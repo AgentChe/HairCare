@@ -1,0 +1,263 @@
+/* 
+  Localizable.strings
+  Soccer
+
+  Created by Андрей Чернышев on 01.02.2023.
+  
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"Next" = "Next";
+"Done" = "Done";
+"Skip" = "Skip";
+"OK" = "OK";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take a photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: TryAgain
+"TryAgain.Title" = "The app failed to perform a request";
+"TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
+"TryAgain.Button" = "Try again";
+"TryAgain.Contact" = "Contact support";
+
+// MARK: Paygate
+"Paygate.Error.Title" = "Error";
+"Paygate.Error.Text" = "An error occurred during execution. Try later.";
+"Paygate.Error.Button" = "OK";
+"Paygate.Title" = "Upgrade Premium";
+"Paygate.Info1" = "AI-powered skincare assistant";
+"Paygate.Info2" = "Access dermatologic guides & articles";
+"Paygate.Info3" = "Stay on track with medication and\nrescan reminders";
+"Paygate.EnableFreeTrial" = "Enable Free Trial";
+"Paygate.FreeTrialEnabled" = "Free Trial Enabled";
+"Paygate.Yearly" = "Yearly";
+"Paygate.Yearly.Bottom" = "%@/year";
+"Paygate.PerWeek" = "per week";
+"Paygate.FreeTrialDays" = "3-day free trial";
+"Paygate.Then" = "%@\n";
+"Paygate.Continue" = "Continue";
+"Paygate.TryFreeSubscribe" = "Try free & subscribe";
+"Paygate.CancelAnytime" = "Cancel Anytime";
+"Paygate.NoPaymentNow" = "No payment now";
+"Paygate.TermsOfUse" = "Terms of Use";
+"Paygate.PrivacyPolicy" = "Privacy Policy";
+"Paygate.RestorePurchases" = "Restore Purchases";
+"Paygate.BestOffer" = "⭐ Best Offer";
+
+// MARK: Splash
+"Splash.Preloader" = "Loading...";
+
+// MARK: Onboarding
+"Onboarding.Disclaimer.Title" = "Disclaimer";
+"Onboarding.Disclaimer.Text1" = "The information provided in this application ";
+"Onboarding.Disclaimer.Text2" = "MUST NOT";
+"Onboarding.Disclaimer.Text3" = " be regarded as a replacement for a professional medical advice. All of the medical decisions you make ";
+"Onboarding.Disclaimer.Text4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
+"Onboarding.Disclaimer.Text5" = " who is able to take all of your conditions into account.";
+"Onboarding.BottomInfo1" = "The information provided in the app ";
+"Onboarding.BottomInfo2" = "MUST NOT";
+"Onboarding.BottomInfo3" = " be regarded as a replacement for a professional medical advice. Read more. ";
+"Onboarding.BottomInfo4" = "Read more";
+"Onboarding.ScanScin.Title" = "Scan Your Skin";
+"Onboarding.ScanScin.Text" = "Analyse your skin condition instantly with our AI-powered scanner";
+"Onboarding.ExploreSkinInsights.Title" = "Explore Skin Insights";
+"Onboarding.ExploreSkinInsights.Text" = "Learn about skin health, diseases, and treatments with expert guidance.";
+"Onboarding.StayOnTrack.Title" = "Stay on Track";
+"Onboarding.StayOnTrack.Text" = "Set reminders for medicaments and skin rescans";
+"Onboarding.Chat.Title" = "Chat with SkinBot";
+"Onboarding.Chat.Text" = "Ask any skin care question and get instant answers";
+
+// MARK: Disclaimer
+"Disclaimer.Title" = "Disclaimer";
+"Disclaimer.Text" = "The information provided in this application MUST NOT be regarded as a replacement for a professional medical advice. All of the medical decisions you make SHOULD BE ADVISED BY A QUALIFIED DOCTOR who is able to take all of your conditions into account.";
+"Disclaimer.Text.Bold1" = "MUST NOT";
+"Disclaimer.Text.Bold2" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
+
+// MARK: Home
+"Home.Title" = "AI Skin Scanner";
+"Home.Explore.Title" = "Explore";
+"Home.Explore.Procedures.Title" = "Procedures";
+"Home.Explore.Procedures.Text" = "A concise glossary of essential procedures";
+"Home.Explore.Disease.Title" = "Disease";
+"Home.Explore.Disease.Text" = "Discover an extensive guide ";
+"Home.Explore.Glossary.Title" = "Glossary";
+"Home.Explore.Glossary.Text" = "A compilation of key terms ";
+"Home.OpenScanner.Title" = "Start skin scanning";
+"Home.OpenScanner.SubTitle" = "Make your first AI scan";
+"Home.OpenScanner.Button" = "Open scanner";
+"Home.OpenHistory.Title" = "Skin scan history";
+"Home.OpenHistory.SubTitle" = "Check your scan results";
+"Home.OpenHistory.Button" = "Open history";
+"Home.AddReminder.Title" = "Set a notification";
+"Home.AddReminder.SubTitle" = "Stay on track with meds\nand rescans";
+"Home.AddReminder.Button" = "Add event";
+
+// MARK: Menu
+"Menu.Title" = "Menu";
+"Menu.Disclaimer" = "Disclaimer";
+"Menu.TermsOfUse" = "Terms of Use";
+"Menu.PrivacyPolicy" = "Privacy Policy";
+"Menu.Support" = "Support";
+
+// MARK: Catalogs
+"Catalogs.Diseases.Title" = "Disease Guide";
+"Catalogs.Procedures.Title" = "Procedures Guide";
+"Catalogs.Glossaries.Title" = "Glossary";
+"Catalogs.Search" = "Search";
+
+// MARK: Bookmarks
+"Bookmarks.Title" = "Bookmark";
+"Bookmarks.Procedures" = "Procedures";
+"Bookmarks.Diseases" = "Disease";
+"Bookmarks.Glossaries" = "Glossary";
+"Bookmarks.ConfirmDelete.Title" = "Are you sure?";
+"Bookmarks.ConfirmDelete.Text" = "Do you really want to delete this bookmark?";
+"Bookmarks.ConfirmDelete.Remove" = "Remove";
+"Bookmarks.Empty.Procedures.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Procedures.SubTitle" = "Saved procedures will appear here";
+"Bookmarks.Empty.Disease.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Disease.SubTitle" = "Saved diseases will appear here";
+"Bookmarks.Empty.Glossary.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Glossary.SubTitle" = "Saved dermatologic terms will appear here";
+
+// MARK: Chat
+"Chat.Title" = "AI Dermatologist";
+"Chat.Placeholder.Title" = "Ask the AI Dermatologist";
+"Chat.Placeholder.SubTitle" = "Type any skin question for instant answers";
+"Chat.Input.Placeholder" = "Type in your quiestion";
+"Chat.Regenerate.Text" = "There was an error generating a response";
+"Chat.Regenerate.Button" = "Regenerate";
+"Chat.Copied.Toast" = "Text copied";
+
+// MARK: Chats
+"Chats.Title" = "Chat history";
+"Chats.ConfirmDelete.Title" = "Are you sure?";
+"Chats.ConfirmDelete.SubTitle" = "Do you really want to delete this chat?";
+"Chats.ConfirmDelete.Delete" = "Remove";
+
+// MARK: AnalyseCamera
+"AnalyseCamera.Placeholder" = "Center the skin area in the frame";
+"AnalyseCamera.NotPermissions.Title" = "No permission";
+"AnalyseCamera.NotPermissions.Text" = "Please go to settings and give permission to receive images for scanning";
+
+// MARK: AnalyseImageResize
+"AnalyseImageResize.AcceptPhoto" = "Accept photo";
+"AnalyseImageResize.Retake" = "Retake";
+"AnalyseImageResize.RetakePhoto" = "Retake photo";
+"AnalyseImageResize.Preloader" = "Scanning in progress...";
+"AnalyseImageResize.Correct" = "The photo is suitable";
+"AnalyseImageResize.Incorrect" = "Cannot scan the photo";
+
+// MARK: AnalyseScanResult
+"AnalyseScanResult.Title" = "Scan result";
+"AnalyseScanResult.Name" = "Name: ";
+"AnalyseScanResult.Assessment" = "Assessment: ";
+"AnalyseScanResult.Conclusion" = "Conclusion: ";
+"AnalyseScanResult.Recommendation" = "Recommendation: ";
+"AnalyseScanResult.Description" = "Description: ";
+"AnalyseScanResult.SaveButton" = "Save result";
+"AnalyseScanResult.SetNotificationButton" = "Set notification";
+
+// MARK: SaveAnalyseSelectSkinArea
+"SaveAnalyseSelectSkinArea.Title" = "Save result";
+"SaveAnalyseSelectSkinArea.SubTitle" = "Select the side of the scanned skin area";
+
+// MARK: Side
+"Side.Front" = "Front";
+"Side.Back" = "Back";
+
+// MARK: SkinArea
+"SkinArea.Head" = "Head";
+"SkinArea.Body" = "Body";
+"SkinArea.leftArm" = "Left arm";
+"SkinArea.RightArm" = "Right arm";
+"SkinArea.Stomach" = "Stomach";
+"SkinArea.LeftLeg" = "Left leg";
+"SkinArea.RightLeg" = "Right leg";
+
+// MARK: SaveAnalyseSetTitle
+"SaveAnalyseSetTitle.Title" = "Save result";
+"SaveAnalyseSetTitle.SubTitle" = "Add a few extra details to the result";
+"SaveAnalyseSetTitle.ScannedArea" = "Scanned area:\n%@";
+"SaveAnalyseSetTitle.AddTitle" = "Add scan title";
+"SaveAnalyseSetTitle.TitlePlaceholder" = "Enter text";
+"SaveAnalyseSetTitle.SaveButton" = "Save result";
+
+// MARK: SaveAnalyseComplete
+"SaveAnalyseComplete.Title" = "Done!";
+"SaveAnalyseComplete.Text" = "You can set notifications to take the skin rescan and keep track of any changes";
+"SaveAnalyseComplete.ReminderButton" = "Set a rescan reminder";
+"SaveAnalyseComplete.LaterButton" = "Do it later";
+
+// MARK: ScanHistory
+"ScanHistory.Title" = "Scan history";
+
+// MARK: Reminder
+"Reminders.Title" = "Calendar";
+"Reminders.SubTitle" = "Set notifications for taking medication on time or do the skin rescan";
+"Reminders.Empty" = "You don’t track any events yet.\nTap plus to add an event.";
+"Reminders.AddEvent" = "Tap plus to add an event.";
+"Reminders.SkinRescan.Title" = "SKIN RESCANE";
+"Reminders.Medication.Title" = "MEDICATION";
+"Reminders.Trigger.EveryDay" = "Every day at %@";
+"Reminders.Trigger.EveryMinutes" = "Every %i minutes";
+"Reminders.Trigger.EveryHours" = "Every %i hours";
+"Reminders.Trigger.EveryDays" = "Every %i days";
+"Reminders.Trigger.EveryMonth" = "Every month on the %@th";
+"Reminders.Trigger.EveryYear" = "Every year on the %@th";
+"Reminders.NoteTitle" = "Note: ";
+"Reminders.DaysOfWeek.Su" = "S";
+"Reminders.DaysOfWeek.Mo" = "M";
+"Reminders.DaysOfWeek.Tu" = "T";
+"Reminders.DaysOfWeek.We" = "W";
+"Reminders.DaysOfWeek.Th" = "T";
+"Reminders.DaysOfWeek.Fr" = "F";
+"Reminders.DaysOfWeek.Sa" = "S";
+
+// MARK: ChooseReminderEvent
+"ChooseReminderEvent.Title" = "Choose the event you want to log";
+"ChooseReminderEvent.Medication" = "Medication";
+"ChooseReminderEvent.SkinRescan" = "Skin rescan";
+
+// MARK: CreteMedication
+"CreteMedication.Create.Title" = "Create an event";
+"CreteMedication.Edit.Title" = "Edit event";
+"CreteMedication.Reminder" = "Reminder";
+"CreteMedication.EveryMinutes" = "Every %i minutes";
+"CreteMedication.EveryHours" = "Every %i hours";
+"CreteMedication.EveryDays" = "Every %i days";
+"CreteMedication.AddNote" = "Add note";
+"CreteMedication.Note" = "Note";
+"CreteMedication.Optional" = "Optional";
+
+// MARK: CreateReminder
+"CreateReminder.Medication" = "Medication";
+"CreateReminder.SkinRescan" = "Skin Rescan";
+"CreateReminder.Medication.Name.Placeholder" = "Medicine name";
+"CreateReminder.SkinRescan.Name.Placeholder" = "Title";
+"CreateReminder.ConfirmDelete.Title" = "Are you sure?";
+"CreateReminder.ConfirmDelete.Text" = "Do you really want to remove this event?";
+"CreateReminder.ConfirmDelete.Remove" = "Remove";
+
+// MARK: Repetitions
+"Repetitions.Title" = "Repetition";
+"Repetitions.EveryDay" = "Every day";
+"Repetitions.EveryMinutes" = "Every X minutes";
+"Repetitions.EveryHours" = "Every X hours";
+"Repetitions.EveryDays" = "Every X days";
+"Repetitions.EveryMonth" = "Every month";
+"Repetitions.EveryYear" = "Every year";
+"Repetitions.OnSpecificDate" = "On specific date";
+"Repetitions.Create.ConfirmButton" = "Next";
+"Repetitions.Edit.ConfirmButton" = "Save event";
+"Repetitions.SaveButton" = "Save";
+"Repetitions.Every" = "Every";
+"Repetitions.Minutes" = "minutes";
+"Repetitions.Hours" = "hours";
+"Repetitions.Days" = "days";
+"Repetitions.RemoveButton" = "Remove this event";
