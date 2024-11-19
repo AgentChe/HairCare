@@ -28,7 +28,7 @@ final class ODisclaimerView: OnboardingSlideView {
 // MARK: Private
 private extension ODisclaimerView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -124,7 +124,7 @@ private extension ODisclaimerView {
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         addSubview(view)

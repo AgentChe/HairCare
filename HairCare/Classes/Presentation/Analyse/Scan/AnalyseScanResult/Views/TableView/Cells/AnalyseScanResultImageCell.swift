@@ -66,7 +66,7 @@ private extension AnalyseScanResultImageCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 16.scale
-        view.layer.borderColor = Appearance.main900.cgColor
+        view.layer.borderColor = Appearance.main700.cgColor
         view.layer.borderWidth = 4.scale
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -102,7 +102,7 @@ private extension CatalogsView {
         view.contentInset = UIEdgeInsets(vertical: 10.scale)
         view.setContentOffset(CGPoint(x: 0, y: -10.scale), animated: false)
         view.separatorStyle = .singleLine
-        view.separatorColor = Appearance.main900
+        view.separatorColor = Appearance.main700
         view.separatorInset = UIEdgeInsets(horizontal: 16.scale)
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never

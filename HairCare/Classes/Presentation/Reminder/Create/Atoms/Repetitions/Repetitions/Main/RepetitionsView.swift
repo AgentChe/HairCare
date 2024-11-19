@@ -94,7 +94,7 @@ private extension RepetitionsView {
         view.contentInset = UIEdgeInsets(vertical: 16.scale)
         view.setContentOffset(CGPoint(x: 0, y: -16.scale), animated: false)
         view.showsVerticalScrollIndicator = false
-        view.separatorColor = Appearance.main900
+        view.separatorColor = Appearance.main700
         view.separatorInset = UIEdgeInsets(horizontal: 16.scale)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

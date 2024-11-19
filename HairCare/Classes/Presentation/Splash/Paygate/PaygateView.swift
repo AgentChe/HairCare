@@ -49,7 +49,7 @@ extension PaygateView {
 // MARK: Private
 private extension PaygateView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -57,10 +57,10 @@ private extension PaygateView {
 private extension PaygateView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 160.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 160.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 130.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 130.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
+            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -73,7 +73,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20.scale)
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 35.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -213,7 +213,7 @@ private extension PaygateView {
     func makeBuyButton() -> UIButton {
         let view = UIButton()
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -236,7 +236,7 @@ private extension PaygateView {
     func makePreloader() -> UIActivityIndicatorView {
         let view = UIActivityIndicatorView()
         view.style = .large
-        view.color = Appearance.main100
+        view.color = Appearance.mono200
         view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

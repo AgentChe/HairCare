@@ -53,7 +53,7 @@ extension SaveAnalyseSelectSkinAreaView {
     func continueButton(enable: Bool) {
         continueButton.isUserInteractionEnabled = enable
         
-        continueButton.backgroundColor = enable ? Appearance.main100 : Appearance.main900
+        continueButton.backgroundColor = enable ? Appearance.main100 : Appearance.main700
         
         let attrs = enable ? continueButtonEnableAttrs : continueButtonDisableAttrs
         continueButton.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)

@@ -98,7 +98,7 @@ private extension AnalyseImageResizeOptionsView {
         
         let retakeButton = UIButton()
         retakeButton.setAttributedTitle("AnalyseImageResize.Retake".localized.attributed(with: blackButtonAttrs), for: .normal)
-        retakeButton.backgroundColor = Appearance.main900
+        retakeButton.backgroundColor = Appearance.main700
         retakeButton.layer.cornerRadius = 16.scale
         retakeButton.translatesAutoresizingMaskIntoConstraints = false
         retakeButton.addTarget(self, action: #selector(retakeTapped), for: .touchUpInside)
@@ -134,7 +134,7 @@ private extension AnalyseImageResizeOptionsView {
         
         let continueButton = UIButton()
         continueButton.setAttributedTitle("Continue".localized.attributed(with: disableButtonAttrs), for: .normal)
-        continueButton.backgroundColor = Appearance.main900
+        continueButton.backgroundColor = Appearance.main700
         continueButton.layer.cornerRadius = 16.scale
         continueButton.isUserInteractionEnabled = false 
         continueButton.translatesAutoresizingMaskIntoConstraints = false

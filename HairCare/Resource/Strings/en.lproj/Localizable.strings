@@ -30,7 +30,7 @@
 "Paygate.Error.Text" = "An error occurred during execution. Try later.";
 "Paygate.Error.Button" = "OK";
 "Paygate.Title" = "Upgrade Premium";
-"Paygate.Info1" = "AI-powered skincare assistant";
+"Paygate.Info1" = "AI-powered hair care assistant";
 "Paygate.Info2" = "Access dermatologic guides & articles";
 "Paygate.Info3" = "Stay on track with medication and\nrescan reminders";
 "Paygate.EnableFreeTrial" = "Enable Free Trial";
@@ -63,14 +63,14 @@
 "Onboarding.BottomInfo2" = "MUST NOT";
 "Onboarding.BottomInfo3" = " be regarded as a replacement for a professional medical advice. Read more. ";
 "Onboarding.BottomInfo4" = "Read more";
-"Onboarding.ScanScin.Title" = "Scan Your Skin";
-"Onboarding.ScanScin.Text" = "Analyse your skin condition instantly with our AI-powered scanner";
-"Onboarding.ExploreSkinInsights.Title" = "Explore Skin Insights";
-"Onboarding.ExploreSkinInsights.Text" = "Learn about skin health, diseases, and treatments with expert guidance.";
-"Onboarding.StayOnTrack.Title" = "Stay on Track";
-"Onboarding.StayOnTrack.Text" = "Set reminders for medicaments and skin rescans";
-"Onboarding.Chat.Title" = "Chat with SkinBot";
-"Onboarding.Chat.Text" = "Ask any skin care question and get instant answers";
+"Onboarding.ScanScin.Title" = "Scan Your Hair";
+"Onboarding.ScanScin.Text" = "Analyze your hair’s condition with our AI scanner. Get personalized insights and recommendations.";
+"Onboarding.ExploreSkinInsights.Title" = "Hair Care Insights";
+"Onboarding.ExploreSkinInsights.Text" = "Browse curated articles on hair care, treatments, and trends from experts.";
+"Onboarding.StayOnTrack.Title" = "Treatment Calendar";
+"Onboarding.StayOnTrack.Text" = "Set reminders for treatments and rescans. Track your progress effortlessly.";
+"Onboarding.Chat.Title" = "Chat with HairBot";
+"Onboarding.Chat.Text" = "Chat with our AI assistant for instant support and personalized hair care tips.";
 
 // MARK: Disclaimer
 "Disclaimer.Title" = "Disclaimer";

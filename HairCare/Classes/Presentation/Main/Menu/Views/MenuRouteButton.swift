@@ -75,7 +75,7 @@ private extension MenuRouteButton {
     func makeSeparator() -> UIView {
         let view = UIView()
         view.isHidden = route.separatorHidden
-        view.backgroundColor = Appearance.main900
+        view.backgroundColor = Appearance.main700
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

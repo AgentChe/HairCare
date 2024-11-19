@@ -1583,8 +1583,8 @@
 		DE7BCE6B2CEC66EC00ECD4FE /* Disclaimer */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE692CEC66EC00ECD4FE /* DisclaimerView.swift */,
 				DE7BCE6A2CEC66EC00ECD4FE /* DisclaimerViewController.swift */,
+				DE7BCE692CEC66EC00ECD4FE /* DisclaimerView.swift */,
 			);
 			path = Disclaimer;
 			sourceTree = "<group>";
@@ -1592,13 +1592,13 @@
 		DE7BCE732CEC66EC00ECD4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE6C2CEC66EC00ECD4FE /* OChatView.swift */,
-				DE7BCE6D2CEC66EC00ECD4FE /* ODisclaimerView.swift */,
-				DE7BCE6E2CEC66EC00ECD4FE /* OExploreSkinInsightsView.swift */,
-				DE7BCE6F2CEC66EC00ECD4FE /* OnboardingSlideView.swift */,
-				DE7BCE702CEC66EC00ECD4FE /* OScanScinView.swift */,
-				DE7BCE712CEC66EC00ECD4FE /* OStayOnTrackView.swift */,
 				DE7BCE722CEC66EC00ECD4FE /* OStepsView.swift */,
+				DE7BCE6F2CEC66EC00ECD4FE /* OnboardingSlideView.swift */,
+				DE7BCE6D2CEC66EC00ECD4FE /* ODisclaimerView.swift */,
+				DE7BCE702CEC66EC00ECD4FE /* OScanScinView.swift */,
+				DE7BCE6E2CEC66EC00ECD4FE /* OExploreSkinInsightsView.swift */,
+				DE7BCE712CEC66EC00ECD4FE /* OStayOnTrackView.swift */,
+				DE7BCE6C2CEC66EC00ECD4FE /* OChatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1607,8 +1607,8 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE732CEC66EC00ECD4FE /* Views */,
-				DE7BCE742CEC66EC00ECD4FE /* OnboardingView.swift */,
 				DE7BCE752CEC66EC00ECD4FE /* OnboardingViewController.swift */,
+				DE7BCE742CEC66EC00ECD4FE /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1640,9 +1640,9 @@
 			children = (
 				DE7BCE792CEC66EC00ECD4FE /* Utils */,
 				DE7BCE802CEC66EC00ECD4FE /* Views */,
-				DE7BCE812CEC66EC00ECD4FE /* PaygateView.swift */,
 				DE7BCE822CEC66EC00ECD4FE /* PaygateViewController.swift */,
 				DE7BCE832CEC66EC00ECD4FE /* PaygateViewModel.swift */,
+				DE7BCE812CEC66EC00ECD4FE /* PaygateView.swift */,
 			);
 			path = Paygate;
 			sourceTree = "<group>";
@@ -1659,9 +1659,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE862CEC66EC00ECD4FE /* Utils */,
-				DE7BCE872CEC66EC00ECD4FE /* SplashView.swift */,
 				DE7BCE882CEC66EC00ECD4FE /* SplashViewController.swift */,
 				DE7BCE892CEC66EC00ECD4FE /* SplashViewModel.swift */,
+				DE7BCE872CEC66EC00ECD4FE /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -2380,9 +2380,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2GY8CB289H;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2398,8 +2398,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.HairCare;
+				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2416,9 +2417,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2GY8CB289H;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2434,8 +2435,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.HairCare;
+				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

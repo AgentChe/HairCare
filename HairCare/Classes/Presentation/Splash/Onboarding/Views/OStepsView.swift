@@ -28,13 +28,13 @@ final class OStepsView: UIView {
 // MARK: Public
 extension OStepsView {
     func update(at slide: OnboardingView.Slide) {
-        let main100 = Appearance.main100
-        let main200 = Appearance.main200
+        let highlight = Appearance.mono200
+        let notHighlight = Appearance.main100
         
-        scanScinDivisionView.backgroundColor = slide.equalOrGreater(than: .scanScin) ? main100 : main200
-        exploreSkinInsightsDivisionView.backgroundColor = slide.equalOrGreater(than: .exploreSkinInsights) ? main100 : main200
-        stayOnTrackDivisionView.backgroundColor = slide.equalOrGreater(than: .stayOnTrack) ? main100 : main200
-        chatDivisionView.backgroundColor = slide.equalOrGreater(than: .chat) ? main100 : main200
+        scanScinDivisionView.backgroundColor = slide.equalOrGreater(than: .scanScin) ? highlight : notHighlight
+        exploreSkinInsightsDivisionView.backgroundColor = slide.equalOrGreater(than: .exploreSkinInsights) ? highlight : notHighlight
+        stayOnTrackDivisionView.backgroundColor = slide.equalOrGreater(than: .stayOnTrack) ? highlight : notHighlight
+        chatDivisionView.backgroundColor = slide.equalOrGreater(than: .chat) ? highlight : notHighlight
         
         isHidden = {
             switch slide {

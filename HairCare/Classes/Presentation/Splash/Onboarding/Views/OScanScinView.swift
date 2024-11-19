@@ -30,7 +30,7 @@ final class OScanScinView: OnboardingSlideView {
 // MARK: Private
 private extension OScanScinView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -50,17 +50,17 @@ private extension OScanScinView {
         ])
         
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 322.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 322.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 270.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 270.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 15.scale)
+            imageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 103.scale)
         ])
         
         NSLayoutConstraint.activate([
             continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             continueButton.heightAnchor.constraint(equalToConstant: 54.scale),
-            continueButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8.scale)
+            continueButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 35.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -127,7 +127,7 @@ private extension OScanScinView {
         let view = UIButton()
         view.setAttributedTitle("Continue".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         addSubview(view)
@@ -142,7 +142,7 @@ private extension OScanScinView {
         let view = UIButton()
         view.setAttributedTitle("Skip".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main900
+        view.backgroundColor = Appearance.main100
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addTarget(self, action: #selector(onSkip), for: .touchUpInside)
         addSubview(view)

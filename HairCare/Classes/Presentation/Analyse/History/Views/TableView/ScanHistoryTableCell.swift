@@ -105,7 +105,7 @@ private extension ScanHistoryTableCell {
         view.backgroundColor = Appearance.mono100
         view.layer.cornerRadius = 16.scale
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.main900.cgColor
+        view.layer.borderColor = Appearance.main700.cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

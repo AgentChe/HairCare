@@ -151,7 +151,7 @@ private extension TryAgainView {
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Contact".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main900
+        view.backgroundColor = Appearance.main700
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

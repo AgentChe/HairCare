@@ -47,7 +47,7 @@ private extension ChatsTableFooterView {
 private extension ChatsTableFooterView {
     func makeSeparator() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.main900
+        view.backgroundColor = Appearance.main700
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

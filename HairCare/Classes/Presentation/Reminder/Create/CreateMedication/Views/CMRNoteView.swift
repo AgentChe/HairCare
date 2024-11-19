@@ -45,7 +45,7 @@ private extension CMRNoteView {
         layer.cornerRadius = 4.scale
         layer.masksToBounds = true
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main900.cgColor
+        layer.borderColor = Appearance.main700.cgColor
     }
 }
 

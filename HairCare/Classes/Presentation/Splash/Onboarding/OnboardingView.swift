@@ -86,7 +86,7 @@ extension OnboardingView: OnboardingSlideViewDelete {
 // MARK: Private
 private extension OnboardingView {
     func initialize() {
-        backgroundColor = Appearance.main100
+        backgroundColor = Appearance.mono100
         
         slidesViews.forEach { [weak self] slideView in
             guard let self else { return }

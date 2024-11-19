@@ -62,7 +62,7 @@ private extension SASTScannedAreaImageView {
         backgroundColor = Appearance.mono100
         layer.cornerRadius = 12.scale
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main900.cgColor
+        layer.borderColor = Appearance.main700.cgColor
     }
 }
 

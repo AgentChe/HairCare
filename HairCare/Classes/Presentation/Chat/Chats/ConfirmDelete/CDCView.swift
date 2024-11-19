@@ -172,7 +172,7 @@ private extension CDCView {
         
         let view = UIButton()
         view.setAttributedTitle("Cancel".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main900
+        view.backgroundColor = Appearance.main700
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)

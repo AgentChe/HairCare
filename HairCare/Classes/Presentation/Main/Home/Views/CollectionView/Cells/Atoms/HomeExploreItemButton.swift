@@ -40,7 +40,7 @@ private extension HomeExploreItemButton {
         backgroundColor = Appearance.mono100
         layer.cornerRadius = 16.scale
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main900.cgColor
+        layer.borderColor = Appearance.main700.cgColor
     }
 }
 

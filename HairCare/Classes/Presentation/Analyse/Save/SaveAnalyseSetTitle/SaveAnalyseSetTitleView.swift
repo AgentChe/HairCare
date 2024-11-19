@@ -40,7 +40,7 @@ extension SaveAnalyseSetTitleView {
     func saveButton(enable: Bool) {
         saveButton.isUserInteractionEnabled = enable
         
-        saveButton.backgroundColor = enable ? Appearance.main100 : Appearance.main900
+        saveButton.backgroundColor = enable ? Appearance.main100 : Appearance.main700
         
         let attrs = enable ? saveButtonEnableAttrs : saveButtonDisableAttrs
         saveButton.setAttributedTitle("SaveAnalyseSetTitle.SaveButton".localized.attributed(with: attrs), for: .normal)

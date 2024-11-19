@@ -48,7 +48,7 @@ private extension CatalogsSearchField {
     func initialize() {
         backgroundColor = Appearance.mono100
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main900.cgColor
+        layer.borderColor = Appearance.main700.cgColor
         layer.cornerRadius = 10.scale
         layer.masksToBounds = true
     }

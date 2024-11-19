@@ -70,7 +70,7 @@ private extension PaygateInfoCell {
         let attrs = TextAttributes()
             .textColor(Appearance.mono200)
             .font(Fonts.Roboto.regular(size: 16.scale))
-            .lineHeight(22.scale)
+            .lineHeight(26.scale)
             .textAlignment(.left)
         
         let view = UILabel()
