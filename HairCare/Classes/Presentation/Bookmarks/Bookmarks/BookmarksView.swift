@@ -41,7 +41,7 @@ extension BookmarksView {
 // MARK: Private
 private extension BookmarksView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -160,7 +160,7 @@ private extension BookmarksView {
     func makePreloader() -> UIActivityIndicatorView {
         let view = UIActivityIndicatorView()
         view.style = .large
-        view.color = Appearance.main100
+        view.color = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

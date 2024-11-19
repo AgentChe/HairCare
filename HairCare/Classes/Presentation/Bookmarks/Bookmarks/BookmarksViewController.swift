@@ -40,6 +40,12 @@ final class BookmarksViewController: UIViewController {
         let didTapFilter = Observable
             .merge(
                 mainView.filterView
+                    .recipesButton.rx.tap
+                    .map { BookmarksFilterView.Filter.recipes },
+                mainView.filterView
+                    .insightsButton.rx.tap
+                    .map { BookmarksFilterView.Filter.insights },
+                mainView.filterView
                     .proceduresButton.rx.tap
                     .map { BookmarksFilterView.Filter.procedures },
                 mainView.filterView
@@ -50,7 +56,7 @@ final class BookmarksViewController: UIViewController {
                     .map { BookmarksFilterView.Filter.glossaries }
             )
             .asSignal(onErrorSignalWith: .never())
-            .startWith(.procedures)
+            .startWith(.recipes)
         
         didTapFilter
             .emit(to: Binder(mainView.filterView) { base, filter in

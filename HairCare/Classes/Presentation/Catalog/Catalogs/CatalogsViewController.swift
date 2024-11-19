@@ -10,7 +10,7 @@ import RxSwift
 
 final class CatalogsViewController: UIViewController {
     enum Item {
-        case glossary, procedure, disease
+        case recipes, insights, glossary, procedure, disease
     }
     
     private lazy var mainView = CatalogsView(item: item)
@@ -80,6 +80,10 @@ private extension CatalogsViewController {
             } else {
                 let detailsItem: CatalogDetailsViewController.Item = {
                     switch item {
+                    case .recipes:
+                        return .recipes
+                    case .insights:
+                        return .insights
                     case .glossary:
                         return .glossary
                     case .procedure:

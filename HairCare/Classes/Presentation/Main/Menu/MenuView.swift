@@ -30,7 +30,7 @@ final class MenuView: UIView {
 // MARK: Private
 private extension MenuView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

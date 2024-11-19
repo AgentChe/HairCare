@@ -47,12 +47,22 @@ extension BookmarksViewModel {
     func configure(input: Input) -> Output {
         let filter = input
             .didTapFilter
-            .startWith(.procedures)
+            .startWith(.recipes)
             .asDriver(onErrorDriveWith: .never())
         let navigationMode = makeNavigationMode(
             didTapDone: input.didTapDone,
             didTapEdit: input.didTapEdit,
             didDelete: didDeleteTrigger.asSignal()
+        )
+        let selectedRecipes = makeSelectedRecipes(
+            navigationMode: navigationMode,
+            didTapCatalog: input.didTapCatalog,
+            filter: filter
+        )
+        let selectedInsights = makeSelectedInsights(
+            navigationMode: navigationMode,
+            didTapCatalog: input.didTapCatalog,
+            filter: filter
         )
         let selectedProcedures = makeSelectedProcedures(
             navigationMode: navigationMode,
@@ -68,6 +78,16 @@ extension BookmarksViewModel {
             navigationMode: navigationMode,
             didTapCatalog: input.didTapCatalog,
             filter: filter
+        )
+        let recipesElements = makeRecipesElements(
+            navigationMode: navigationMode,
+            bookmarksRecipes: makeBookmarkRecipes(),
+            selectedRecipes: selectedRecipes
+        )
+        let insightsElements = makeInsightsElements(
+            navigationMode: navigationMode,
+            bookmarksInsights: makeBookmarkInsights(),
+            selectedInsights: selectedInsights
         )
         let proceduresElements = makeProceduresElements(
             navigationMode: navigationMode,
@@ -92,6 +112,8 @@ extension BookmarksViewModel {
         let didDelete = makeDelete(
             filter: filter,
             didTapDelete: input.didTapDelete,
+            selectedRecipes: selectedRecipes,
+            selectedInsights: selectedInsights,
             selectedProcedures: selectedProcedures,
             selectedDiseases: selectedDiseases,
             selectedGlossaries: selectedGlossaries
@@ -103,6 +125,8 @@ extension BookmarksViewModel {
         return Output(
             isEmpty: makeIsEmpty(
                 filter: filter,
+                recipesElements: recipesElements,
+                insightsElements: insightsElements,
                 proceduresElements: proceduresElements,
                 diseasesElements: diseasesElements,
                 glossariesElements: glossariesElements
@@ -110,6 +134,8 @@ extension BookmarksViewModel {
             navigationMode: navigationMode,
             elements: makeElements(
                 filter: filter,
+                recipesElements: recipesElements,
+                insightsElements: insightsElements,
                 proceduresElements: proceduresElements,
                 diseasesElements: diseasesElements,
                 glossariesElements: glossariesElements
@@ -117,6 +143,8 @@ extension BookmarksViewModel {
             activity: activity.asDriver(),
             hasSelectedOnCurrentFilter: makeHasSelectedOnCurrentFilter(
                 filter: filter,
+                selectedRecipes: selectedRecipes,
+                selectedInsights: selectedInsights,
                 selectedProcedures: selectedProcedures,
                 selectedDiseases: selectedDiseases,
                 selectedGlossaries: selectedGlossaries
@@ -131,6 +159,8 @@ extension BookmarksViewModel {
 private extension BookmarksViewModel {
     func makeIsEmpty(
         filter: Driver<BookmarksFilterView.Filter>,
+        recipesElements: Driver<[BookmarksTableElement]>,
+        insightsElements: Driver<[BookmarksTableElement]>,
         proceduresElements: Driver<[BookmarksTableElement]>,
         diseasesElements: Driver<[BookmarksTableElement]>,
         glossariesElements: Driver<[BookmarksTableElement]>
@@ -138,11 +168,17 @@ private extension BookmarksViewModel {
         Driver
             .combineLatest(
                 filter,
+                recipesElements,
+                insightsElements,
                 proceduresElements,
                 diseasesElements,
                 glossariesElements
-            ).map { filter, procedures, diseases, glossaries -> BookmarksEmptyView.Unit? in
+            ).map { filter, recipes, insights, procedures, diseases, glossaries -> BookmarksEmptyView.Unit? in
                 switch filter {
+                case .recipes:
+                    return recipes.isEmpty ? .recipes : nil
+                case .insights:
+                    return insights.isEmpty ? .insights : nil
                 case .procedures:
                     return procedures.isEmpty ? .procedures : nil
                 case .diseases:
@@ -172,6 +208,8 @@ private extension BookmarksViewModel {
     
     func makeElements(
         filter: Driver<BookmarksFilterView.Filter>,
+        recipesElements: Driver<[BookmarksTableElement]>,
+        insightsElements: Driver<[BookmarksTableElement]>,
         proceduresElements: Driver<[BookmarksTableElement]>,
         diseasesElements: Driver<[BookmarksTableElement]>,
         glossariesElements: Driver<[BookmarksTableElement]>
@@ -179,12 +217,18 @@ private extension BookmarksViewModel {
         Driver
             .combineLatest(
                 filter,
+                recipesElements,
+                insightsElements,
                 proceduresElements,
                 diseasesElements,
                 glossariesElements
             )
-            .map { filter, procedures, diseases, glossaries -> [BookmarksTableElement] in
+            .map { filter, recipes, insights, procedures, diseases, glossaries -> [BookmarksTableElement] in
                 switch filter {
+                case .recipes:
+                    return recipes
+                case .insights:
+                    return insights
                 case .procedures:
                     return procedures
                 case .diseases:
@@ -197,6 +241,8 @@ private extension BookmarksViewModel {
     
     func makeHasSelectedOnCurrentFilter(
         filter: Driver<BookmarksFilterView.Filter>,
+        selectedRecipes: Driver<[Catalog]>,
+        selectedInsights: Driver<[Catalog]>,
         selectedProcedures: Driver<[Catalog]>,
         selectedDiseases: Driver<[Catalog]>,
         selectedGlossaries: Driver<[Catalog]>
@@ -204,18 +250,66 @@ private extension BookmarksViewModel {
         Driver
             .combineLatest(
                 filter,
+                selectedRecipes.startWith([]),
+                selectedInsights.startWith([]),
                 selectedProcedures.startWith([]),
                 selectedDiseases.startWith([]),
                 selectedGlossaries.startWith([])
             )
-            .map { filter, procedures, diseases, glossaries -> Bool in
+            .map { filter, recipes, insights, procedures, diseases, glossaries -> Bool in
                 switch filter {
+                case .recipes:
+                    return !recipes.isEmpty
+                case .insights:
+                    return !insights.isEmpty
                 case .procedures:
                     return !procedures.isEmpty
                 case .diseases:
                     return !diseases.isEmpty
                 case .glossaries:
                     return !glossaries.isEmpty
+                }
+            }
+    }
+    
+    func makeRecipesElements(
+        navigationMode: Driver<BookmarksViewController.NavigationMode>,
+        bookmarksRecipes: Driver<[Catalog]>,
+        selectedRecipes: Driver<[Catalog]>
+    ) -> Driver<[BookmarksTableElement]> {
+        Driver
+            .combineLatest(
+                navigationMode,
+                bookmarksRecipes,
+                selectedRecipes
+            )
+            .map { mode, bookmarksRecipes, selectedRecipes -> [BookmarksTableElement] in
+                bookmarksRecipes.map { recipe -> BookmarksTableElement in
+                    BookmarksTableElement(
+                        catalog: recipe,
+                        selected: mode == .editable ? selectedRecipes.contains(where: { $0.id == recipe.id }) : nil
+                    )
+                }
+            }
+    }
+    
+    func makeInsightsElements(
+        navigationMode: Driver<BookmarksViewController.NavigationMode>,
+        bookmarksInsights: Driver<[Catalog]>,
+        selectedInsights: Driver<[Catalog]>
+    ) -> Driver<[BookmarksTableElement]> {
+        Driver
+            .combineLatest(
+                navigationMode,
+                bookmarksInsights,
+                selectedInsights
+            )
+            .map { mode, bookmarksInsights, selectedInsights -> [BookmarksTableElement] in
+                bookmarksInsights.map { insight -> BookmarksTableElement in
+                    BookmarksTableElement(
+                        catalog: insight,
+                        selected: mode == .editable ? selectedInsights.contains(where: { $0.id == insight.id }) : nil
+                    )
                 }
             }
     }
@@ -281,6 +375,34 @@ private extension BookmarksViewModel {
                     )
                 }
             }
+    }
+    
+    func makeSelectedRecipes(
+        navigationMode: Driver<BookmarksViewController.NavigationMode>,
+        didTapCatalog: Signal<Catalog>,
+        filter: Driver<BookmarksFilterView.Filter>
+    ) -> Driver<[Catalog]> {
+        makeSelectedUnits(
+            navigationMode: navigationMode,
+            didTapCatalog: didTapCatalog
+                .asDriver(onErrorDriveWith: .never())
+                .withLatestFrom(filter) { ($0, $1) }
+                .compactMap { $1 == .recipes ? $0 : nil }
+        )
+    }
+    
+    func makeSelectedInsights(
+        navigationMode: Driver<BookmarksViewController.NavigationMode>,
+        didTapCatalog: Signal<Catalog>,
+        filter: Driver<BookmarksFilterView.Filter>
+    ) -> Driver<[Catalog]> {
+        makeSelectedUnits(
+            navigationMode: navigationMode,
+            didTapCatalog: didTapCatalog
+                .asDriver(onErrorDriveWith: .never())
+                .withLatestFrom(filter) { ($0, $1) }
+                .compactMap { $1 == .insights ? $0 : nil }
+        )
     }
     
     func makeSelectedProcedures(
@@ -349,6 +471,42 @@ private extension BookmarksViewModel {
                     return .just([])
                 }
             }
+    }
+    
+    func makeBookmarkRecipes() -> Driver<[Catalog]> {
+        makeUnits(
+            downloadTrigger: CatalogMediator.shared
+                .didSaveRecipeId
+                .map { id in Void() },
+            removeTrigger: CatalogMediator.shared
+                .didUnsaveRecipesIds,
+            source: { [weak self] in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.catalogManager
+                    .obtainBookmarksRecipes()
+            }
+        )
+    }
+    
+    func makeBookmarkInsights() -> Driver<[Catalog]> {
+        makeUnits(
+            downloadTrigger: CatalogMediator.shared
+                .didSaveInsightId
+                .map { id in Void() },
+            removeTrigger: CatalogMediator.shared
+                .didUnsaveInsightsIds,
+            source: { [weak self] in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.catalogManager
+                    .obtainBookmarksInsights()
+            }
+        )
     }
     
     func makeBookmarkProcedures() -> Driver<[Catalog]> {
@@ -468,6 +626,10 @@ private extension BookmarksViewModel {
                 guard navigationMode == .normal else { return nil }
                 
                 switch filter {
+                case .recipes:
+                    return (.catalog(.recipes, catalog))
+                case .insights:
+                    return (.catalog(.insights, catalog))
                 case .procedures:
                     return (.catalog(.procedure, catalog))
                 case .diseases:
@@ -481,6 +643,8 @@ private extension BookmarksViewModel {
     func makeDelete(
         filter: Driver<BookmarksFilterView.Filter>,
         didTapDelete: Signal<Void>,
+        selectedRecipes: Driver<[Catalog]>,
+        selectedInsights: Driver<[Catalog]>,
         selectedProcedures: Driver<[Catalog]>,
         selectedDiseases: Driver<[Catalog]>,
         selectedGlossaries: Driver<[Catalog]>
@@ -491,6 +655,8 @@ private extension BookmarksViewModel {
 
         let selected = Driver
             .combineLatest(
+                selectedRecipes.startWith([]),
+                selectedInsights.startWith([]),
                 selectedProcedures.startWith([]),
                 selectedDiseases.startWith([]),
                 selectedGlossaries.startWith([])
@@ -503,10 +669,16 @@ private extension BookmarksViewModel {
                     return .never()
                 }
                 
-                let (procedures, diseases, glossaries) = args
+                let (recipes, insights, procedures, diseases, glossaries) = args
                 
                 func source() -> Single<Void> {
                     switch filter {
+                    case .recipes:
+                        return self.catalogManager
+                            .unsaveRecipes(ids: recipes.map { $0.id })
+                    case .insights:
+                        return self.catalogManager
+                            .unsaveInsights(ids: insights.map { $0.id })
                     case .procedures:
                         return self.catalogManager
                             .unsaveProcedures(ids: procedures.map { $0.id })

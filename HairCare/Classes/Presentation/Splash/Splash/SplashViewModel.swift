@@ -63,6 +63,16 @@ private extension SplashViewModel {
             .flatMapLatest { [weak self] void -> Signal<Void> in
                 guard let self else { return .never() }
                 
+                let recipes = catalogManager
+                    .obtainRecipes(forceUpdate: true)
+                    .asSignal(onErrorJustReturn: [])
+                    .map { recipes -> Void in Void() }
+                
+                let insights = catalogManager
+                    .obtainInsights(forceUpdate: true)
+                    .asSignal(onErrorJustReturn: [])
+                    .map { insights -> Void in Void() }
+                
                 let glossaries = catalogManager
                     .obtainGlossaries(forceUpdate: true)
                     .asSignal(onErrorJustReturn: [])
@@ -79,7 +89,7 @@ private extension SplashViewModel {
                     .map { diseases -> Void in Void() }
                 
                 return Signal
-                    .merge([glossaries, procedures, diseases])
+                    .merge([recipes, insights, glossaries, procedures, diseases])
             }
     }
     

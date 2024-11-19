@@ -96,7 +96,7 @@ extension HomeCollectionView: UICollectionViewDelegateFlowLayout {
         case .openScanner, .openHistory, .addReminder:
             return CGSize(width: bounds.width, height: 194.scale)
         case .explore:
-            return CGSize(width: bounds.width, height: 411.scale)
+            return CGSize(width: bounds.width, height: 601.scale)
         }
     }
 }

@@ -9,15 +9,17 @@ import UIKit
 
 final class BookmarksFilterView: UIScrollView {
     enum Filter {
-        case procedures, diseases, glossaries
+        case recipes, insights, procedures, diseases, glossaries
     }
     
-    lazy var filter = Filter.procedures {
+    lazy var filter = Filter.recipes {
         didSet {
             update()
         }
     }
     
+    lazy var recipesButton = makeButton(text: "Bookmarks.Recipes".localized)
+    lazy var insightsButton = makeButton(text: "Bookmarks.Insights".localized)
     lazy var proceduresButton = makeButton(text: "Bookmarks.Procedures".localized)
     lazy var diseasesButton = makeButton(text: "Bookmarks.Diseases".localized)
     lazy var glossariesButton = makeButton(text: "Bookmarks.Glossaries".localized)
@@ -37,6 +39,8 @@ final class BookmarksFilterView: UIScrollView {
 // MARK: Private
 private extension BookmarksFilterView {
     func update() {
+        recipesButton.marked = filter == .recipes
+        insightsButton.marked = filter == .insights
         proceduresButton.marked = filter == .procedures
         diseasesButton.marked = filter == .diseases
         glossariesButton.marked = filter == .glossaries
@@ -47,9 +51,25 @@ private extension BookmarksFilterView {
 private extension BookmarksFilterView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            recipesButton.widthAnchor.constraint(equalToConstant: 73.scale),
+            recipesButton.heightAnchor.constraint(equalToConstant: 35.scale),
+            recipesButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            recipesButton.topAnchor.constraint(equalTo: topAnchor),
+            recipesButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            insightsButton.widthAnchor.constraint(equalToConstant: 73.scale),
+            insightsButton.heightAnchor.constraint(equalToConstant: 35.scale),
+            insightsButton.leadingAnchor.constraint(equalTo: recipesButton.trailingAnchor, constant: 16.scale),
+            insightsButton.topAnchor.constraint(equalTo: topAnchor),
+            insightsButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             proceduresButton.widthAnchor.constraint(equalToConstant: 98.scale),
             proceduresButton.heightAnchor.constraint(equalToConstant: 35.scale),
-            proceduresButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            proceduresButton.leadingAnchor.constraint(equalTo: insightsButton.trailingAnchor, constant: 16.scale),
             proceduresButton.topAnchor.constraint(equalTo: topAnchor),
             proceduresButton.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])

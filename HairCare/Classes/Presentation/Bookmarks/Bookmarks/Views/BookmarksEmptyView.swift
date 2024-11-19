@@ -9,7 +9,7 @@ import UIKit
 
 final class BookmarksEmptyView: UIView {
     enum Unit {
-        case procedures, diseases, glossaries
+        case recipes, insights, procedures, diseases, glossaries
     }
     
     lazy var imageView = makeImageView()
@@ -42,6 +42,14 @@ final class BookmarksEmptyView: UIView {
 extension BookmarksEmptyView {
     func setup(unit: Unit) {
         switch unit {
+        case .recipes:
+            imageView.image = UIImage(named: "Bookmark.Empty.Recipes")
+            titleLabel.attributedText = "Bookmarks.Empty.Recipes.Title".localized.attributed(with: titleAttrs)
+            textLabel.attributedText = "Bookmarks.Empty.Recipes.SubTitle".localized.attributed(with: textAttrs)
+        case .insights:
+            imageView.image = UIImage(named: "Bookmark.Empty.Insights")
+            titleLabel.attributedText = "Bookmarks.Empty.Insights.Title".localized.attributed(with: titleAttrs)
+            textLabel.attributedText = "Bookmarks.Empty.Insights.SubTitle".localized.attributed(with: textAttrs)
         case .procedures:
             imageView.image = UIImage(named: "Bookmark.Empty.Procedures")
             titleLabel.attributedText = "Bookmarks.Empty.Procedures.Title".localized.attributed(with: titleAttrs)

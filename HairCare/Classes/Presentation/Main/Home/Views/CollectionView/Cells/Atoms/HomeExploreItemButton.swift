@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeExploreItemButton: UIButton {
     enum Item {
+        case recipes
+        case insights
         case procedures
         case disease
         case glossary
@@ -37,10 +39,17 @@ final class HomeExploreItemButton: UIButton {
 // MARK: Private
 private extension HomeExploreItemButton {
     func initialize() {
-        backgroundColor = Appearance.mono100
+        backgroundColor = {
+            switch item {
+            case .recipes:
+                return UIColor(integralRed: 240, green: 219, blue: 255)
+            case .insights:
+                return UIColor(integralRed: 201, green: 241, blue: 255)
+            case .procedures, .disease, .glossary:
+                return Appearance.main700
+            }
+        }()
         layer.cornerRadius = 16.scale
-        layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main700.cgColor
     }
 }
 
@@ -113,6 +122,10 @@ private extension HomeExploreItemButton {
 private extension HomeExploreItemButton.Item {
     var iconName: String {
         switch self {
+        case .recipes:
+            return "Home.Explore.Recipes"
+        case .insights:
+            return "Home.Explore.Insights"
         case .procedures:
             return "Home.Explore.Procedures"
         case .disease:
@@ -124,6 +137,10 @@ private extension HomeExploreItemButton.Item {
     
     var title: String {
         switch self {
+        case .recipes:
+            return "Home.Explore.Recipes.Title".localized
+        case .insights:
+            return "Home.Explore.Insights.Title".localized
         case .procedures:
             return "Home.Explore.Procedures.Title".localized
         case .disease:
@@ -135,6 +152,10 @@ private extension HomeExploreItemButton.Item {
     
     var text: String {
         switch self {
+        case .recipes:
+            return "Home.Explore.Recipes.Text".localized
+        case .insights:
+            return "Home.Explore.Insights.Text".localized
         case .procedures:
             return "Home.Explore.Procedures.Text".localized
         case .disease:

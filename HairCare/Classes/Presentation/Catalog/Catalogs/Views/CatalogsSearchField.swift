@@ -46,7 +46,7 @@ extension CatalogsSearchField: UITextFieldDelegate {
 // MARK: Private
 private extension CatalogsSearchField {
     func initialize() {
-        backgroundColor = Appearance.mono100
+        backgroundColor = Appearance.main700
         layer.borderWidth = 1.scale
         layer.borderColor = Appearance.main700.cgColor
         layer.cornerRadius = 10.scale

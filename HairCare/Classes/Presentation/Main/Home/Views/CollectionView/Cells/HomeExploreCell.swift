@@ -11,6 +11,8 @@ final class HomeExploreCell: UICollectionViewCell {
     var didTap: ((HomeExploreItemButton.Item) -> Void)?
     
     lazy var titleLabel = makeTitleLabel()
+    lazy var recipesButton = makeItemButton(item: .recipes)
+    lazy var insightsButton = makeItemButton(item: .insights)
     lazy var proceduresButton = makeItemButton(item: .procedures)
     lazy var diseaseButton = makeItemButton(item: .disease)
     lazy var glossaryButton = makeItemButton(item: .glossary)
@@ -55,17 +57,31 @@ private extension HomeExploreCell {
         ])
         
         NSLayoutConstraint.activate([
+            recipesButton.widthAnchor.constraint(equalToConstant: 164.scale),
+            recipesButton.heightAnchor.constraint(equalToConstant: 175.scale),
+            recipesButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            recipesButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            insightsButton.widthAnchor.constraint(equalToConstant: 164.scale),
+            insightsButton.heightAnchor.constraint(equalToConstant: 175.scale),
+            insightsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
+            insightsButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             proceduresButton.widthAnchor.constraint(equalToConstant: 164.scale),
             proceduresButton.heightAnchor.constraint(equalToConstant: 175.scale),
             proceduresButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
-            proceduresButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+            proceduresButton.topAnchor.constraint(equalTo: recipesButton.bottomAnchor, constant: 16.scale)
         ])
         
         NSLayoutConstraint.activate([
             diseaseButton.widthAnchor.constraint(equalToConstant: 164.scale),
             diseaseButton.heightAnchor.constraint(equalToConstant: 175.scale),
             diseaseButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
-            diseaseButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+            diseaseButton.topAnchor.constraint(equalTo: insightsButton.bottomAnchor, constant: 16.scale)
         ])
         
         NSLayoutConstraint.activate([

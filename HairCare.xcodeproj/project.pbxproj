@@ -295,6 +295,16 @@
 		DE7BD0042CEC66F200ECD4FE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCFFB2CEC66F200ECD4FE /* Roboto-Bold.ttf */; };
 		DE7BD0052CEC66F200ECD4FE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCFFC2CEC66F200ECD4FE /* Roboto-Medium.ttf */; };
 		DE7BD0062CEC66F200ECD4FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE7BD0012CEC66F200ECD4FE /* Localizable.strings */; };
+		DE7BD00A2CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0092CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift */; };
+		DE7BD00C2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD00B2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift */; };
+		DE7BD00E2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD00D2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift */; };
+		DE7BD0102CEC9AA400ECD4FE /* GetInsightDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD00F2CEC9AA400ECD4FE /* GetInsightDetailsRequest.swift */; };
+		DE7BD0122CEC9AC100ECD4FE /* GetRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0112CEC9AC100ECD4FE /* GetRecipesRequest.swift */; };
+		DE7BD0142CEC9B0A00ECD4FE /* GetInsightsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0132CEC9B0A00ECD4FE /* GetInsightsRequest.swift */; };
+		DE7BD0162CEC9B2100ECD4FE /* SaveRecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0152CEC9B2100ECD4FE /* SaveRecipeRequest.swift */; };
+		DE7BD0182CEC9B2B00ECD4FE /* SaveInsightRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0172CEC9B2B00ECD4FE /* SaveInsightRequest.swift */; };
+		DE7BD01A2CEC9B5900ECD4FE /* UnsaveRecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD0192CEC9B5900ECD4FE /* UnsaveRecipeRequest.swift */; };
+		DE7BD01C2CEC9B6400ECD4FE /* UnsaveInsightRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BD01B2CEC9B6400ECD4FE /* UnsaveInsightRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -589,6 +599,16 @@
 		DE7BCFFC2CEC66F200ECD4FE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		DE7BCFFD2CEC66F200ECD4FE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DE7BD0002CEC66F200ECD4FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DE7BD0092CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksRecipesRequest.swift; sourceTree = "<group>"; };
+		DE7BD00B2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksInsightsRequest.swift; sourceTree = "<group>"; };
+		DE7BD00D2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailsRequest.swift; sourceTree = "<group>"; };
+		DE7BD00F2CEC9AA400ECD4FE /* GetInsightDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsightDetailsRequest.swift; sourceTree = "<group>"; };
+		DE7BD0112CEC9AC100ECD4FE /* GetRecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequest.swift; sourceTree = "<group>"; };
+		DE7BD0132CEC9B0A00ECD4FE /* GetInsightsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInsightsRequest.swift; sourceTree = "<group>"; };
+		DE7BD0152CEC9B2100ECD4FE /* SaveRecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipeRequest.swift; sourceTree = "<group>"; };
+		DE7BD0172CEC9B2B00ECD4FE /* SaveInsightRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInsightRequest.swift; sourceTree = "<group>"; };
+		DE7BD0192CEC9B5900ECD4FE /* UnsaveRecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaveRecipeRequest.swift; sourceTree = "<group>"; };
+		DE7BD01B2CEC9B6400ECD4FE /* UnsaveInsightRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaveInsightRequest.swift; sourceTree = "<group>"; };
 		FE5561387EE85387FA9EA915 /* Pods-HairCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HairCare.debug.xcconfig"; path = "Target Support Files/Pods-HairCare/Pods-HairCare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1037,9 +1057,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDC92CEC66EC00ECD4FE /* Views */,
-				DE7BCDCA2CEC66EC00ECD4FE /* BookmarksView.swift */,
 				DE7BCDCB2CEC66EC00ECD4FE /* BookmarksViewController.swift */,
 				DE7BCDCC2CEC66EC00ECD4FE /* BookmarksViewModel.swift */,
+				DE7BCDCA2CEC66EC00ECD4FE /* BookmarksView.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -1047,8 +1067,8 @@
 		DE7BCDD02CEC66EC00ECD4FE /* ConfirmDeleteBookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCDCE2CEC66EC00ECD4FE /* CDBView.swift */,
 				DE7BCDCF2CEC66EC00ECD4FE /* CDBViewController.swift */,
+				DE7BCDCE2CEC66EC00ECD4FE /* CDBView.swift */,
 			);
 			path = ConfirmDeleteBookmarks;
 			sourceTree = "<group>";
@@ -1097,9 +1117,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDDC2CEC66EC00ECD4FE /* Views */,
-				DE7BCDDD2CEC66EC00ECD4FE /* CatalogDetailsView.swift */,
 				DE7BCDDE2CEC66EC00ECD4FE /* CatalogDetailsViewController.swift */,
 				DE7BCDDF2CEC66EC00ECD4FE /* CatalogDetailsViewModel.swift */,
+				DE7BCDDD2CEC66EC00ECD4FE /* CatalogDetailsView.swift */,
 			);
 			path = CatalogDetails;
 			sourceTree = "<group>";
@@ -1127,9 +1147,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDE62CEC66EC00ECD4FE /* Views */,
-				DE7BCDE72CEC66EC00ECD4FE /* CatalogsView.swift */,
 				DE7BCDE82CEC66EC00ECD4FE /* CatalogsViewController.swift */,
 				DE7BCDE92CEC66EC00ECD4FE /* CatalogsViewModel.swift */,
+				DE7BCDE72CEC66EC00ECD4FE /* CatalogsView.swift */,
 			);
 			path = Catalogs;
 			sourceTree = "<group>";
@@ -1294,9 +1314,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE172CEC66EC00ECD4FE /* Views */,
-				DE7BCE182CEC66EC00ECD4FE /* HomeView.swift */,
 				DE7BCE192CEC66EC00ECD4FE /* HomeViewController.swift */,
 				DE7BCE1A2CEC66EC00ECD4FE /* HomeViewModel.swift */,
+				DE7BCE182CEC66EC00ECD4FE /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1341,9 +1361,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE252CEC66EC00ECD4FE /* Views */,
-				DE7BCE262CEC66EC00ECD4FE /* MenuView.swift */,
 				DE7BCE272CEC66EC00ECD4FE /* MenuViewController.swift */,
 				DE7BCE282CEC66EC00ECD4FE /* MenuViewModel.swift */,
+				DE7BCE262CEC66EC00ECD4FE /* MenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1748,21 +1768,31 @@
 		DE7BCEB12CEC66EC00ECD4FE /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DE7BD0092CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift */,
+				DE7BD00B2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift */,
 				DE7BCEA22CEC66EC00ECD4FE /* GetBookmarksDiseasesRequest.swift */,
 				DE7BCEA32CEC66EC00ECD4FE /* GetBookmarksGlossariesRequest.swift */,
 				DE7BCEA42CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift */,
 				DE7BCEA52CEC66EC00ECD4FE /* GetDiseaseDetailsRequest.swift */,
+				DE7BD00D2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift */,
+				DE7BCEA82CEC66EC00ECD4FE /* GetGlossaryDetailsRequest.swift */,
+				DE7BD00F2CEC9AA400ECD4FE /* GetInsightDetailsRequest.swift */,
+				DE7BCEA92CEC66EC00ECD4FE /* GetProcedureDetailsRequest.swift */,
 				DE7BCEA62CEC66EC00ECD4FE /* GetDiseasesRequest.swift */,
 				DE7BCEA72CEC66EC00ECD4FE /* GetGlossariesRequest.swift */,
-				DE7BCEA82CEC66EC00ECD4FE /* GetGlossaryDetailsRequest.swift */,
-				DE7BCEA92CEC66EC00ECD4FE /* GetProcedureDetailsRequest.swift */,
 				DE7BCEAA2CEC66EC00ECD4FE /* GetProceduresRequest.swift */,
+				DE7BD0112CEC9AC100ECD4FE /* GetRecipesRequest.swift */,
+				DE7BD0132CEC9B0A00ECD4FE /* GetInsightsRequest.swift */,
 				DE7BCEAB2CEC66EC00ECD4FE /* SaveDiseaseRequest.swift */,
 				DE7BCEAC2CEC66EC00ECD4FE /* SaveGlossaryRequest.swift */,
 				DE7BCEAD2CEC66EC00ECD4FE /* SaveProcedureRequest.swift */,
+				DE7BD0152CEC9B2100ECD4FE /* SaveRecipeRequest.swift */,
+				DE7BD0172CEC9B2B00ECD4FE /* SaveInsightRequest.swift */,
 				DE7BCEAE2CEC66EC00ECD4FE /* UnsaveDiseaseRequest.swift */,
 				DE7BCEAF2CEC66EC00ECD4FE /* UnsaveGlossaryRequest.swift */,
 				DE7BCEB02CEC66EC00ECD4FE /* UnsaveProcedureRequest.swift */,
+				DE7BD0192CEC9B5900ECD4FE /* UnsaveRecipeRequest.swift */,
+				DE7BD01B2CEC9B6400ECD4FE /* UnsaveInsightRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2070,6 +2100,7 @@
 			files = (
 				DE7BCEE22CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift in Sources */,
 				DE7BCEE32CEC66EC00ECD4FE /* DeleteChatRequest.swift in Sources */,
+				DE7BD0162CEC9B2100ECD4FE /* SaveRecipeRequest.swift in Sources */,
 				DE7BCEE42CEC66EC00ECD4FE /* CatalogsTableCell.swift in Sources */,
 				DE7BCEE52CEC66EC00ECD4FE /* GetAnalyseScanResultRequest.swift in Sources */,
 				DE7BCEE62CEC66EC00ECD4FE /* ChatsTableCell.swift in Sources */,
@@ -2077,6 +2108,7 @@
 				DE7BCEE82CEC66EC00ECD4FE /* PaygateView.swift in Sources */,
 				DE7BCEE92CEC66EC00ECD4FE /* AmplitudeManager.swift in Sources */,
 				DE7BCEEA2CEC66EC00ECD4FE /* RepetitionSpecificDayViewController.swift in Sources */,
+				DE7BD00C2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift in Sources */,
 				DE7BCEEB2CEC66EC00ECD4FE /* PaygateViewModel.swift in Sources */,
 				DE7BCEEC2CEC66EC00ECD4FE /* HomeCollectionView.swift in Sources */,
 				DE7BCEED2CEC66EC00ECD4FE /* RepetitionCountPickerView.swift in Sources */,
@@ -2097,6 +2129,7 @@
 				DE7BCEFC2CEC66EC00ECD4FE /* ReminderRegisterManager.swift in Sources */,
 				DE7BCEFD2CEC66EC00ECD4FE /* AnalyseScanResultNameCell.swift in Sources */,
 				DE7BCEFE2CEC66EC00ECD4FE /* HomeExploreItemButton.swift in Sources */,
+				DE7BD0182CEC9B2B00ECD4FE /* SaveInsightRequest.swift in Sources */,
 				DE7BCEFF2CEC66EC00ECD4FE /* UIColor+Extension.swift in Sources */,
 				DE7BCF002CEC66EC00ECD4FE /* CDTableView.swift in Sources */,
 				DE7BCF012CEC66EC00ECD4FE /* BookmarksEmptyView.swift in Sources */,
@@ -2112,10 +2145,12 @@
 				DE7BCF0B2CEC66EC00ECD4FE /* CMRReminderView.swift in Sources */,
 				DE7BCF0C2CEC66EC00ECD4FE /* ChatsTableSection.swift in Sources */,
 				DE7BCF0D2CEC66EC00ECD4FE /* CDCView.swift in Sources */,
+				DE7BD00E2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift in Sources */,
 				DE7BCF0E2CEC66EC00ECD4FE /* RepetitionsViewController.swift in Sources */,
 				DE7BCF0F2CEC66EC00ECD4FE /* CRHeaderView.swift in Sources */,
 				DE7BCF102CEC66EC00ECD4FE /* RepetitionEveryDayViewController.swift in Sources */,
 				DE7BCF112CEC66EC00ECD4FE /* AnalyseScanResultDescriptionCell.swift in Sources */,
+				DE7BD0122CEC9AC100ECD4FE /* GetRecipesRequest.swift in Sources */,
 				DE7BCF122CEC66EC00ECD4FE /* CatalogMediator.swift in Sources */,
 				DE7BCF132CEC66EC00ECD4FE /* ChatManager.swift in Sources */,
 				DE7BCF142CEC66EC00ECD4FE /* SaveAnalyseSelectSkinAreaView.swift in Sources */,
@@ -2129,6 +2164,7 @@
 				DE7BCF1C2CEC66EC00ECD4FE /* MenuViewModel.swift in Sources */,
 				DE7BCF1D2CEC66EC00ECD4FE /* Weak.swift in Sources */,
 				DE7BCF1E2CEC66EC00ECD4FE /* ChatTableElement.swift in Sources */,
+				DE7BD0142CEC9B0A00ECD4FE /* GetInsightsRequest.swift in Sources */,
 				DE7BCF1F2CEC66EC00ECD4FE /* AnalyseScanAssembly.swift in Sources */,
 				DE7BCF202CEC66EC00ECD4FE /* SaveDiseaseRequest.swift in Sources */,
 				DE7BCF212CEC66EC00ECD4FE /* GlobalDefinitions.swift in Sources */,
@@ -2187,6 +2223,7 @@
 				DE7BCF562CEC66EC00ECD4FE /* ImagePicker.swift in Sources */,
 				DE7BCF572CEC66EC00ECD4FE /* AnalyseCameraOptionsView.swift in Sources */,
 				DE7BCF582CEC66EC00ECD4FE /* CDTableTextCell.swift in Sources */,
+				DE7BD01A2CEC9B5900ECD4FE /* UnsaveRecipeRequest.swift in Sources */,
 				DE7BCF592CEC66EC00ECD4FE /* GetDiseasesRequest.swift in Sources */,
 				DE7BCF5A2CEC66EC00ECD4FE /* ChatQuestionImageCell.swift in Sources */,
 				DE7BCF5B2CEC66EC00ECD4FE /* GetProceduresRequest.swift in Sources */,
@@ -2213,12 +2250,14 @@
 				DE7BCF702CEC66EC00ECD4FE /* RestAPITransport.swift in Sources */,
 				DE7BCF712CEC66EC00ECD4FE /* APIRequestBody.swift in Sources */,
 				DE7BCF722CEC66EC00ECD4FE /* RepetitionsTableView.swift in Sources */,
+				DE7BD0102CEC9AA400ECD4FE /* GetInsightDetailsRequest.swift in Sources */,
 				DE7BCF732CEC66EC00ECD4FE /* RemindersTableView.swift in Sources */,
 				DE7BCF742CEC66EC00ECD4FE /* ChatTableView.swift in Sources */,
 				DE7BCF752CEC66EC00ECD4FE /* AnalyseScanResultTableElement.swift in Sources */,
 				DE7BCF762CEC66EC00ECD4FE /* RemindersTableCell.swift in Sources */,
 				DE7BCF772CEC66EC00ECD4FE /* Appearance.swift in Sources */,
 				DE7BCF782CEC66EC00ECD4FE /* SaveAnalyseSelectSkinAreaViewController.swift in Sources */,
+				DE7BD01C2CEC9B6400ECD4FE /* UnsaveInsightRequest.swift in Sources */,
 				DE7BCF792CEC66EC00ECD4FE /* Side.swift in Sources */,
 				DE7BCF7A2CEC66EC00ECD4FE /* SaveAnalyseCompleteView.swift in Sources */,
 				DE7BCF7B2CEC66EC00ECD4FE /* AnalyseScanResultAssembly.swift in Sources */,
@@ -2266,6 +2305,7 @@
 				DE7BCFA52CEC66EC00ECD4FE /* GetBookmarksDiseasesRequest.swift in Sources */,
 				DE7BCFA62CEC66EC00ECD4FE /* RemindersViewModel.swift in Sources */,
 				DE7BCFA72CEC66EC00ECD4FE /* DermatologySyncTokensRequest.swift in Sources */,
+				DE7BD00A2CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift in Sources */,
 				DE7BCFA82CEC66EC00ECD4FE /* SceneDelegate.swift in Sources */,
 				DE7BCFA92CEC66EC00ECD4FE /* Collection+Extension.swift in Sources */,
 				DE7BCFAA2CEC66EC00ECD4FE /* CMRView.swift in Sources */,

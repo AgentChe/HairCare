@@ -32,7 +32,7 @@ final class CatalogsView: UIView {
 // MARK: Private
 private extension CatalogsView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -102,7 +102,7 @@ private extension CatalogsView {
         view.contentInset = UIEdgeInsets(vertical: 10.scale)
         view.setContentOffset(CGPoint(x: 0, y: -10.scale), animated: false)
         view.separatorStyle = .singleLine
-        view.separatorColor = Appearance.main700
+        view.separatorColor = Appearance.main100
         view.separatorInset = UIEdgeInsets(horizontal: 16.scale)
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
@@ -117,6 +117,10 @@ private extension CatalogsView {
 private extension CatalogsViewController.Item {
     var title: String {
         switch self {
+        case .recipes:
+            return "Catalogs.Recipes.Title".localized
+        case .insights:
+            return "Catalogs.Insights.Title".localized
         case .glossary:
             return "Catalogs.Glossaries.Title".localized
         case .procedure:

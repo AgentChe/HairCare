@@ -142,6 +142,10 @@ private extension CatalogDetailsViewModel {
                 
                 func source() -> Single<Void> {
                     switch item {
+                    case .recipes:
+                        return saved ? catalogManager.unsaveRecipes(ids: [catalogDetails.id]) : catalogManager.saveRecipe(id: catalogDetails.id)
+                    case .insights:
+                        return saved ? catalogManager.unsaveInsights(ids: [catalogDetails.id]) : catalogManager.saveInsight(id: catalogDetails.id)
                     case .glossary:
                         return saved ? catalogManager.unsaveGlossaries(ids: [catalogDetails.id]) : catalogManager.saveGlossary(id: catalogDetails.id)
                     case .procedure:
@@ -181,6 +185,14 @@ private extension CatalogDetailsViewModel {
                 func source() -> Single<CatalogDetails> {
                     let details: Single<CatalogDetails?> = {
                         switch item {
+                        case .recipes:
+                            return self.catalogManager
+                                .obtainRecipeDetails(id: catalog.id)
+                                .catch { error in .just(nil) }
+                        case .insights:
+                            return self.catalogManager
+                                .obtainInsightDetails(id: catalog.id)
+                                .catch { error in .just(nil) }
                         case .glossary:
                             return self.catalogManager
                                 .obtainGlossaryDetails(id: catalog.id)
@@ -253,6 +265,10 @@ private extension CatalogDetailsViewModel {
     func makeBookmarkCatalogs() -> Driver<[Catalog]> {
         Signal
             .merge(
+                CatalogMediator.shared.didSaveRecipeId.map { id in Void() },
+                CatalogMediator.shared.didUnsaveRecipesIds.map { id in Void() },
+                CatalogMediator.shared.didSaveInsightId.map { id in Void() },
+                CatalogMediator.shared.didUnsaveInsightsIds.map { id in Void() },
                 CatalogMediator.shared.didSaveDiseaseId.map { id in Void() },
                 CatalogMediator.shared.didSaveProcedureId.map { id in Void() },
                 CatalogMediator.shared.didSaveGlossaryId.map { id in Void() },
@@ -266,6 +282,14 @@ private extension CatalogDetailsViewModel {
                 guard let self = self else { return .never() }
                 
                 switch item {
+                case .recipes:
+                    return catalogManager
+                        .obtainBookmarksRecipes()
+                        .asSignal(onErrorJustReturn: [])
+                case .insights:
+                    return catalogManager
+                        .obtainBookmarksInsights()
+                        .asSignal(onErrorJustReturn: [])
                 case .disease:
                     return catalogManager
                         .obtainBookmarksDiseases()

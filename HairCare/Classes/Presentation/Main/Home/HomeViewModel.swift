@@ -86,6 +86,10 @@ private extension HomeViewModel {
         let catalogs = didTapExplore
             .map { item -> Route in
                 switch item {
+                case .recipes:
+                    return .catalogs(.recipes)
+                case .insights:
+                    return .catalogs(.insights)
                 case .glossary:
                     return .catalogs(.glossary)
                 case .procedures:

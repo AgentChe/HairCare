@@ -79,22 +79,26 @@
 "Disclaimer.Text.Bold2" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
 
 // MARK: Home
-"Home.Title" = "AI Skin Scanner";
+"Home.Title" = "AI Hair Scanner";
 "Home.Explore.Title" = "Explore";
+"Home.Explore.Recipes.Title" = "Recipes";
+"Home.Explore.Recipes.Text" = "Nourishing hair recipes, masks and treatments";
+"Home.Explore.Insights.Title" = "Insights";
+"Home.Explore.Insights.Text" = "Hair care insights and tips";
 "Home.Explore.Procedures.Title" = "Procedures";
 "Home.Explore.Procedures.Text" = "A concise glossary of essential procedures";
 "Home.Explore.Disease.Title" = "Disease";
-"Home.Explore.Disease.Text" = "Discover an extensive guide ";
+"Home.Explore.Disease.Text" = "Discover an extensive guide";
 "Home.Explore.Glossary.Title" = "Glossary";
-"Home.Explore.Glossary.Text" = "A compilation of key terms ";
-"Home.OpenScanner.Title" = "Start skin scanning";
-"Home.OpenScanner.SubTitle" = "Make your first AI scan";
+"Home.Explore.Glossary.Text" = "A compilation of key terms";
+"Home.OpenScanner.Title" = "Start hair diagnostics";
+"Home.OpenScanner.SubTitle" = "Diagnose your hair type";
 "Home.OpenScanner.Button" = "Open scanner";
-"Home.OpenHistory.Title" = "Skin scan history";
+"Home.OpenHistory.Title" = "Hair scan history";
 "Home.OpenHistory.SubTitle" = "Check your scan results";
 "Home.OpenHistory.Button" = "Open history";
 "Home.AddReminder.Title" = "Set a notification";
-"Home.AddReminder.SubTitle" = "Stay on track with meds\nand rescans";
+"Home.AddReminder.SubTitle" = "Schedule a treatment\nreminder";
 "Home.AddReminder.Button" = "Add event";
 
 // MARK: Menu
@@ -105,6 +109,8 @@
 "Menu.Support" = "Support";
 
 // MARK: Catalogs
+"Catalogs.Recipes.Title" = "Recipes";
+"Catalogs.Insights.Title" = "Articles";
 "Catalogs.Diseases.Title" = "Disease Guide";
 "Catalogs.Procedures.Title" = "Procedures Guide";
 "Catalogs.Glossaries.Title" = "Glossary";
@@ -112,12 +118,18 @@
 
 // MARK: Bookmarks
 "Bookmarks.Title" = "Bookmark";
+"Bookmarks.Recipes" = "Recipes";
+"Bookmarks.Insights" = "Insights";
 "Bookmarks.Procedures" = "Procedures";
 "Bookmarks.Diseases" = "Disease";
 "Bookmarks.Glossaries" = "Glossary";
 "Bookmarks.ConfirmDelete.Title" = "Are you sure?";
 "Bookmarks.ConfirmDelete.Text" = "Do you really want to delete this bookmark?";
 "Bookmarks.ConfirmDelete.Remove" = "Remove";
+"Bookmarks.Empty.Recipes.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Recipes.SubTitle" = "Saved recipes will appear here";
+"Bookmarks.Empty.Insights.Title" = "Nothing’s here yet";
+"Bookmarks.Empty.Insights.SubTitle" = "Saved insights will appear here";
 "Bookmarks.Empty.Procedures.Title" = "Nothing’s here yet";
 "Bookmarks.Empty.Procedures.SubTitle" = "Saved procedures will appear here";
 "Bookmarks.Empty.Disease.Title" = "Nothing’s here yet";

@@ -11,7 +11,7 @@ import RxCocoa
 
 final class CatalogDetailsViewController: UIViewController {
     enum Item {
-        case glossary, procedure, disease
+        case recipes, insights, glossary, procedure, disease
     }
     
     private lazy var mainView = CatalogDetailsView(title: catalog.name)

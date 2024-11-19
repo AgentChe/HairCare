@@ -76,7 +76,7 @@ private extension BookmarksFilterItemButton {
     
     func makeSeparator() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

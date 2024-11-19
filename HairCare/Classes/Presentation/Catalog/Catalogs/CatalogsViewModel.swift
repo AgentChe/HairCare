@@ -88,6 +88,14 @@ private extension CatalogsViewModel {
                 guard let self else { return .never() }
                 
                 switch item {
+                case .recipes:
+                    return catalogManager
+                        .obtainRecipes(forceUpdate: false)
+                        .asDriver(onErrorJustReturn: [])
+                case .insights:
+                    return catalogManager
+                        .obtainInsights(forceUpdate: false)
+                        .asDriver(onErrorJustReturn: [])
                 case .glossary:
                     return catalogManager
                         .obtainGlossaries(forceUpdate: false)

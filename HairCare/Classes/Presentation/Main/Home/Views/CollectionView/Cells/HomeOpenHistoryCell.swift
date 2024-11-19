@@ -131,13 +131,13 @@ private extension HomeOpenHistoryCell {
     
     func makeOpenHistoryButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.mono100)
+            .textColor(Appearance.mono200)
             .font(Fonts.Roboto.medium(size: 16.scale))
         
         let view = UIButton()
         view.setAttributedTitle("Home.OpenHistory.Button".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main300
+        view.backgroundColor = Appearance.mono100
         view.addTarget(self, action: #selector(openHistoryTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
