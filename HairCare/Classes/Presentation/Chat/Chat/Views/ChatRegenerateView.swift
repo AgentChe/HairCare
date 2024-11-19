@@ -89,7 +89,7 @@ private extension ChatRegenerateView {
         let view = UIButton()
         view.setAttributedTitle("Chat.Regenerate.Button".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

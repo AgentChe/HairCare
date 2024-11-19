@@ -69,7 +69,7 @@ private extension ChatQuestionTextCell {
 private extension ChatQuestionTextCell {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.main300
+        view.backgroundColor = Appearance.main200
         view.layer.cornerRadius = 16.scale
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.layer.borderColor = Appearance.main200.cgColor

@@ -138,10 +138,10 @@ private extension ChatAnswerCell {
     
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.main700
         view.layer.cornerRadius = 16.scale
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        view.layer.borderColor = Appearance.main200.cgColor
+        view.layer.borderColor = Appearance.main700.cgColor
         view.layer.borderWidth = 1.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

@@ -38,8 +38,8 @@ extension ChatsTableHeaderView {
 // MARK: Private
 private extension ChatsTableHeaderView {
     func initialize() {
-        backgroundColor = Appearance.main700
-        contentView.backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
+        contentView.backgroundColor = Appearance.mono100
     }
 }
 

@@ -1199,9 +1199,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDF72CEC66EC00ECD4FE /* Views */,
-				DE7BCDF82CEC66EC00ECD4FE /* ChatView.swift */,
 				DE7BCDF92CEC66EC00ECD4FE /* ChatViewController.swift */,
 				DE7BCDFA2CEC66EC00ECD4FE /* ChatViewModel.swift */,
+				DE7BCDF82CEC66EC00ECD4FE /* ChatView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1238,9 +1238,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE032CEC66EC00ECD4FE /* Views */,
-				DE7BCE042CEC66EC00ECD4FE /* ChatsView.swift */,
 				DE7BCE052CEC66EC00ECD4FE /* ChatsViewController.swift */,
 				DE7BCE062CEC66EC00ECD4FE /* ChatsViewModel.swift */,
+				DE7BCE042CEC66EC00ECD4FE /* ChatsView.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -1248,8 +1248,8 @@
 		DE7BCE0A2CEC66EC00ECD4FE /* ConfirmDelete */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE082CEC66EC00ECD4FE /* CDCView.swift */,
 				DE7BCE092CEC66EC00ECD4FE /* CDCViewController.swift */,
+				DE7BCE082CEC66EC00ECD4FE /* CDCView.swift */,
 			);
 			path = ConfirmDelete;
 			sourceTree = "<group>";

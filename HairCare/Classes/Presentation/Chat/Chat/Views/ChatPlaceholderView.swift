@@ -89,6 +89,7 @@ private extension ChatPlaceholderView {
             .textAlignment(.center)
         
         let view = UILabel()
+        view.numberOfLines = 0
         view.attributedText = "Chat.Placeholder.SubTitle".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

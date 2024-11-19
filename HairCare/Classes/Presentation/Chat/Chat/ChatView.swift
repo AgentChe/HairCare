@@ -31,7 +31,7 @@ final class ChatView: UIView {
 // MARK: Private
 private extension ChatView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

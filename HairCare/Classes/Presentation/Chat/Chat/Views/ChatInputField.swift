@@ -36,7 +36,7 @@ private extension ChatInputField {
     func initialize() {
         backgroundColor = Appearance.mono100
         layer.cornerRadius = 27.scale
-        layer.shadowColor = Appearance.mono200.withAlphaComponent(0.4).cgColor
+        layer.shadowColor = Appearance.mono200.withAlphaComponent(0.6).cgColor
         layer.shadowOpacity = 0.1
         layer.shadowOffset = .zero
         layer.shadowRadius = 4.scale
