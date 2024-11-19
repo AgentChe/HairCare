@@ -28,7 +28,7 @@ final class ScanHistoryView: UIView {
 // MARK: Private
 private extension ScanHistoryView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

@@ -153,7 +153,7 @@
 "Chats.ConfirmDelete.Delete" = "Remove";
 
 // MARK: AnalyseCamera
-"AnalyseCamera.Placeholder" = "Center the skin area in the frame";
+"AnalyseCamera.Placeholder" = "Center the hair area in the frame";
 "AnalyseCamera.NotPermissions.Title" = "No permission";
 "AnalyseCamera.NotPermissions.Text" = "Please go to settings and give permission to receive images for scanning";
 

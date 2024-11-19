@@ -30,7 +30,7 @@ final class AnalyseCameraView: UIView {
 // MARK: Private
 private extension AnalyseCameraView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

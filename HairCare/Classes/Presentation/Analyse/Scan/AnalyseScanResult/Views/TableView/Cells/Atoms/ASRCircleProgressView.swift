@@ -58,7 +58,7 @@ private extension ASRCircleProgressView {
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         trackLayer.lineWidth = 4.scale
-        trackLayer.strokeColor = Appearance.main100.cgColor
+        trackLayer.strokeColor = Appearance.main200.cgColor
         trackLayer.strokeStart = 0
         
         layer.addSublayer(circleLayer)

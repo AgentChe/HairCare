@@ -33,7 +33,7 @@ final class TryAgainView: UIView {
 // MARK: Private
 private extension TryAgainView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
     
     func errorMessage() -> String {
@@ -137,7 +137,7 @@ private extension TryAgainView {
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Button".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -151,7 +151,7 @@ private extension TryAgainView {
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Contact".localized.attributed(with: attrs), for: .normal)
         view.layer.cornerRadius = 16.scale
-        view.backgroundColor = Appearance.main700
+        view.backgroundColor = Appearance.main100
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

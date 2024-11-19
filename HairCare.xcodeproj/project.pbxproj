@@ -830,9 +830,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCD862CEC66EC00ECD4FE /* Views */,
-				DE7BCD872CEC66EC00ECD4FE /* ScanHistoryView.swift */,
 				DE7BCD882CEC66EC00ECD4FE /* ScanHistoryViewController.swift */,
 				DE7BCD892CEC66EC00ECD4FE /* ScanHistoryViewModel.swift */,
+				DE7BCD872CEC66EC00ECD4FE /* ScanHistoryView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -926,8 +926,8 @@
 			children = (
 				DE7BCDA02CEC66EC00ECD4FE /* Utils */,
 				DE7BCDA22CEC66EC00ECD4FE /* Views */,
-				DE7BCDA32CEC66EC00ECD4FE /* AnalyseCameraView.swift */,
 				DE7BCDA42CEC66EC00ECD4FE /* AnalyseCameraViewController.swift */,
+				DE7BCDA32CEC66EC00ECD4FE /* AnalyseCameraView.swift */,
 			);
 			path = AnalyseCamera;
 			sourceTree = "<group>";
@@ -944,9 +944,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDA72CEC66EC00ECD4FE /* Views */,
-				DE7BCDA82CEC66EC00ECD4FE /* AnalyseImageResizeView.swift */,
 				DE7BCDA92CEC66EC00ECD4FE /* AnalyseImageResizeViewController.swift */,
 				DE7BCDAA2CEC66EC00ECD4FE /* AnalyseImageResizeViewModel.swift */,
+				DE7BCDA82CEC66EC00ECD4FE /* AnalyseImageResizeView.swift */,
 			);
 			path = AnalyseImageResize;
 			sourceTree = "<group>";
@@ -995,9 +995,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCDB82CEC66EC00ECD4FE /* Views */,
-				DE7BCDB92CEC66EC00ECD4FE /* AnalyseScanResultView.swift */,
 				DE7BCDBA2CEC66EC00ECD4FE /* AnalyseScanResultViewController.swift */,
 				DE7BCDBB2CEC66EC00ECD4FE /* AnalyseScanResultViewModel.swift */,
+				DE7BCDB92CEC66EC00ECD4FE /* AnalyseScanResultView.swift */,
 			);
 			path = AnalyseScanResult;
 			sourceTree = "<group>";
@@ -1700,8 +1700,8 @@
 		DE7BCE8E2CEC66EC00ECD4FE /* TryAgain */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE8C2CEC66EC00ECD4FE /* TryAgainView.swift */,
 				DE7BCE8D2CEC66EC00ECD4FE /* TryAgainViewController.swift */,
+				DE7BCE8C2CEC66EC00ECD4FE /* TryAgainView.swift */,
 			);
 			path = TryAgain;
 			sourceTree = "<group>";
@@ -2420,9 +2420,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2438,7 +2439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
+				PRODUCT_BUNDLE_IDENTIFIER = haircare.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2457,9 +2458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2475,7 +2477,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.locationtracker;
+				PRODUCT_BUNDLE_IDENTIFIER = haircare.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

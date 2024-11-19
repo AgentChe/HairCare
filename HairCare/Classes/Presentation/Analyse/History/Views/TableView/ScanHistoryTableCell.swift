@@ -102,7 +102,7 @@ private extension ScanHistoryTableCell {
 private extension ScanHistoryTableCell {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.main700
         view.layer.cornerRadius = 16.scale
         view.layer.borderWidth = 1.scale
         view.layer.borderColor = Appearance.main700.cgColor

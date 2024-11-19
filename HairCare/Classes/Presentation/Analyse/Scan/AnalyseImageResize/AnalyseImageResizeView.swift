@@ -27,7 +27,7 @@ final class AnalyseImageResizeView: UIView {
 // MARK: Private
 private extension AnalyseImageResizeView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

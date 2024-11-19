@@ -51,7 +51,7 @@ extension AnalyseScanResultView {
 // MARK: Private
 private extension AnalyseScanResultView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -171,7 +171,7 @@ private extension AnalyseScanResultView {
     
     func makeButton() -> UIButton {
         let view = UIButton()
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -182,7 +182,7 @@ private extension AnalyseScanResultView {
         let view = UIActivityIndicatorView()
         view.hidesWhenStopped = true 
         view.style = .large
-        view.color = Appearance.main100
+        view.color = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
