@@ -11,6 +11,7 @@ final class CREButton: UIButton {
     enum Event {
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     let event: Event
@@ -35,7 +36,7 @@ final class CREButton: UIButton {
 // MARK: Private
 private extension CREButton {
     func initialize() {
-        backgroundColor = Appearance.mono100
+        backgroundColor = Appearance.main700
         layer.cornerRadius = 16.scale
         layer.borderWidth = 1.scale
         layer.borderColor = Appearance.main700.cgColor
@@ -95,6 +96,8 @@ private extension CREButton.Event {
             return "ChooseReminderEvent.Medication"
         case .skinRescan:
             return "ChooseReminderEvent.SkinRescan"
+        case .hairTreatment:
+            return "ChooseReminderEvent.HairTreatment"
         }
     }
 }

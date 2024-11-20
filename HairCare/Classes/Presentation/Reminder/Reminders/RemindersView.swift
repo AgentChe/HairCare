@@ -29,7 +29,7 @@ final class RemindersView: UIView {
 // MARK: Private
 private extension RemindersView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 

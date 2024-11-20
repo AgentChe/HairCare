@@ -8,21 +8,17 @@
 import UIKit
 import JTAppleCalendar
 
-class ReminderCalendarDayCell: JTACDayCell {
-    
+final class ReminderCalendarDayCell: JTACDayCell {
     private lazy var weekDayLabel = makeLabel()
     private lazy var dayLabel = makeLabel()
     private lazy var statusView = makeStatusView()
     private lazy var daySelectView = makeDaySelectView()
-    
-    private lazy var statusViewWidth = NSLayoutConstraint()
     
     private lazy var dayAttrs = TextAttributes()
         .textColor(Appearance.mono200)
         .font(Fonts.Roboto.regular(size: 14.scale))
         .lineHeight(25.6.scale)
         .textAlignment(.center)
-    
     private lazy var weekDayAttrs = TextAttributes()
         .font(Fonts.Roboto.regular(size: 12.scale))
         .lineHeight(16.scale)
@@ -43,9 +39,9 @@ class ReminderCalendarDayCell: JTACDayCell {
 extension ReminderCalendarDayCell {
     func setup(isSelected: Bool) {
         daySelectView.layer.borderWidth = isSelected ? 2.scale : 0
-        daySelectView.layer.borderColor = isSelected ? Appearance.main100.cgColor : UIColor.clear.cgColor
-        statusView.backgroundColor = isSelected ? Appearance.main100 : Appearance.main300
-        weekDayLabel.textColor = isSelected ? Appearance.main100 : Appearance.mono200
+        daySelectView.layer.borderColor = isSelected ? Appearance.main200.cgColor : UIColor.clear.cgColor
+        statusView.backgroundColor = isSelected ? Appearance.main200 : Appearance.main200
+        weekDayLabel.textColor = isSelected ? Appearance.mono200 : Appearance.mono200
     }
     
     func setup(isCurrentDay: Bool, isAvailableEvent: Bool, text: String, weekDay: DaysOfWeek) {
@@ -53,12 +49,12 @@ extension ReminderCalendarDayCell {
         weekDayLabel.attributedText = weekDay.dayName.attributed(with: weekDayAttrs)
         statusView.isHidden = !isAvailableEvent
         daySelectView.backgroundColor = isCurrentDay
-            ? Appearance.mono100
+            ? Appearance.main700
             : UIColor.clear
         
         weekDayLabel.textColor = isCurrentDay
-            ? Appearance.main100
-            : Appearance.mono200.withAlphaComponent(0.7)
+            ? Appearance.mono200
+            : Appearance.mono200
     }
 }
 

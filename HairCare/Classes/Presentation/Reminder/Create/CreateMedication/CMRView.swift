@@ -37,7 +37,7 @@ final class CMRView: UIView {
 // MARK: Private
 private extension CMRView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
         stackView.addArrangedSubview(confirmButton)
         stackView.addArrangedSubview(deleteButton)
         if case .create = mode {
@@ -134,7 +134,7 @@ private extension CMRView {
         
         let view = UIButton()
         view.setAttributedTitle(mode.confirmTitle.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

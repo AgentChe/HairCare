@@ -114,7 +114,7 @@ private extension CDRView {
     
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.main700
+        view.backgroundColor = Appearance.mono100
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

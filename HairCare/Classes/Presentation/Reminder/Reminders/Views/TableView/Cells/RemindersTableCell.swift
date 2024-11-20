@@ -13,7 +13,6 @@ final class RemindersTableCell: UITableViewCell {
     lazy var stackView = makeStackView()
     
     private lazy var titleAttrs = TextAttributes()
-        .textColor(Appearance.main100)
         .font(Fonts.Roboto.bold(size: 14.scale))
         .lineHeight(20.scale)
         .textAlignment(.left)
@@ -79,6 +78,8 @@ extension RemindersTableCell {
                 return "Reminders.R.Medication"
             case .skinRescan:
                 return "Reminders.R.ScinRescan"
+            case .hairTreatment:
+                return "Reminders.R.HairTreatment"
             }
         }()
         iconView.image = UIImage(named: iconName)
@@ -113,10 +114,24 @@ private extension RemindersTableCell {
                 return "Reminders.Medication.Title".localized
             case .skinRescan:
                 return "Reminders.SkinRescan.Title".localized
+            case .hairTreatment:
+                return "Reminders.HiarTreatment.Title".localized
+            }
+        }()
+        
+        let titleColor: UIColor = {
+            switch event {
+            case .medication:
+                return Appearance.main200
+            case .skinRescan:
+                return Appearance.main500
+            case .hairTreatment:
+                return Appearance.main400
             }
         }()
         
         let view = UILabel()
+        view.textColor = titleColor
         view.attributedText = title.attributed(with: titleAttrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -202,12 +217,8 @@ private extension RemindersTableCell {
 private extension RemindersTableCell {
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.mono100
+        view.backgroundColor = Appearance.main700
         view.layer.cornerRadius = 10.scale
-        view.layer.shadowColor = Appearance.mono200.withAlphaComponent(0.4).cgColor
-        view.layer.shadowOpacity = 0.1
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 4.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

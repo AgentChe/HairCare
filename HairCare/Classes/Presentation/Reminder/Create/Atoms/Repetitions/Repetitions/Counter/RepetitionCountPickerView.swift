@@ -36,6 +36,7 @@ extension RepetitionCountPickerView {
             .textAlignment(.center)
         
         let labelAttrs = TextAttributes()
+            .textColor(Appearance.mono200)
             .font(Fonts.Roboto.regular(size: 16.scale))
             .lineHeight(19.scale)
         
@@ -48,7 +49,7 @@ extension RepetitionCountPickerView {
 // MARK: Private
 private extension RepetitionCountPickerView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -117,7 +118,7 @@ private extension RepetitionCountPickerView {
         
         let view = UIButton()
         view.setAttributedTitle("Repetitions.SaveButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

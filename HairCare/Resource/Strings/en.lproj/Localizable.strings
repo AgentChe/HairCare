@@ -196,8 +196,9 @@
 "Reminders.SubTitle" = "Set notifications for taking medication on time or do the skin rescan";
 "Reminders.Empty" = "You don’t track any events yet.\nTap plus to add an event.";
 "Reminders.AddEvent" = "Tap plus to add an event.";
-"Reminders.SkinRescan.Title" = "SKIN RESCANE";
+"Reminders.SkinRescan.Title" = "HAIR RESCAN";
 "Reminders.Medication.Title" = "MEDICATION";
+"Reminders.HiarTreatment.Title" = "TREATMENT";
 "Reminders.Trigger.EveryDay" = "Every day at %@";
 "Reminders.Trigger.EveryMinutes" = "Every %i minutes";
 "Reminders.Trigger.EveryHours" = "Every %i hours";
@@ -217,6 +218,7 @@
 "ChooseReminderEvent.Title" = "Choose the event you want to log";
 "ChooseReminderEvent.Medication" = "Medication";
 "ChooseReminderEvent.SkinRescan" = "Skin rescan";
+"ChooseReminderEvent.HairTreatment" = "Hair treatment";
 
 // MARK: CreteMedication
 "CreteMedication.Create.Title" = "Create an event";
@@ -232,8 +234,10 @@
 // MARK: CreateReminder
 "CreateReminder.Medication" = "Medication";
 "CreateReminder.SkinRescan" = "Skin Rescan";
+"CreateReminder.HairTreatment" = "Hair treatment";
 "CreateReminder.Medication.Name.Placeholder" = "Medicine name";
 "CreateReminder.SkinRescan.Name.Placeholder" = "Title";
+"CreateReminder.HairTreatment.Name.Placeholder" = "Title";
 "CreateReminder.ConfirmDelete.Title" = "Are you sure?";
 "CreateReminder.ConfirmDelete.Text" = "Do you really want to remove this event?";
 "CreateReminder.ConfirmDelete.Remove" = "Remove";

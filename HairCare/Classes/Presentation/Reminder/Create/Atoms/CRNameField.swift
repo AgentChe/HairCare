@@ -13,6 +13,7 @@ final class CRNameField: UIView {
     enum Event {
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     let event: Event
@@ -57,7 +58,7 @@ private extension CRNameField {
         layer.cornerRadius = 4.scale
         layer.masksToBounds = true
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main700.cgColor
+        layer.borderColor = Appearance.main100.cgColor
     }
 }
 
@@ -89,7 +90,7 @@ private extension CRNameField {
         view.delegate = self
         view.attributedPlaceholder = event.placehodler.localized.attributed(with: placeholderAttrs)
         view.defaultTextAttributes = textAttrs.dictionary
-        view.textPadding = UIEdgeInsets(vertical: 10.scale, horizontal: 8.scale)
+        view.textPadding = UIEdgeInsets(vertical: 10.scale, horizontal: 16.scale)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -104,6 +105,8 @@ private extension CRNameField.Event {
             return "CreateReminder.Medication.Name.Placeholder"
         case .skinRescan:
             return "CreateReminder.SkinRescan.Name.Placeholder"
+        case .hairTreatment:
+            return "CreateReminder.HairTreatment.Name.Placeholder"
         }
     }
 }

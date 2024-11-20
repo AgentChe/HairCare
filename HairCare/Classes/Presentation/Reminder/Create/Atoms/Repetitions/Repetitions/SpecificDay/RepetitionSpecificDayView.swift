@@ -35,7 +35,7 @@ extension RepetitionSpecificDayView {
 // MARK: Private
 private extension RepetitionSpecificDayView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -64,7 +64,8 @@ private extension RepetitionSpecificDayView {
         let view = UIDatePicker()
         view.datePickerMode = .dateAndTime
         view.preferredDatePickerStyle = .inline
-        view.tintColor = Appearance.main100
+        view.overrideUserInterfaceStyle = .light
+        view.tintColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -77,7 +78,7 @@ private extension RepetitionSpecificDayView {
         
         let view = UIButton()
         view.setAttributedTitle("Repetitions.SaveButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

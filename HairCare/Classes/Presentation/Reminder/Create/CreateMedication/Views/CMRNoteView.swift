@@ -11,6 +11,7 @@ final class CMRNoteView: UIView {
     enum Event {
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     let event: Event
@@ -45,7 +46,7 @@ private extension CMRNoteView {
         layer.cornerRadius = 4.scale
         layer.masksToBounds = true
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main700.cgColor
+        layer.borderColor = Appearance.main100.cgColor
     }
 }
 
@@ -62,16 +63,23 @@ private extension CMRNoteView {
 
 private extension CMRNoteView {
     func makeNoteField() -> UITextField {
-        let view = UITextField()
-        let label = UILabel()
-        let attrs = TextAttributes()
-            .font(Fonts.Roboto.regular(size: 16.scale))
-            .lineHeight(19.scale)
+        let placeholderAttrs = TextAttributes()
             .textColor(Appearance.mono200.withAlphaComponent(0.5))
-        label.attributedText = "CreteMedication.Optional".localized.attributed(with: attrs)
+            .font(Fonts.Roboto.regular(size: 16.scale))
+            .textAlignment(.left)
+        let textAttrs = TextAttributes()
+            .textColor(Appearance.mono200)
+            .font(Fonts.Roboto.regular(size: 16.scale))
+            .textAlignment(.left)
+        
+        let label = UILabel()
+        label.attributedText = "CreteMedication.Optional".localized.attributed(with: placeholderAttrs)
+        
+        let view = UITextField()
         view.rightView = label
         view.rightViewMode = .unlessEditing
-        view.attributedPlaceholder = event.key.localized.attributed(with: attrs)
+        view.attributedPlaceholder = event.key.localized.attributed(with: placeholderAttrs)
+        view.defaultTextAttributes = textAttrs.dictionary
         view.backgroundColor = Appearance.mono100
         view.returnKeyType = .done
         view.delegate = self
@@ -85,7 +93,7 @@ private extension CMRNoteView {
 private extension CMRNoteView.Event {
     var key: String {
         switch self {
-        case .medication:
+        case .medication, .hairTreatment:
             return "CreteMedication.AddNote"
         case .skinRescan:
             return "CreteMedication.Note"

@@ -12,6 +12,7 @@ final class CREViewController: UIViewController {
         case close
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     private lazy var mainView = CREView()
@@ -46,7 +47,10 @@ final class CREViewController: UIViewController {
                     .map { Result.medication },
                 
                 mainView.skinRescanButton.rx.tap
-                    .map { Result.skinRescan }
+                    .map { Result.skinRescan },
+                
+                mainView.hairTreatmentButton.rx.tap
+                    .map { Result.hairTreatment }
             )
             .bind(to: Binder(self) { base, result in
                 base.result(result)

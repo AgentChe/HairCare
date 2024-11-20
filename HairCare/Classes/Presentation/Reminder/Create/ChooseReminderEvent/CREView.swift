@@ -12,6 +12,7 @@ final class CREView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var medicationButton = makeEventButton(event: .medication)
     lazy var skinRescanButton = makeEventButton(event: .skinRescan)
+    lazy var hairTreatmentButton = makeEventButton(event: .hairTreatment)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +29,7 @@ final class CREView: UIView {
 // MARK: Private
 private extension CREView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -58,6 +59,12 @@ private extension CREView {
             skinRescanButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             skinRescanButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             skinRescanButton.topAnchor.constraint(equalTo: medicationButton.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            hairTreatmentButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            hairTreatmentButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            hairTreatmentButton.topAnchor.constraint(equalTo: skinRescanButton.bottomAnchor, constant: 16.scale)
         ])
     }
 }

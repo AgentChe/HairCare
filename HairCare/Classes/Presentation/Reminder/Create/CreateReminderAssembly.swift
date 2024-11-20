@@ -35,6 +35,16 @@ final class CreateReminderAssembly {
                     }
                 }
                 nc?.pushViewController(cmrVC, animated: true)
+            case .hairTreatment:
+                let cmrVC = CMRViewController.make(mode: .create(.hairTreatment)) { [weak nc] cmrResult in
+                    switch cmrResult {
+                    case .back:
+                        nc?.popViewController(animated: true)
+                    case .close:
+                        nc?.dismiss(animated: true)
+                    }
+                }
+                nc?.pushViewController(cmrVC, animated: true)
             }
         }
         
@@ -44,8 +54,6 @@ final class CreateReminderAssembly {
     }
     
     func open(from: UIViewController, reminder: Reminder) {
-        
-        
         let cmrVC = CMRViewController.make(mode: .edit(reminder)) { [weak from] cmrResult in
             switch cmrResult {
             case .back:

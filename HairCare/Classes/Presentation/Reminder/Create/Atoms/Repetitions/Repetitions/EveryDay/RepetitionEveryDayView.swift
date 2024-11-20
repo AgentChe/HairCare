@@ -8,7 +8,6 @@
 import UIKit
 
 final class RepetitionEveryDayView: UIView {
-
     lazy var datePicker = makeDatePicker()
     lazy var confirmButton = makeConfirmButton()
     
@@ -27,7 +26,7 @@ final class RepetitionEveryDayView: UIView {
 // MARK: Private
 private extension RepetitionEveryDayView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -56,7 +55,8 @@ private extension RepetitionEveryDayView {
         let view = UIDatePicker()
         view.datePickerMode = .time
         view.preferredDatePickerStyle = .wheels
-        view.tintColor = Appearance.main100
+        view.tintColor = Appearance.mono200
+        view.textColor = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -69,10 +69,22 @@ private extension RepetitionEveryDayView {
         
         let view = UIButton()
         view.setAttributedTitle("Repetitions.SaveButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
+    }
+}
+
+// MARK: Additional
+private extension UIDatePicker {
+    var textColor: UIColor? {
+        set {
+            setValue(newValue, forKeyPath: "textColor")
+        }
+        get {
+            return value(forKeyPath: "textColor") as? UIColor
+        }
     }
 }

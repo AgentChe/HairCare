@@ -11,12 +11,7 @@ final class RepetitionsTableCell: UITableViewCell {
     lazy var label = makeLabel()
     lazy var checkedView = makeCheckedView()
     
-    private lazy var sAttrs = TextAttributes()
-        .textColor(Appearance.main100)
-        .font(Fonts.Roboto.regular(size: 16.scale))
-        .lineHeight(24.scale)
-        .textAlignment(.left)
-    private lazy var dAttrs = TextAttributes()
+    private lazy var attrs = TextAttributes()
         .textColor(Appearance.mono200)
         .font(Fonts.Roboto.regular(size: 16.scale))
         .lineHeight(24.scale)
@@ -37,7 +32,6 @@ final class RepetitionsTableCell: UITableViewCell {
 // MARK: Public
 extension RepetitionsTableCell {
     func setup(element: RepetitionsTableElement) {
-        let attrs = element.marked ? sAttrs : dAttrs
         label.attributedText = element.localizedTitle.attributed(with: attrs)
         
         checkedView.isHidden = !element.marked

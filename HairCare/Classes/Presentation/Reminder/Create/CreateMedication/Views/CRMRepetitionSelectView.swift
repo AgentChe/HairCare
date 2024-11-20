@@ -66,7 +66,7 @@ private extension CRMRepetitionSelectView {
         layer.cornerRadius = 4.scale
         layer.masksToBounds = true
         layer.borderWidth = 1.scale
-        layer.borderColor = Appearance.main700.cgColor
+        layer.borderColor = Appearance.main100.cgColor
         
         let tapGesture = UITapGestureRecognizer()
         isUserInteractionEnabled = true

@@ -11,6 +11,7 @@ struct Reminder: Codable, Equatable {
     enum Event: Codable {
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     let id: String

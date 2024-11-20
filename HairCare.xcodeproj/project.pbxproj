@@ -1385,9 +1385,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE372CEC66EC00ECD4FE /* Views */,
-				DE7BCE382CEC66EC00ECD4FE /* RepetitionsView.swift */,
 				DE7BCE392CEC66EC00ECD4FE /* RepetitionsViewController.swift */,
 				DE7BCE3A2CEC66EC00ECD4FE /* RepetitionsViewModel.swift */,
+				DE7BCE382CEC66EC00ECD4FE /* RepetitionsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1443,8 +1443,8 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE462CEC66EC00ECD4FE /* Views */,
-				DE7BCE472CEC66EC00ECD4FE /* CREView.swift */,
 				DE7BCE482CEC66EC00ECD4FE /* CREViewController.swift */,
+				DE7BCE472CEC66EC00ECD4FE /* CREView.swift */,
 			);
 			path = ChooseReminderEvent;
 			sourceTree = "<group>";
@@ -1474,9 +1474,9 @@
 			children = (
 				DE7BCE4C2CEC66EC00ECD4FE /* ConfirmRemoveAlert */,
 				DE7BCE512CEC66EC00ECD4FE /* Views */,
-				DE7BCE522CEC66EC00ECD4FE /* CMRView.swift */,
 				DE7BCE532CEC66EC00ECD4FE /* CMRViewController.swift */,
 				DE7BCE542CEC66EC00ECD4FE /* CMRViewModel.swift */,
+				DE7BCE522CEC66EC00ECD4FE /* CMRView.swift */,
 			);
 			path = CreateMedication;
 			sourceTree = "<group>";
@@ -1542,9 +1542,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7BCE632CEC66EC00ECD4FE /* Views */,
-				DE7BCE642CEC66EC00ECD4FE /* RemindersView.swift */,
 				DE7BCE652CEC66EC00ECD4FE /* RemindersViewController.swift */,
 				DE7BCE662CEC66EC00ECD4FE /* RemindersViewModel.swift */,
+				DE7BCE642CEC66EC00ECD4FE /* RemindersView.swift */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";

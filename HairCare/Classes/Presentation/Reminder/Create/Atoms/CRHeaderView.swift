@@ -11,6 +11,7 @@ final class CRHeaderView: UIView {
     enum Event {
         case medication
         case skinRescan
+        case hairTreatment
     }
     
     let event: Event
@@ -92,6 +93,8 @@ private extension CRHeaderView.Event {
             return "CreateReminder.Medication"
         case .skinRescan:
             return "CreateReminder.SkinRescan"
+        case .hairTreatment:
+            return "CreateReminder.HairTreatment"
         }
     }
 }

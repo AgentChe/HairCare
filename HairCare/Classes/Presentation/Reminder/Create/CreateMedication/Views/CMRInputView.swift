@@ -148,6 +148,8 @@ private extension CRHeaderView.Event {
             self = .medication
         case .skinRescan:
             self = .skinRescan
+        case .hairTreatment:
+            self = .hairTreatment
         }
     }
 }
@@ -159,6 +161,8 @@ private extension CRNameField.Event {
             self = .medication
         case .skinRescan:
             self = .skinRescan
+        case .hairTreatment:
+            self = .hairTreatment
         }
     }
 }
@@ -170,6 +174,8 @@ private extension CMRNoteView.Event {
             self = .medication
         case .skinRescan:
             self = .skinRescan
+        case .hairTreatment:
+            self = .hairTreatment
         }
     }
 }

@@ -28,7 +28,7 @@ final class RepetitionsView: UIView {
 // MARK: Private
 private extension RepetitionsView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -108,7 +108,7 @@ private extension RepetitionsView {
         
         let view = UIButton()
         view.setAttributedTitle("Repetitions.Create.ConfirmButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

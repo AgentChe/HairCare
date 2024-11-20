@@ -75,7 +75,7 @@ private extension RepetitionsViewModel {
             .combineLatest(event, initial)
             .map { event, initial -> [RepetitionsTableElement] in
                 switch event {
-                case .medication:
+                case .medication, .hairTreatment:
                     return [
                         RepetitionsTableElement(
                             repetition: .everyDay,
