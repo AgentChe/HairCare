@@ -12,7 +12,7 @@ final class AnalyseScanResultViewModel {
     enum Route {
         case close
         case disclaimer
-        case save(String)
+        case save(AnalyseScanResultViewController.SaveData)
         case setNotification(String)
     }
     
@@ -175,7 +175,11 @@ private extension AnalyseScanResultViewModel {
                 return {
                     switch actionButtonState {
                     case .save:
-                        return Route.save(scanResult.id)
+                        let saveData = AnalyseScanResultViewController.SaveData(
+                            analyseId: scanResult.id,
+                            image: scanResult.image
+                        )
+                        return Route.save(saveData)
                     case .setNotifications:
                         return Route.setNotification(scanResult.id)
                     }

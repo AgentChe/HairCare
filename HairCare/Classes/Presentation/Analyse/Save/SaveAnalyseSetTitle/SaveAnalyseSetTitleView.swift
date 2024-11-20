@@ -10,7 +10,6 @@ import UIKit
 final class SaveAnalyseSetTitleView: UIView {
     lazy var backButton = makeBackButton()
     lazy var titleLabel = makeTitleLabel()
-    lazy var subTitleLabel = makeSubTitleLabel()
     lazy var scannedAreaView = makeScannedAreaView()
     lazy var inputField = makeInputField()
     lazy var saveButton = makeSaveButton()
@@ -40,7 +39,7 @@ extension SaveAnalyseSetTitleView {
     func saveButton(enable: Bool) {
         saveButton.isUserInteractionEnabled = enable
         
-        saveButton.backgroundColor = enable ? Appearance.main100 : Appearance.main700
+        saveButton.backgroundColor = enable ? Appearance.mono200 : Appearance.main100
         
         let attrs = enable ? saveButtonEnableAttrs : saveButtonDisableAttrs
         saveButton.setAttributedTitle("SaveAnalyseSetTitle.SaveButton".localized.attributed(with: attrs), for: .normal)
@@ -50,7 +49,7 @@ extension SaveAnalyseSetTitleView {
 // MARK: Private
 private extension SaveAnalyseSetTitleView {
     func initialize() {
-        backgroundColor = Appearance.main700
+        backgroundColor = Appearance.mono100
     }
 }
 
@@ -70,15 +69,9 @@ private extension SaveAnalyseSetTitleView {
         ])
         
         NSLayoutConstraint.activate([
-            subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            subTitleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             scannedAreaView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scannedAreaView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scannedAreaView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 29.scale)
+            scannedAreaView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 29.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -121,21 +114,7 @@ private extension SaveAnalyseSetTitleView {
             .textAlignment(.left)
         
         let view = UILabel()
-        view.attributedText = "SaveAnalyseSelectSkinArea.Title".localized.attributed(with: attrs)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeSubTitleLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.5))
-            .font(Fonts.Roboto.regular(size: 16.scale))
-            .lineHeight(19.scale)
-            .textAlignment(.left)
-        
-        let view = UILabel()
-        view.attributedText = "SaveAnalyseSetTitle.SubTitle".localized.attributed(with: attrs)
+        view.attributedText = "SaveAnalyseSetTitle.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -167,7 +146,7 @@ private extension SaveAnalyseSetTitleView {
         let view = UIActivityIndicatorView()
         view.hidesWhenStopped = true 
         view.style = .large
-        view.color = Appearance.main100
+        view.color = Appearance.mono200
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

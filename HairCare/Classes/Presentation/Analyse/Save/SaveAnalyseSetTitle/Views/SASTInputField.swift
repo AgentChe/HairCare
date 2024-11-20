@@ -92,7 +92,7 @@ private extension SASTInputField {
         view.layer.cornerRadius = 4.scale
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1.scale
-        view.layer.borderColor = Appearance.main700.cgColor
+        view.layer.borderColor = Appearance.main100.cgColor
         view.attributedPlaceholder = "SaveAnalyseSetTitle.TitlePlaceholder".localized.attributed(with: placeholderAttrs)
         view.defaultTextAttributes = textAttrs.dictionary
         view.textPadding = UIEdgeInsets(vertical: 13.scale, horizontal: 16.scale)

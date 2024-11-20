@@ -7,12 +7,12 @@
 
 import Alamofire
 
+// TODO: убрать area
 struct AnalyseSaveScanResultRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String?
     let analyseId: String
     let title: String
-    let area: [String]
     
     var url: String {
         GlobalDefinitions.domain + "/api/v1/ai/analyses/save"
@@ -33,7 +33,7 @@ struct AnalyseSaveScanResultRequest: APIRequestBody {
             "anonymous_id": anonymousId,
             "analyses_id": analyseId,
             "title": title,
-            "area": area
+            "area": []
         ]
         
         if let internalId {

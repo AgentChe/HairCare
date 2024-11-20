@@ -12,7 +12,7 @@ protocol AnalyseManagerProtocol {
     func checkCorrectImage(image: UIImage) -> Single<AnalyseCheckCorrentImage?>
     func getAnalyseResult(analyseId: String) -> Single<AnalyseScanResult?>
     func analyseScan(image: UIImage) -> Single<AnalyseScanResult?>
-    func saveScanResult(analyseId: String, title: String, area: [String]) -> Single<Void>
+    func saveScanResult(analyseId: String, title: String) -> Single<Void>
     func obtainHistory() -> Single<[AnalyseScanTemplate]?>
 }
 
@@ -69,7 +69,7 @@ extension AnalyseManager: AnalyseManagerProtocol {
             .map { AnalyseScanResult(response: $0) }
     }
     
-    func saveScanResult(analyseId: String, title: String, area: [String]) -> Single<Void> {
+    func saveScanResult(analyseId: String, title: String) -> Single<Void> {
         let anonymousId = sessionManager.anonymousId
         let internalId = sessionManager.internalId
         
@@ -77,8 +77,7 @@ extension AnalyseManager: AnalyseManagerProtocol {
             anonymousId: anonymousId,
             internalId: (internalId == anonymousId) ? nil : internalId,
             analyseId: analyseId,
-            title: title,
-            area: area
+            title: title
         )
         
         return restAPITransport

@@ -11,8 +11,13 @@ import RxSwift
 final class AnalyseScanResultViewController: UIViewController {
     enum Result {
         case close
-        case save(String)
+        case save(SaveData)
         case setNotifications(String)
+    }
+    
+    struct SaveData {
+        let analyseId: String
+        let image: URL
     }
     
     private lazy var mainView = AnalyseScanResultView()
@@ -136,8 +141,8 @@ private extension AnalyseScanResultViewController {
         case .disclaimer:
             let vc = DisclaimerViewController.make()
             present(vc, animated: true)
-        case .save(let analyseId):
-            complete(.save(analyseId))
+        case .save(let saveData):
+            complete(.save(saveData))
         case .setNotification(let analyseId):
             complete(.setNotifications(analyseId))
         }

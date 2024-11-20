@@ -16,8 +16,7 @@ final class SaveAnalyseSetTitleViewController: UIViewController {
     
     struct Input {
         let analyseId: String
-        let side: Side
-        let area: SkinArea
+        let image: URL
     }
     
     private lazy var mainView = SaveAnalyseSetTitleView()
@@ -79,11 +78,9 @@ final class SaveAnalyseSetTitleViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        output.scannedArea
-            .drive(Binder(mainView) { base, scannedArea in
-                let (side, area) = scannedArea
-                
-                base.scannedAreaView.setup(side: side, area: area)
+        output.image
+            .drive(Binder(mainView.scannedAreaView) { base, image in
+                base.setup(image: image)
             })
             .disposed(by: disposeBag)
     }

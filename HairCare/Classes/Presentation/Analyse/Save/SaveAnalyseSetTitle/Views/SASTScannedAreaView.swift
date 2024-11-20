@@ -6,16 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SASTScannedAreaView: UIView {
     lazy var imageView = makeImageView()
     lazy var label = makeLabel()
-    
-    private lazy var attrs = TextAttributes()
-        .textColor(Appearance.mono200)
-        .font(Fonts.Roboto.regular(size: 16.scale))
-        .lineHeight(19.scale)
-        .textAlignment(.left)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,13 +26,8 @@ final class SASTScannedAreaView: UIView {
 
 // MARK: Public
 extension SASTScannedAreaView {
-    func setup(side: Side, area: SkinArea) {
-        imageView.setup(side: side, area: area)
-        
-        let joined = [side.localized, area.localized]
-            .joined(separator: ", ")
-        let value = String(format: "SaveAnalyseSetTitle.ScannedArea".localized, joined)
-        label.attributedText = value.attributed(with: attrs)
+    func setup(image: URL) {
+        imageView.kf.setImage(with: image)
     }
 }
 
@@ -69,15 +59,25 @@ private extension SASTScannedAreaView {
 
 // MARK: Lazy initialization
 private extension SASTScannedAreaView {
-    func makeImageView() -> SASTScannedAreaImageView {
-        let view = SASTScannedAreaImageView()
+    func makeImageView() -> UIImageView {
+        let view = UIImageView()
+        view.layer.cornerRadius = 12.scale
+        view.layer.masksToBounds = true
+        view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
     }
     
     func makeLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.mono200)
+            .font(Fonts.Roboto.regular(size: 16.scale))
+            .lineHeight(19.scale)
+            .textAlignment(.left)
+        
         let view = UILabel()
+        view.attributedText = "SaveAnalyseSetTitle.SubTitle".localized.attributed(with: attrs)
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

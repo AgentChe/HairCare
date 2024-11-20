@@ -41,7 +41,7 @@ extension SaveAnalyseSetTitleViewModel {
         let route: Driver<Route>
         let canSave: Driver<Bool>
         let activity: Driver<Bool>
-        let scannedArea: Driver<(Side, SkinArea)>
+        let image: Driver<URL>
     }
     
     func configure(input: Input) -> Output {
@@ -54,7 +54,7 @@ extension SaveAnalyseSetTitleViewModel {
             ),
             canSave: makeCanSave(text: input.text),
             activity: activity.asDriver(),
-            scannedArea: inputData.map { ($0.side, $0.area) }
+            image: inputData.map { $0.image }
         )
     }
 }
@@ -84,8 +84,7 @@ private extension SaveAnalyseSetTitleViewModel {
                     analyseManager
                         .saveScanResult(
                             analyseId: inputData.analyseId,
-                            title: text,
-                            area: [inputData.side.localized, inputData.area.localized]
+                            title: text
                         )
                         .map { Route.complete }
                 }

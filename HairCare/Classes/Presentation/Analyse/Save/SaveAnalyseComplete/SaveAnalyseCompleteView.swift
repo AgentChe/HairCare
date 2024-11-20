@@ -122,7 +122,7 @@ private extension SaveAnalyseCompleteView {
     
     func makeContainer() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.main700
+        view.backgroundColor = Appearance.mono100
         view.layer.cornerRadius = 10.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -175,7 +175,7 @@ private extension SaveAnalyseCompleteView {
         
         let view = UIButton()
         view.setAttributedTitle("SaveAnalyseComplete.ReminderButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main100
+        view.backgroundColor = Appearance.mono200
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
@@ -189,7 +189,7 @@ private extension SaveAnalyseCompleteView {
         
         let view = UIButton()
         view.setAttributedTitle("SaveAnalyseComplete.LaterButton".localized.attributed(with: attrs), for: .normal)
-        view.backgroundColor = Appearance.main700
+        view.backgroundColor = Appearance.main100
         view.layer.cornerRadius = 16.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
