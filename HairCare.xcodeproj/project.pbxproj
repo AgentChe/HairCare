@@ -197,7 +197,6 @@
 		DE7BCF9E2CEC66EC00ECD4FE /* HomeAddReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE0F2CEC66EC00ECD4FE /* HomeAddReminderCell.swift */; };
 		DE7BCF9F2CEC66EC00ECD4FE /* ChatLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDED2CEC66EC00ECD4FE /* ChatLoadingCell.swift */; };
 		DE7BCFA02CEC66EC00ECD4FE /* BookmarksFilterItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDC12CEC66EC00ECD4FE /* BookmarksFilterItemButton.swift */; };
-		DE7BCFA12CEC66EC00ECD4FE /* AnalyseCheckCorrentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE902CEC66EC00ECD4FE /* AnalyseCheckCorrentImage.swift */; };
 		DE7BCFA22CEC66EC00ECD4FE /* CRMRepetitionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE502CEC66EC00ECD4FE /* CRMRepetitionSelectView.swift */; };
 		DE7BCFA32CEC66EC00ECD4FE /* CatalogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEB22CEC66EC00ECD4FE /* CatalogManager.swift */; };
 		DE7BCFA42CEC66EC00ECD4FE /* CDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDCF2CEC66EC00ECD4FE /* CDBViewController.swift */; };
@@ -254,7 +253,6 @@
 		DE7BCFD92CEC66EC00ECD4FE /* TapAreaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD5D2CEC66EC00ECD4FE /* TapAreaButton.swift */; };
 		DE7BCFDA2CEC66EC00ECD4FE /* HomeOpenScannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE122CEC66EC00ECD4FE /* HomeOpenScannerCell.swift */; };
 		DE7BCFDB2CEC66EC00ECD4FE /* AnalyseScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE912CEC66EC00ECD4FE /* AnalyseScanResult.swift */; };
-		DE7BCFDC2CEC66EC00ECD4FE /* AnalyseCheckCorrectImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE952CEC66EC00ECD4FE /* AnalyseCheckCorrectImageRequest.swift */; };
 		DE7BCFDD2CEC66EC00ECD4FE /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD7C2CEC66EC00ECD4FE /* XOREncryption.swift */; };
 		DE7BCFDE2CEC66EC00ECD4FE /* ChatPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDF52CEC66EC00ECD4FE /* ChatPlaceholderView.swift */; };
 		DE7BCFDF2CEC66EC00ECD4FE /* RemindersEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE622CEC66EC00ECD4FE /* RemindersEmptyView.swift */; };
@@ -521,11 +519,9 @@
 		DE7BCE892CEC66EC00ECD4FE /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE7BCE8C2CEC66EC00ECD4FE /* TryAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainView.swift; sourceTree = "<group>"; };
 		DE7BCE8D2CEC66EC00ECD4FE /* TryAgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
-		DE7BCE902CEC66EC00ECD4FE /* AnalyseCheckCorrentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseCheckCorrentImage.swift; sourceTree = "<group>"; };
 		DE7BCE912CEC66EC00ECD4FE /* AnalyseScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseScanResult.swift; sourceTree = "<group>"; };
 		DE7BCE922CEC66EC00ECD4FE /* AnalyseScanTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseScanTemplate.swift; sourceTree = "<group>"; };
 		DE7BCE932CEC66EC00ECD4FE /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
-		DE7BCE952CEC66EC00ECD4FE /* AnalyseCheckCorrectImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseCheckCorrectImageRequest.swift; sourceTree = "<group>"; };
 		DE7BCE962CEC66EC00ECD4FE /* AnalyseSaveScanResultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseSaveScanResultRequest.swift; sourceTree = "<group>"; };
 		DE7BCE972CEC66EC00ECD4FE /* AnalyseScanImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseScanImageRequest.swift; sourceTree = "<group>"; };
 		DE7BCE982CEC66EC00ECD4FE /* GetAnalyseHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAnalyseHistoryRequest.swift; sourceTree = "<group>"; };
@@ -1682,7 +1678,6 @@
 		DE7BCE942CEC66EC00ECD4FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE902CEC66EC00ECD4FE /* AnalyseCheckCorrentImage.swift */,
 				DE7BCE912CEC66EC00ECD4FE /* AnalyseScanResult.swift */,
 				DE7BCE922CEC66EC00ECD4FE /* AnalyseScanTemplate.swift */,
 				DE7BCE932CEC66EC00ECD4FE /* Side.swift */,
@@ -1693,7 +1688,6 @@
 		DE7BCE9A2CEC66EC00ECD4FE /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE952CEC66EC00ECD4FE /* AnalyseCheckCorrectImageRequest.swift */,
 				DE7BCE962CEC66EC00ECD4FE /* AnalyseSaveScanResultRequest.swift */,
 				DE7BCE972CEC66EC00ECD4FE /* AnalyseScanImageRequest.swift */,
 				DE7BCE982CEC66EC00ECD4FE /* GetAnalyseHistoryRequest.swift */,
@@ -2252,7 +2246,6 @@
 				DE7BCF9E2CEC66EC00ECD4FE /* HomeAddReminderCell.swift in Sources */,
 				DE7BCF9F2CEC66EC00ECD4FE /* ChatLoadingCell.swift in Sources */,
 				DE7BCFA02CEC66EC00ECD4FE /* BookmarksFilterItemButton.swift in Sources */,
-				DE7BCFA12CEC66EC00ECD4FE /* AnalyseCheckCorrentImage.swift in Sources */,
 				DE7BCFA22CEC66EC00ECD4FE /* CRMRepetitionSelectView.swift in Sources */,
 				DE7BCFA32CEC66EC00ECD4FE /* CatalogManager.swift in Sources */,
 				DE7BCFA42CEC66EC00ECD4FE /* CDBViewController.swift in Sources */,
@@ -2310,7 +2303,6 @@
 				DE7BCFD92CEC66EC00ECD4FE /* TapAreaButton.swift in Sources */,
 				DE7BCFDA2CEC66EC00ECD4FE /* HomeOpenScannerCell.swift in Sources */,
 				DE7BCFDB2CEC66EC00ECD4FE /* AnalyseScanResult.swift in Sources */,
-				DE7BCFDC2CEC66EC00ECD4FE /* AnalyseCheckCorrectImageRequest.swift in Sources */,
 				DE7BCFDD2CEC66EC00ECD4FE /* XOREncryption.swift in Sources */,
 				DE7BCFDE2CEC66EC00ECD4FE /* ChatPlaceholderView.swift in Sources */,
 				DE7BCFDF2CEC66EC00ECD4FE /* RemindersEmptyView.swift in Sources */,

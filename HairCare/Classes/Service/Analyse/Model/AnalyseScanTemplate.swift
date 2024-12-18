@@ -20,7 +20,9 @@ extension AnalyseScanTemplate {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [[String: Any]]
-        else { return nil }
+        else {
+            return nil
+        }
         
         return body.compactMap { AnalyseScanTemplate(json: $0) }
     }

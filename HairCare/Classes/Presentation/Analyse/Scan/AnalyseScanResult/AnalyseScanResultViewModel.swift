@@ -20,8 +20,8 @@ final class AnalyseScanResultViewModel {
     
     private let source: Driver<Source>
     
-    init(image: UIImage) {
-        source = BehaviorRelay(value: .scanImage(image)).asDriver()
+    init(resultFromScan: AnalyseScanResult) {
+        source = BehaviorRelay(value: .resultFromScan(resultFromScan)).asDriver()
     }
     
     init(analyseId: String) {
@@ -72,7 +72,7 @@ extension AnalyseScanResultViewModel {
 // MARK: Private
 private extension AnalyseScanResultViewModel {
     enum Source {
-        case scanImage(UIImage)
+        case resultFromScan(AnalyseScanResult)
         case byAnalyseId(String)
     }
     
@@ -114,9 +114,8 @@ private extension AnalyseScanResultViewModel {
                 func source() -> Single<AnalyseScanResult> {
                     let scanResult: Single<AnalyseScanResult?> = {
                         switch dataSource {
-                        case .scanImage(let image):
-                            return self.analyseManager
-                                .analyseScan(image: image)
+                        case .resultFromScan(let resultFromScan):
+                            return .just(resultFromScan)
                         case .byAnalyseId(let analyseId):
                             return self.analyseManager
                                 .getAnalyseResult(analyseId: analyseId)

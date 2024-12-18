@@ -47,8 +47,8 @@ private extension AnalyseScanAssembly {
                     guard let self else { return }
                     
                     switch result {
-                    case .image(let croppedImage):
-                        let resultNC = self.startResultFlow(croppedImage: croppedImage) { [weak from] in
+                    case .scanResult(let scanResult):
+                        let resultNC = self.startResultFlow(resultFromScan: scanResult) { [weak from] in
                             from?.dismiss(animated: true)
                         }
                         nc?.present(resultNC, animated: true)
@@ -64,11 +64,11 @@ private extension AnalyseScanAssembly {
         from.present(nc, animated: true)
     }
     
-    func startResultFlow(croppedImage: UIImage, complete: @escaping () -> Void) -> UINavigationController {
+    func startResultFlow(resultFromScan: AnalyseScanResult, complete: @escaping () -> Void) -> UINavigationController {
         let nc = NavigationController()
         nc.modalPresentationStyle = .fullScreen
         
-        let scanResultVC = AnalyseScanResultViewController.make(image: croppedImage) { [weak nc] result in
+        let scanResultVC = AnalyseScanResultViewController.make(resultFromScan: resultFromScan) { [weak nc] result in
             switch result {
             case .close:
                 complete()

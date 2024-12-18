@@ -12,7 +12,7 @@ import Mantis
 
 final class AnalyseImageResizeViewController: UIViewController {
     enum Result {
-        case image(UIImage)
+        case scanResult(AnalyseScanResult)
         case retake
         case back
     }
@@ -130,8 +130,8 @@ private extension AnalyseImageResizeViewController {
             complete(.back)
         case .retake:
             complete(.retake)
-        case .finish(let image):
-            complete(.image(image))
+        case .finish(let scanResult):
+            complete(.scanResult(scanResult))
         }
     }
     

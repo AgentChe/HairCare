@@ -9,7 +9,6 @@ import RxSwift
 import RxCocoa
 
 protocol AnalyseManagerProtocol {
-    func checkCorrectImage(image: UIImage) -> Single<AnalyseCheckCorrentImage?>
     func getAnalyseResult(analyseId: String) -> Single<AnalyseScanResult?>
     func analyseScan(image: UIImage) -> Single<AnalyseScanResult?>
     func saveScanResult(analyseId: String, title: String) -> Single<Void>
@@ -24,21 +23,6 @@ final class AnalyseManager {
 
 // MARK: AnalyzeManagerProtocol
 extension AnalyseManager: AnalyseManagerProtocol {
-    func checkCorrectImage(image: UIImage) -> Single<AnalyseCheckCorrentImage?> {
-        let anonymousId = sessionManager.anonymousId
-        let internalId = sessionManager.internalId
-        
-        let request = AnalyseCheckCorrectImageRequest(
-            anonymousId: anonymousId,
-            internalId: (internalId == anonymousId) ? nil : internalId,
-            image: image
-        )
-        
-        return restAPITransport
-            .callServerApi(formDataBody: request)
-            .map { AnalyseCheckCorrentImage(response: $0) }
-    }
-    
     func getAnalyseResult(analyseId: String) -> Single<AnalyseScanResult?> {
         let anonymousId = sessionManager.anonymousId
         let internalId = sessionManager.internalId

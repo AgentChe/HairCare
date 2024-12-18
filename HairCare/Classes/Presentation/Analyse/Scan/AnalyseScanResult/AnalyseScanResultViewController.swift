@@ -28,8 +28,8 @@ final class AnalyseScanResultViewController: UIViewController {
     
     private let complete: (Result) -> Void
     
-    private init(image: UIImage, complete: @escaping (Result) -> Void) {
-        self.viewModel = AnalyseScanResultViewModel(image: image)
+    private init(resultFromScan: AnalyseScanResult, complete: @escaping (Result) -> Void) {
+        self.viewModel = AnalyseScanResultViewModel(resultFromScan: resultFromScan)
         self.complete = complete
         
         super.init(nibName: nil, bundle: nil)
@@ -101,8 +101,8 @@ final class AnalyseScanResultViewController: UIViewController {
 
 // MARK: Public
 extension AnalyseScanResultViewController {
-    static func make(image: UIImage, complete: @escaping (Result) -> Void) -> AnalyseScanResultViewController {
-        let vc = AnalyseScanResultViewController(image: image, complete: complete)
+    static func make(resultFromScan: AnalyseScanResult, complete: @escaping (Result) -> Void) -> AnalyseScanResultViewController {
+        let vc = AnalyseScanResultViewController(resultFromScan: resultFromScan, complete: complete)
         vc.navigationItem.backButtonTitle = " "
         vc.modalPresentationStyle = .fullScreen
         return vc

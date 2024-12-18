@@ -12,7 +12,7 @@ final class AnalyseImageResizeViewModel {
     enum Route {
         case back
         case retake
-        case finish(UIImage)
+        case finish(AnalyseScanResult)
     }
     
     enum Action {
@@ -39,14 +39,18 @@ extension AnalyseImageResizeViewModel {
     }
     
     func configure(input: Input) -> Output {
-        let optionsState = makeOptionsState(pushCroppedImage: input.pushCroppedImage)
+        let scanResult = makeScanResult(pushCroppedImage: input.pushCroppedImage)
+        let optionsState = makeOptionsState(
+            pushCroppedImage: input.pushCroppedImage,
+            scanResult: scanResult
+        )
         
         return Output(
             route: makeRoute(
                 didTapBack: input.didTapBack,
                 didRetakePhoto: input.didRetakePhoto,
                 didContinue: input.didContinue,
-                pushCroppedImage: input.pushCroppedImage
+                scanResult: scanResult
             ),
             action: makeAction(
                 didAcceptPhoto: input.didAcceptPhoto,
@@ -62,7 +66,7 @@ private extension AnalyseImageResizeViewModel {
         didTapBack: Signal<Void>,
         didRetakePhoto: Signal<Void>,
         didContinue: Signal<Void>,
-        pushCroppedImage: Signal<UIImage>
+        scanResult: Driver<AnalyseScanResult?>
     ) -> Driver<Route> {
         let back = didTapBack
             .map { Route.back }
@@ -73,7 +77,8 @@ private extension AnalyseImageResizeViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let finish = didContinue
-            .withLatestFrom(pushCroppedImage)
+            .withLatestFrom(scanResult)
+            .compactMap { $0 }
             .map { Route.finish($0) }
             .asDriver(onErrorDriveWith: .never())
         
@@ -97,17 +102,30 @@ private extension AnalyseImageResizeViewModel {
             .merge(crop, changedOptionsState)
     }
     
-    func makeOptionsState(pushCroppedImage: Signal<UIImage>) -> Driver<AnalyseImageResizeOptionsView.State> {
+    func makeOptionsState(
+        pushCroppedImage: Signal<UIImage>,
+        scanResult: Driver<AnalyseScanResult?>
+    ) -> Driver<AnalyseImageResizeOptionsView.State> {
+        let preloader = pushCroppedImage
+            .asDriver(onErrorDriveWith: .never())
+            .map { _ in AnalyseImageResizeOptionsView.State.preloader }
+        
+        let result = scanResult
+            .map { $0 == nil ? AnalyseImageResizeOptionsView.State.incorrect : AnalyseImageResizeOptionsView.State.correct }
+        
+        return Driver
+            .merge(preloader, result)
+            .startWith(.acceptPhoto)
+    }
+    
+    func makeScanResult(pushCroppedImage: Signal<UIImage>) -> Driver<AnalyseScanResult?> {
         pushCroppedImage
-            .flatMapLatest { [weak self] image -> Driver<AnalyseImageResizeOptionsView.State> in
+            .flatMapLatest { [weak self] image -> Driver<AnalyseScanResult?> in
                 guard let self else { return .never() }
                 
                 return analyseManager
-                    .checkCorrectImage(image: image)
+                    .analyseScan(image: image)
                     .asDriver(onErrorJustReturn: nil)
-                    .map { $0?.correct == true ? .correct : .incorrect }
-                    .startWith(.preloader)
             }
-            .startWith(.acceptPhoto)
     }
 }
