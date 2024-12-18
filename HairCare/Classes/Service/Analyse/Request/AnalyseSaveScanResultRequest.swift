@@ -7,7 +7,6 @@
 
 import Alamofire
 
-// TODO: убрать area
 struct AnalyseSaveScanResultRequest: APIRequestBody {
     let anonymousId: String
     let internalId: String?
@@ -32,8 +31,7 @@ struct AnalyseSaveScanResultRequest: APIRequestBody {
         var params: Parameters = [
             "anonymous_id": anonymousId,
             "analyses_id": analyseId,
-            "title": title,
-            "area": []
+            "title": title
         ]
         
         if let internalId {

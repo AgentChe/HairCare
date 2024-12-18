@@ -9,7 +9,7 @@ import Alamofire
 
 struct UnsaveProcedureRequest: APIRequestBody {
     let userToken: String
-    let ids: [Int]
+    let ids: [String]
 
     var url: String {
         GlobalDefinitions.dermatologyDomain + "/api/procedure/unsave"

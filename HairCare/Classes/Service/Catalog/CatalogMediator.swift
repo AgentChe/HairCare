@@ -11,119 +11,119 @@ import RxCocoa
 final class CatalogMediator {
     static let shared = CatalogMediator()
     
-    private lazy var didSaveRecipeIdTrigger = PublishRelay<Int>()
-    private lazy var didUnsaveRecipesIdsTrigger = PublishRelay<[Int]>()
-    private lazy var didSaveInsightIdTrigger = PublishRelay<Int>()
-    private lazy var didUnsaveInsightsIdsTrigger = PublishRelay<[Int]>()
-    private lazy var didSaveGlossaryIdTrigger = PublishRelay<Int>()
-    private lazy var didUnsaveGlossariesIdsTrigger = PublishRelay<[Int]>()
-    private lazy var didSaveProcedureIdTrigger = PublishRelay<Int>()
-    private lazy var didUnsaveProceduresIdsTrigger = PublishRelay<[Int]>()
-    private lazy var didSaveDiseaseIdTrigger = PublishRelay<Int>()
-    private lazy var didUnsaveDiseasesIdsTrigger = PublishRelay<[Int]>()
+    private lazy var didSaveRecipeIdTrigger = PublishRelay<String>()
+    private lazy var didUnsaveRecipesIdsTrigger = PublishRelay<[String]>()
+    private lazy var didSaveInsightIdTrigger = PublishRelay<String>()
+    private lazy var didUnsaveInsightsIdsTrigger = PublishRelay<[String]>()
+    private lazy var didSaveGlossaryIdTrigger = PublishRelay<String>()
+    private lazy var didUnsaveGlossariesIdsTrigger = PublishRelay<[String]>()
+    private lazy var didSaveProcedureIdTrigger = PublishRelay<String>()
+    private lazy var didUnsaveProceduresIdsTrigger = PublishRelay<[String]>()
+    private lazy var didSaveDiseaseIdTrigger = PublishRelay<String>()
+    private lazy var didUnsaveDiseasesIdsTrigger = PublishRelay<[String]>()
     
     private init() {}
 }
 
 // MARK: Public
 extension CatalogMediator {
-    func saveRecipe(id: Int) {
+    func saveRecipe(id: String) {
         DispatchQueue.main.async {
             Self.shared.didSaveRecipeIdTrigger.accept(id)
         }
     }
     
-    func unsaveRecipes(ids: [Int]) {
+    func unsaveRecipes(ids: [String]) {
         DispatchQueue.main.async {
             Self.shared.didUnsaveRecipesIdsTrigger.accept(ids)
         }
     }
     
-    func saveInsight(id: Int) {
+    func saveInsight(id: String) {
         DispatchQueue.main.async {
             Self.shared.didSaveInsightIdTrigger.accept(id)
         }
     }
     
-    func unsaveInsights(ids: [Int]) {
+    func unsaveInsights(ids: [String]) {
         DispatchQueue.main.async {
             Self.shared.didUnsaveInsightsIdsTrigger.accept(ids)
         }
     }
     
-    func saveGlossary(id: Int) {
+    func saveGlossary(id: String) {
         DispatchQueue.main.async {
             Self.shared.didSaveGlossaryIdTrigger.accept(id)
         }
     }
     
-    func unsaveGlossaries(ids: [Int]) {
+    func unsaveGlossaries(ids: [String]) {
         DispatchQueue.main.async {
             Self.shared.didUnsaveGlossariesIdsTrigger.accept(ids)
         }
     }
     
-    func saveProcedure(id: Int) {
+    func saveProcedure(id: String) {
         DispatchQueue.main.async {
             Self.shared.didSaveProcedureIdTrigger.accept(id)
         }
     }
     
-    func unsaveProcedures(ids: [Int]) {
+    func unsaveProcedures(ids: [String]) {
         DispatchQueue.main.async {
             Self.shared.didUnsaveProceduresIdsTrigger.accept(ids)
         }
     }
     
-    func saveDisease(id: Int) {
+    func saveDisease(id: String) {
         DispatchQueue.main.async {
             Self.shared.didSaveDiseaseIdTrigger.accept(id)
         }
     }
     
-    func unsaveDiseases(ids: [Int]) {
+    func unsaveDiseases(ids: [String]) {
         DispatchQueue.main.async {
             Self.shared.didUnsaveDiseasesIdsTrigger.accept(ids)
         }
     }
     
-    var didSaveRecipeId: Signal<Int> {
+    var didSaveRecipeId: Signal<String> {
         didSaveRecipeIdTrigger.asSignal()
     }
     
-    var didUnsaveRecipesIds: Signal<[Int]> {
+    var didUnsaveRecipesIds: Signal<[String]> {
         didUnsaveRecipesIdsTrigger.asSignal()
     }
     
-    var didSaveInsightId: Signal<Int> {
+    var didSaveInsightId: Signal<String> {
         didSaveInsightIdTrigger.asSignal()
     }
     
-    var didUnsaveInsightsIds: Signal<[Int]> {
+    var didUnsaveInsightsIds: Signal<[String]> {
         didUnsaveInsightsIdsTrigger.asSignal()
     }
     
-    var didSaveGlossaryId: Signal<Int> {
+    var didSaveGlossaryId: Signal<String> {
         didSaveGlossaryIdTrigger.asSignal()
     }
     
-    var didUnsaveGlossariesIds: Signal<[Int]> {
+    var didUnsaveGlossariesIds: Signal<[String]> {
         didUnsaveGlossariesIdsTrigger.asSignal()
     }
     
-    var didSaveProcedureId: Signal<Int> {
+    var didSaveProcedureId: Signal<String> {
         didSaveProcedureIdTrigger.asSignal()
     }
     
-    var didUnsaveProceduresIds: Signal<[Int]> {
+    var didUnsaveProceduresIds: Signal<[String]> {
         didUnsaveProceduresIdsTrigger.asSignal()
     }
     
-    var didSaveDiseaseId: Signal<Int> {
+    var didSaveDiseaseId: Signal<String> {
         didSaveDiseaseIdTrigger.asSignal()
     }
     
-    var didUnsaveDiseasesIds: Signal<[Int]> {
+    var didUnsaveDiseasesIds: Signal<[String]> {
         didUnsaveDiseasesIdsTrigger.asSignal()
     }
 }

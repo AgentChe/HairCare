@@ -8,11 +8,11 @@
 import Alamofire
 
 struct GetBookmarksRecipesRequest: APIRequestBody {
-    let userToken: String
+    let anonymousId: String
+    let internalId: String?
 
-    // TODO: заменить endpoint
     var url: String {
-        GlobalDefinitions.dermatologyDomain + "/api/disease/bookmarks"
+        GlobalDefinitions.domain + "/api/v1/recipes/bookmarks"
     }
     
     var method: HTTPMethod {
@@ -20,9 +20,20 @@ struct GetBookmarksRecipesRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
+        var params: Parameters = [
+            "anonymous_id": anonymousId
+        ]
+        
+        if let internalId {
+            params["internal_id"] = internalId
+        }
+        
+        return params
+    }
+    
+    var headers: HTTPHeaders? {
         [
-            "_api_key": GlobalDefinitions.dermatologyApiKey,
-            "_user_token": userToken
+            "Access-Token": GlobalDefinitions.apiKey
         ]
     }
 }

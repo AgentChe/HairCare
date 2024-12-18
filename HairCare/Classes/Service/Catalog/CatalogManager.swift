@@ -14,21 +14,21 @@ protocol CatalogManagerProtocol {
     func obtainGlossaries(forceUpdate: Bool) -> Single<[Catalog]>
     func obtainProcedures(forceUpdate: Bool) -> Single<[Catalog]>
     func obtainDiseases(forceUpdate: Bool) -> Single<[Catalog]>
-    func obtainRecipeDetails(id: Int) -> Single<CatalogDetails?>
-    func obtainInsightDetails(id: Int) -> Single<CatalogDetails?>
-    func obtainGlossaryDetails(id: Int) -> Single<CatalogDetails?>
-    func obtainProcedureDetails(id: Int) -> Single<CatalogDetails?>
-    func obtainDiseaseDetails(id: Int) -> Single<CatalogDetails?>
-    func saveRecipe(id: Int) -> Single<Void>
-    func saveInsight(id: Int) -> Single<Void>
-    func saveGlossary(id: Int) -> Single<Void>
-    func saveProcedure(id: Int) -> Single<Void>
-    func saveDisease(id: Int) -> Single<Void>
-    func unsaveRecipes(ids: [Int]) -> Single<Void>
-    func unsaveInsights(ids: [Int]) -> Single<Void>
-    func unsaveGlossaries(ids: [Int]) -> Single<Void>
-    func unsaveProcedures(ids: [Int]) -> Single<Void>
-    func unsaveDiseases(ids: [Int]) -> Single<Void>
+    func obtainRecipeDetails(id: String) -> Single<CatalogDetails?>
+    func obtainInsightDetails(id: String) -> Single<CatalogDetails?>
+    func obtainGlossaryDetails(id: String) -> Single<CatalogDetails?>
+    func obtainProcedureDetails(id: String) -> Single<CatalogDetails?>
+    func obtainDiseaseDetails(id: String) -> Single<CatalogDetails?>
+    func saveRecipe(id: String) -> Single<Void>
+    func saveInsight(id: String) -> Single<Void>
+    func saveGlossary(id: String) -> Single<Void>
+    func saveProcedure(id: String) -> Single<Void>
+    func saveDisease(id: String) -> Single<Void>
+    func unsaveRecipes(ids: [String]) -> Single<Void>
+    func unsaveInsights(ids: [String]) -> Single<Void>
+    func unsaveGlossaries(ids: [String]) -> Single<Void>
+    func unsaveProcedures(ids: [String]) -> Single<Void>
+    func unsaveDiseases(ids: [String]) -> Single<Void>
     func obtainBookmarksRecipes() -> Single<[Catalog]>
     func obtainBookmarksInsights() -> Single<[Catalog]>
     func obtainBookmarksGlossaries() -> Single<[Catalog]>
@@ -38,8 +38,8 @@ protocol CatalogManagerProtocol {
 
 final class CatalogManager {
     enum Constants {
-        static let recipesKey = "catalog_manager_glossaries_key"
-        static let insightsKey = "catalog_manager_glossaries_key"
+        static let recipesKey = "catalog_manager_recipes_key"
+        static let insightsKey = "catalog_manager_insights_key"
         static let glossariesKey = "catalog_manager_glossaries_key"
         static let proceduresKey = "catalog_manager_procedures_key"
         static let diseasesKey = "catalog_manager_diseases_key"
@@ -54,8 +54,15 @@ final class CatalogManager {
 extension CatalogManager: CatalogManagerProtocol {
     func obtainRecipes(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
-            let request = GetRecipesRequest(userToken: sessionManager.internalId, search: nil)
-            return loadCatalogs(request: request, storageKey: Constants.recipesKey)
+            let anonymousId = sessionManager.anonymousId
+            let internalId = sessionManager.internalId
+            
+            let request = GetRecipesRequest(
+                anonymousId: anonymousId,
+                internalId: (internalId == anonymousId) ? nil : internalId,
+                search: nil
+            )
+            return loadCatalogs(request: request, mapper: .hair, storageKey: Constants.recipesKey)
         } else {
             return cachedCatalogs(storageKey: Constants.recipesKey)
         }
@@ -63,8 +70,15 @@ extension CatalogManager: CatalogManagerProtocol {
     
     func obtainInsights(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
-            let request = GetInsightsRequest(userToken: sessionManager.internalId, search: nil)
-            return loadCatalogs(request: request, storageKey: Constants.insightsKey)
+            let anonymousId = sessionManager.anonymousId
+            let internalId = sessionManager.internalId
+            
+            let request = GetInsightsRequest(
+                anonymousId: anonymousId,
+                internalId: (internalId == anonymousId) ? nil : internalId,
+                search: nil
+            )
+            return loadCatalogs(request: request, mapper: .hair, storageKey: Constants.insightsKey)
         } else {
             return cachedCatalogs(storageKey: Constants.insightsKey)
         }
@@ -73,7 +87,7 @@ extension CatalogManager: CatalogManagerProtocol {
     func obtainGlossaries(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
             let request = GetGlossariesRequest(userToken: sessionManager.internalId, search: nil)
-            return loadCatalogs(request: request, storageKey: Constants.glossariesKey)
+            return loadCatalogs(request: request, mapper: .dermatology, storageKey: Constants.glossariesKey)
         } else {
             return cachedCatalogs(storageKey: Constants.glossariesKey)
         }
@@ -82,7 +96,7 @@ extension CatalogManager: CatalogManagerProtocol {
     func obtainProcedures(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
             let request = GetProceduresRequest(userToken: sessionManager.internalId, search: nil)
-            return loadCatalogs(request: request, storageKey: Constants.proceduresKey)
+            return loadCatalogs(request: request, mapper: .dermatology, storageKey: Constants.proceduresKey)
         } else {
             return cachedCatalogs(storageKey: Constants.proceduresKey)
         }
@@ -91,54 +105,75 @@ extension CatalogManager: CatalogManagerProtocol {
     func obtainDiseases(forceUpdate: Bool) -> Single<[Catalog]> {
         if forceUpdate {
             let request = GetDiseasesRequest(userToken: sessionManager.internalId, search: nil)
-            return loadCatalogs(request: request, storageKey: Constants.diseasesKey)
+            return loadCatalogs(request: request, mapper: .dermatology, storageKey: Constants.diseasesKey)
         } else {
             return cachedCatalogs(storageKey: Constants.diseasesKey)
         }
     }
     
-    func obtainRecipeDetails(id: Int) -> Single<CatalogDetails?> {
-        let request = GetRecipeDetailsRequest(userToken: sessionManager.internalId, id: id)
+    func obtainRecipeDetails(id: String) -> Single<CatalogDetails?> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = GetRecipeDetailsRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            id: id
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { CatalogDetails(response: $0) }
+            .map { CatalogDetails(response: $0, mapper: .hair) }
     }
     
-    func obtainInsightDetails(id: Int) -> Single<CatalogDetails?> {
-        let request = GetInsightDetailsRequest(userToken: sessionManager.internalId, id: id)
+    func obtainInsightDetails(id: String) -> Single<CatalogDetails?> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = GetInsightDetailsRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            id: id
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { CatalogDetails(response: $0) }
+            .map { CatalogDetails(response: $0, mapper: .hair) }
     }
     
-    func obtainGlossaryDetails(id: Int) -> Single<CatalogDetails?> {
+    func obtainGlossaryDetails(id: String) -> Single<CatalogDetails?> {
         let request = GetGlossaryDetailsRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { CatalogDetails(response: $0) }
+            .map { CatalogDetails(response: $0, mapper: .dermatology) }
     }
     
-    func obtainProcedureDetails(id: Int) -> Single<CatalogDetails?> {
+    func obtainProcedureDetails(id: String) -> Single<CatalogDetails?> {
         let request = GetProcedureDetailsRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { CatalogDetails(response: $0) }
+            .map { CatalogDetails(response: $0, mapper: .dermatology) }
     }
     
-    func obtainDiseaseDetails(id: Int) -> Single<CatalogDetails?> {
+    func obtainDiseaseDetails(id: String) -> Single<CatalogDetails?> {
         let request = GetDiseaseDetailsRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { CatalogDetails(response: $0) }
+            .map { CatalogDetails(response: $0, mapper: .dermatology) }
     }
     
-    func saveRecipe(id: Int) -> Single<Void> {
-        let request = SaveRecipeRequest(userToken: sessionManager.internalId, id: id)
+    func saveRecipe(id: String) -> Single<Void> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = SaveRecipeRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            id: id
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
@@ -148,8 +183,15 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func saveInsight(id: Int) -> Single<Void> {
-        let request = SaveInsightRequest(userToken: sessionManager.internalId, id: id)
+    func saveInsight(id: String) -> Single<Void> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = SaveInsightRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            id: id
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
@@ -159,7 +201,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func saveGlossary(id: Int) -> Single<Void> {
+    func saveGlossary(id: String) -> Single<Void> {
         let request = SaveGlossaryRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
@@ -170,7 +212,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func saveProcedure(id: Int) -> Single<Void> {
+    func saveProcedure(id: String) -> Single<Void> {
         let request = SaveProcedureRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
@@ -181,7 +223,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func saveDisease(id: Int) -> Single<Void> {
+    func saveDisease(id: String) -> Single<Void> {
         let request = SaveDiseaseRequest(userToken: sessionManager.internalId, id: id)
         
         return restAPITransport
@@ -192,8 +234,15 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func unsaveRecipes(ids: [Int]) -> Single<Void> {
-        let request = UnsaveRecipeRequest(userToken: sessionManager.internalId, ids: ids)
+    func unsaveRecipes(ids: [String]) -> Single<Void> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = UnsaveRecipeRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            ids: ids
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
@@ -203,8 +252,15 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func unsaveInsights(ids: [Int]) -> Single<Void> {
-        let request = UnsaveInsightRequest(userToken: sessionManager.internalId, ids: ids)
+    func unsaveInsights(ids: [String]) -> Single<Void> {
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = UnsaveInsightRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId,
+            ids: ids
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
@@ -214,7 +270,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func unsaveGlossaries(ids: [Int]) -> Single<Void> {
+    func unsaveGlossaries(ids: [String]) -> Single<Void> {
         let request = UnsaveGlossaryRequest(userToken: sessionManager.internalId, ids: ids)
         
         return restAPITransport
@@ -225,7 +281,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func unsaveProcedures(ids: [Int]) -> Single<Void> {
+    func unsaveProcedures(ids: [String]) -> Single<Void> {
         let request = UnsaveProcedureRequest(userToken: sessionManager.internalId, ids: ids)
         
         return restAPITransport
@@ -236,7 +292,7 @@ extension CatalogManager: CatalogManagerProtocol {
             })
     }
     
-    func unsaveDiseases(ids: [Int]) -> Single<Void> {
+    func unsaveDiseases(ids: [String]) -> Single<Void> {
         let request = UnsaveDiseaseRequest(userToken: sessionManager.internalId, ids: ids)
         
         return restAPITransport
@@ -248,19 +304,31 @@ extension CatalogManager: CatalogManagerProtocol {
     }
     
     func obtainBookmarksRecipes() -> Single<[Catalog]> {
-        let request = GetBookmarksRecipesRequest(userToken: sessionManager.internalId)
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = GetBookmarksRecipesRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: .hair) }
     }
     
     func obtainBookmarksInsights() -> Single<[Catalog]> {
-        let request = GetBookmarksInsightsRequest(userToken: sessionManager.internalId)
+        let anonymousId = sessionManager.anonymousId
+        let internalId = sessionManager.internalId
+        
+        let request = GetBookmarksInsightsRequest(
+            anonymousId: anonymousId,
+            internalId: (internalId == anonymousId) ? nil : internalId
+        )
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: .hair) }
     }
     
     func obtainBookmarksGlossaries() -> Single<[Catalog]> {
@@ -268,7 +336,7 @@ extension CatalogManager: CatalogManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: .dermatology) }
     }
     
     func obtainBookmarksProcedures() -> Single<[Catalog]> {
@@ -276,7 +344,7 @@ extension CatalogManager: CatalogManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: .dermatology) }
     }
     
     func obtainBookmarksDiseases() -> Single<[Catalog]> {
@@ -284,16 +352,16 @@ extension CatalogManager: CatalogManagerProtocol {
         
         return restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: .dermatology) }
     }
 }
 
 // MARK: Private
 private extension CatalogManager {
-    func loadCatalogs(request: APIRequestBody, storageKey: String) -> Single<[Catalog]> {
+    func loadCatalogs(request: APIRequestBody, mapper: Catalog.Mapper, storageKey: String) -> Single<[Catalog]> {
         restAPITransport
             .callServerApi(requestBody: request)
-            .map { Catalog.map(response: $0) }
+            .map { Catalog.map(response: $0, mapper: mapper) }
             .do(onSuccess: { catalogs in
                 guard let data = try? JSONEncoder().encode(catalogs) else { return }
                 

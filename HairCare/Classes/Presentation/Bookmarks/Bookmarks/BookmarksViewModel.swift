@@ -565,7 +565,7 @@ private extension BookmarksViewModel {
     
     func makeUnits(
         downloadTrigger: Signal<Void>,
-        removeTrigger: Signal<[Int]>,
+        removeTrigger: Signal<[String]>,
         source: @escaping () -> Single<[Catalog]>
     ) -> Driver<[Catalog]> {
         let download = downloadTrigger

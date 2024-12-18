@@ -6,29 +6,56 @@
 //
 
 struct Catalog: Codable, Hashable {
-    let id: Int
+    let id: String
     let name: String
     let saved: Bool
 }
 
 // MARK: Public
 extension Catalog {
-    static func map(response: Any) -> [Catalog] {
-        guard
-           let json = response as? [String: Any],
-           let data = json["_data"] as? [String: Any],
-           let drugs = data["drugs"] as? [[String: Any]]
-       else { return [] }
+    enum Mapper {
+        case dermatology
+        case hair
+    }
+    
+    static func map(response: Any, mapper: Mapper) -> [Catalog] {
+        let array: [[String: Any]] = {
+            guard let json = response as? [String: Any] else { return [] }
             
-        return drugs.compactMap { Catalog(json: $0) }
+            switch mapper {
+            case .dermatology:
+                guard
+                   let data = json["_data"] as? [String: Any],
+                   let drugs = data["drugs"] as? [[String: Any]]
+                else { return [] }
+                
+                return drugs
+            case .hair:
+                return json["body"] as? [[String: Any]] ?? []
+            }
+        }()
+        
+        return array.compactMap { Catalog(json: $0) }
     }
     
     init?(json: [String: Any]) {
         guard
-            let id = json["id"] as? Int,
+            let id: String = {
+                if let int = json["id"] as? Int {
+                    return String(int)
+                }
+                
+                if let string = json["id"] as? String {
+                    return string
+                }
+                
+                return nil
+            }(),
             let name = json["name"] as? String,
             let saved = json["saved"] as? Bool
-        else { return nil }
+        else {
+            return nil
+        }
         
         self.id = id
         self.name = name

@@ -8,12 +8,12 @@
 import Alamofire
 
 struct GetRecipesRequest: APIRequestBody {
-    let userToken: String
+    let anonymousId: String
+    let internalId: String?
     let search: String?
-
-    // TODO: заменить endpoint
+    
     var url: String {
-        GlobalDefinitions.dermatologyDomain + "/api/disease"
+        GlobalDefinitions.domain + "/api/v1/recipes"
     }
     
     var method: HTTPMethod {
@@ -21,15 +21,24 @@ struct GetRecipesRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        var params = [
-            "_api_key": GlobalDefinitions.dermatologyApiKey,
-            "_user_token": userToken
+        var params: Parameters = [
+            "anonymous_id": anonymousId
         ]
+        
+        if let internalId {
+            params["internal_id"] = internalId
+        }
         
         if let search = search {
             params["search"] = search
         }
         
         return params
+    }
+    
+    var headers: HTTPHeaders? {
+        [
+            "Access-Token": GlobalDefinitions.apiKey
+        ]
     }
 }

@@ -9,7 +9,7 @@ import Alamofire
 
 struct SaveDiseaseRequest: APIRequestBody {
     let userToken: String
-    let id: Int
+    let id: String
 
     var url: String {
         GlobalDefinitions.dermatologyDomain + "/api/disease/save"

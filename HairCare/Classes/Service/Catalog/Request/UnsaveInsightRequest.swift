@@ -8,24 +8,34 @@
 import Alamofire
 
 struct UnsaveInsightRequest: APIRequestBody {
-    let userToken: String
-    let ids: [Int]
+    let anonymousId: String
+    let internalId: String?
+    let ids: [String]
 
-    // TODO: заменить endpoint
     var url: String {
-        GlobalDefinitions.dermatologyDomain + "/api/disease/unsave"
+        GlobalDefinitions.domain + "/api/v1/insights/unsave"
     }
     
     var method: HTTPMethod {
         .post
     }
     
-    // TODO: заменить diseases_ids
     var parameters: Parameters? {
+        var params: Parameters = [
+            "anonymous_id": anonymousId,
+            "insights_ids": ids
+        ]
+        
+        if let internalId {
+            params["internal_id"] = internalId
+        }
+        
+        return params
+    }
+    
+    var headers: HTTPHeaders? {
         [
-            "_api_key": GlobalDefinitions.dermatologyApiKey,
-            "_user_token": userToken,
-            "diseases_ids": ids
+            "Access-Token": GlobalDefinitions.apiKey
         ]
     }
 }

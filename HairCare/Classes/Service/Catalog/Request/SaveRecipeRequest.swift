@@ -8,24 +8,34 @@
 import Alamofire
 
 struct SaveRecipeRequest: APIRequestBody {
-    let userToken: String
-    let id: Int
+    let anonymousId: String
+    let internalId: String?
+    let id: String
 
-    // TODO: заменить endpoint
     var url: String {
-        GlobalDefinitions.dermatologyDomain + "/api/disease/save"
+        GlobalDefinitions.domain + "/api/v1/recipes/save"
     }
     
     var method: HTTPMethod {
         .post
     }
     
-    // TODO: заменить disease_id
     var parameters: Parameters? {
+        var params: Parameters = [
+            "anonymous_id": anonymousId,
+            "recipes_id": id
+        ]
+        
+        if let internalId {
+            params["internal_id"] = internalId
+        }
+        
+        return params
+    }
+    
+    var headers: HTTPHeaders? {
         [
-            "_api_key": GlobalDefinitions.dermatologyApiKey,
-            "_user_token": userToken,
-            "disease_id": id
+            "Access-Token": GlobalDefinitions.apiKey
         ]
     }
 }
