@@ -25,7 +25,7 @@ final class GlobalDefinitions {
     static let contactUsUrl = URL(string: "https://thinkaboutapps.com/contact")!
     
     enum Paygate {
-        static let yearly = "app.haircare.yearly"
-        static let weekly = "app.haircare.weekly"
+        static let yearly = "mobile.hair.yearly"
+        static let weekly = "mobile.hair.weekly"
     }
 }
