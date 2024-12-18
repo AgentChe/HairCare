@@ -302,7 +302,7 @@
 /* Begin PBXFileReference section */
 		023F3B98CF483585080964AA /* Pods-HairCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HairCare.release.xcconfig"; path = "Target Support Files/Pods-HairCare/Pods-HairCare.release.xcconfig"; sourceTree = "<group>"; };
 		23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HairCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE7BCD242CEC64DF00ECD4FE /* HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HairCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile HairCare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7BCD3E2CEC64E700ECD4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7BCD3F2CEC64E700ECD4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -638,7 +638,7 @@
 		DE7BCD252CEC64DF00ECD4FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCD242CEC64DF00ECD4FE /* HairCare.app */,
+				DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1951,7 +1951,7 @@
 			);
 			name = HairCare;
 			productName = HairCare;
-			productReference = DE7BCD242CEC64DF00ECD4FE /* HairCare.app */;
+			productReference = DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2373,6 +2373,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mobile HairCare";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access to take photo for scan";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to select photo for scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2386,7 +2387,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Hair Care AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2414,6 +2415,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mobile HairCare";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access to take photo for scan";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to select photo for scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2427,7 +2429,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Hair Care AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
