@@ -114,6 +114,7 @@ private extension HomeAddReminderCell {
             .lineHeight(30.scale)
         
         let view = UILabel()
+        view.numberOfLines = 0
         view.attributedText = "Home.AddReminder.SubTitle".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

@@ -102,7 +102,7 @@
 "Home.OpenHistory.SubTitle" = "Check your scan results";
 "Home.OpenHistory.Button" = "Open history";
 "Home.AddReminder.Title" = "Set a notification";
-"Home.AddReminder.SubTitle" = "Schedule a treatment\nreminder";
+"Home.AddReminder.SubTitle" = "Schedule a hair care\nreminder";
 "Home.AddReminder.Button" = "Add event";
 "Home.Disclaimer.Title" = "Disclaimer";
 "Home.Disclaimer.Text.1" = "The information provided in this application";
@@ -214,7 +214,7 @@
 "Reminders.AddEvent" = "Tap plus to add an event.";
 "Reminders.SkinRescan.Title" = "HAIR RESCAN";
 "Reminders.Medication.Title" = "MEDICATION";
-"Reminders.HiarTreatment.Title" = "TREATMENT";
+"Reminders.HiarTreatment.Title" = "HAIR CARE";
 "Reminders.Trigger.EveryDay" = "Every day at %@";
 "Reminders.Trigger.EveryMinutes" = "Every %i minutes";
 "Reminders.Trigger.EveryHours" = "Every %i hours";
@@ -233,8 +233,8 @@
 // MARK: ChooseReminderEvent
 "ChooseReminderEvent.Title" = "Choose the event you want to log";
 "ChooseReminderEvent.Medication" = "Medication";
-"ChooseReminderEvent.SkinRescan" = "Skin rescan";
-"ChooseReminderEvent.HairTreatment" = "Hair treatment";
+"ChooseReminderEvent.SkinRescan" = "Hair rescan";
+"ChooseReminderEvent.HairTreatment" = "Hair care";
 
 // MARK: CreteMedication
 "CreteMedication.Create.Title" = "Create an event";
@@ -250,7 +250,7 @@
 // MARK: CreateReminder
 "CreateReminder.Medication" = "Medication";
 "CreateReminder.SkinRescan" = "Skin Rescan";
-"CreateReminder.HairTreatment" = "Hair treatment";
+"CreateReminder.HairTreatment" = "Hair care";
 "CreateReminder.Medication.Name.Placeholder" = "Medicine name";
 "CreateReminder.SkinRescan.Name.Placeholder" = "Title";
 "CreateReminder.HairTreatment.Name.Placeholder" = "Title";
