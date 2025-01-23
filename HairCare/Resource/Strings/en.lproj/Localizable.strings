@@ -184,6 +184,11 @@
 "AnalyseScanResult.Description" = "Description: ";
 "AnalyseScanResult.SaveButton" = "Save result";
 "AnalyseScanResult.SetNotificationButton" = "Set notification";
+"AnalyseScanResult.Disclaimer.1" = "The information provided in the app";
+"AnalyseScanResult.Disclaimer.2" = " MUST NOT ";
+"AnalyseScanResult.Disclaimer.3" = "be regarded as a replacement for a professional medical advice. ";
+"AnalyseScanResult.Disclaimer.4" = "Read more";
+"AnalyseScanResult.Disclaimer.5" = "\nThis product uses publicly available data form the U.S. National Library of Medicine (NLM) and the Centers for Disease Control and Prevention (CDC). ";
 
 // MARK: SaveAnalyseSetTitle
 "SaveAnalyseSetTitle.Title" = "Save result";
@@ -269,3 +274,17 @@
 "Repetitions.Hours" = "hours";
 "Repetitions.Days" = "days";
 "Repetitions.RemoveButton" = "Remove this event";
+
+// MARK: References
+"References.Title" = "References";
+"References.Text1" = "This product uses publicly available data from the U.S. National Library of Medicine (NLM) and the Centers for Disease Control and Prevention (CDC).";
+"References.Text2" = "Both CDC and NLM provide direct access to essential health and safety topics, scientific articles, data, and statistics, along with tools and resources.";
+"References.Text3" = "NLM and CDC are not responsible for the product and do not endorse or recommend this or any other product.";
+
+// MARK: Disclaimer
+"Disclaimer.Title" = "Disclaimer";
+"Disclaimer.Text1" = "The information provided in this application ";
+"Disclaimer.Text2" = "MUST NOT";
+"Disclaimer.Text3" = " be regarded as a replacement for a professional medical advice. All of the medical decisions you make ";
+"Disclaimer.Text4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
+"Disclaimer.Text5" = " who is able to take all of your conditions into account.";

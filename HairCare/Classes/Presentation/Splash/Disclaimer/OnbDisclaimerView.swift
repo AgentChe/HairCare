@@ -1,5 +1,5 @@
 //
-//  DisclaimerView.swift
+//  OnbDisclaimerView.swift
 //  ScinCare
 //
 //  Created by Андрей Чернышев on 21.10.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DisclaimerView: UIView {
+final class OnbDisclaimerView: UIView {
     enum ButtonTitle {
         case `continue`
         case ok
@@ -35,14 +35,14 @@ final class DisclaimerView: UIView {
 }
 
 // MARK: Private
-private extension DisclaimerView {
+private extension OnbDisclaimerView {
     func initialize() {
         backgroundColor = Appearance.main700
     }
 }
 
 // MARK: Make constraints
-private extension DisclaimerView {
+private extension OnbDisclaimerView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
@@ -73,7 +73,7 @@ private extension DisclaimerView {
 }
 
 // MARK: Lazy initialization
-private extension DisclaimerView {
+private extension OnbDisclaimerView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(Appearance.mono200)

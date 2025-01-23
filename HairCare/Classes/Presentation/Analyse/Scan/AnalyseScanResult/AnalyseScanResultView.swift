@@ -16,7 +16,6 @@ final class AnalyseScanResultView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var closeButton = makeCloseButton()
     lazy var tableView = makeTableView()
-    lazy var disclaimerLabel = makeDisclaimerLabel()
     lazy var actionButton = makeButton()
     lazy var preloader = makePreloader()
     
@@ -74,13 +73,7 @@ private extension AnalyseScanResultView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 2.scale),
-            tableView.bottomAnchor.constraint(equalTo: disclaimerLabel.topAnchor, constant: -2.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            disclaimerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            disclaimerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            disclaimerLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8.scale)
+            tableView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -2.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -131,39 +124,6 @@ private extension AnalyseScanResultView {
         view.backgroundColor = UIColor.clear
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeDisclaimerLabel() -> UILabel {
-        let bAttrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.5))
-            .font(Fonts.Roboto.bold(size: 14.scale))
-            .lineHeight(20.scale)
-            .textAlignment(.center)
-        let rAttrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.5))
-            .font(Fonts.Roboto.regular(size: 14.scale))
-            .lineHeight(20.scale)
-            .textAlignment(.center)
-        let underlineAttrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.5))
-            .font(Fonts.Roboto.regular(size: 14.scale))
-            .lineHeight(20.scale)
-            .textAlignment(.center)
-            .underlineColor(Appearance.mono200.withAlphaComponent(0.23))
-            .underlineStyle(.single)
-        
-        let result = NSMutableAttributedString()
-        result.append("Onboarding.BottomInfo1".localized.attributed(with: rAttrs))
-        result.append("Onboarding.BottomInfo2".localized.attributed(with: bAttrs))
-        result.append("Onboarding.BottomInfo3".localized.attributed(with: rAttrs))
-        result.append("Onboarding.BottomInfo4".localized.attributed(with: underlineAttrs))
-        
-        let view = UILabel()
-        view.attributedText = result
-        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

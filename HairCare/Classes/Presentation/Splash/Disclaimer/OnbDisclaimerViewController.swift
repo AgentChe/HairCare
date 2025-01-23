@@ -1,5 +1,5 @@
 //
-//  DisclaimerViewController.swift
+//  OnbDisclaimerViewController.swift
 //  ScinCare
 //
 //  Created by Андрей Чернышев on 21.10.2024.
@@ -8,8 +8,8 @@
 import UIKit
 import RxSwift
 
-final class DisclaimerViewController: UIViewController {
-    lazy var mainView = DisclaimerView(buttonTitle: .ok)
+final class OnbDisclaimerViewController: UIViewController {
+    lazy var mainView = OnbDisclaimerView(buttonTitle: .ok)
     
     private lazy var disposeBag = DisposeBag()
     
@@ -33,9 +33,9 @@ final class DisclaimerViewController: UIViewController {
 }
 
 // MARK: Make
-extension DisclaimerViewController {
-    static func make() -> DisclaimerViewController {
-        let vc = DisclaimerViewController()
+extension OnbDisclaimerViewController {
+    static func make() -> OnbDisclaimerViewController {
+        let vc = OnbDisclaimerViewController()
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

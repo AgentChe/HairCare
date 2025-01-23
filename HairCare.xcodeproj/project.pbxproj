@@ -10,6 +10,11 @@
 		4B79668BA3EE68BCF8C4D31C /* Pods_HairCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */; };
 		DE49F7AC2D425BE70007B601 /* HomeDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */; };
 		DE49F7AE2D425BEC0007B601 /* HomeDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */; };
+		DE49F7B02D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AF2D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift */; };
+		DE49F7B42D4298870007B601 /* ReferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7B32D4298870007B601 /* ReferencesViewController.swift */; };
+		DE49F7B62D42988B0007B601 /* ReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7B52D42988B0007B601 /* ReferencesView.swift */; };
+		DE49F7B92D42A0FF0007B601 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7B82D42A0FF0007B601 /* DisclaimerViewController.swift */; };
+		DE49F7BB2D42A1040007B601 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7BA2D42A1040007B601 /* DisclaimerView.swift */; };
 		DE7BCD492CEC64E700ECD4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */; };
 		DE7BCD4B2CEC64E700ECD4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD402CEC64E700ECD4FE /* LaunchScreen.storyboard */; };
 		DE7BCEE22CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEA42CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift */; };
@@ -63,7 +68,7 @@
 		DE7BCF132CEC66EC00ECD4FE /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEC52CEC66EC00ECD4FE /* ChatManager.swift */; };
 		DE7BCF152CEC66EC00ECD4FE /* ScanHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD892CEC66EC00ECD4FE /* ScanHistoryViewModel.swift */; };
 		DE7BCF162CEC66EC00ECD4FE /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD9F2CEC66EC00ECD4FE /* CameraService.swift */; };
-		DE7BCF172CEC66EC00ECD4FE /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE6A2CEC66EC00ECD4FE /* DisclaimerViewController.swift */; };
+		DE7BCF172CEC66EC00ECD4FE /* OnbDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE6A2CEC66EC00ECD4FE /* OnbDisclaimerViewController.swift */; };
 		DE7BCF182CEC66EC00ECD4FE /* PaygateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE7D2CEC66EC00ECD4FE /* PaygateInfoCell.swift */; };
 		DE7BCF192CEC66EC00ECD4FE /* GetBookmarksGlossariesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEA32CEC66EC00ECD4FE /* GetBookmarksGlossariesRequest.swift */; };
 		DE7BCF1A2CEC66EC00ECD4FE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD512CEC66EC00ECD4FE /* FirebaseManager.swift */; };
@@ -277,7 +282,7 @@
 		DE7BCFF02CEC66EC00ECD4FE /* SignError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD732CEC66EC00ECD4FE /* SignError.swift */; };
 		DE7BCFF12CEC66EC00ECD4FE /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE1C2CEC66EC00ECD4FE /* TabItemButton.swift */; };
 		DE7BCFF22CEC66EC00ECD4FE /* ScanHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD842CEC66EC00ECD4FE /* ScanHistoryTableView.swift */; };
-		DE7BCFF32CEC66EC00ECD4FE /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE692CEC66EC00ECD4FE /* DisclaimerView.swift */; };
+		DE7BCFF32CEC66EC00ECD4FE /* OnbDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE692CEC66EC00ECD4FE /* OnbDisclaimerView.swift */; };
 		DE7BCFF42CEC66EC00ECD4FE /* CreateChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEBE2CEC66EC00ECD4FE /* CreateChatResponse.swift */; };
 		DE7BCFF52CEC66EC00ECD4FE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE872CEC66EC00ECD4FE /* SplashView.swift */; };
 		DE7BCFF62CEC66EC00ECD4FE /* ChatMessagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEB82CEC66EC00ECD4FE /* ChatMessagesPage.swift */; };
@@ -306,6 +311,11 @@
 		23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HairCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerViewController.swift; sourceTree = "<group>"; };
 		DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerView.swift; sourceTree = "<group>"; };
+		DE49F7AF2D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseScanResultDisclaimerCell.swift; sourceTree = "<group>"; };
+		DE49F7B32D4298870007B601 /* ReferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesViewController.swift; sourceTree = "<group>"; };
+		DE49F7B52D42988B0007B601 /* ReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesView.swift; sourceTree = "<group>"; };
+		DE49F7B82D42A0FF0007B601 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
+		DE49F7BA2D42A1040007B601 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile HairCare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7BCD3E2CEC64E700ECD4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -495,8 +505,8 @@
 		DE7BCE642CEC66EC00ECD4FE /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 		DE7BCE652CEC66EC00ECD4FE /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		DE7BCE662CEC66EC00ECD4FE /* RemindersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewModel.swift; sourceTree = "<group>"; };
-		DE7BCE692CEC66EC00ECD4FE /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
-		DE7BCE6A2CEC66EC00ECD4FE /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
+		DE7BCE692CEC66EC00ECD4FE /* OnbDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbDisclaimerView.swift; sourceTree = "<group>"; };
+		DE7BCE6A2CEC66EC00ECD4FE /* OnbDisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbDisclaimerViewController.swift; sourceTree = "<group>"; };
 		DE7BCE6C2CEC66EC00ECD4FE /* OChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OChatView.swift; sourceTree = "<group>"; };
 		DE7BCE6D2CEC66EC00ECD4FE /* ODisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODisclaimerView.swift; sourceTree = "<group>"; };
 		DE7BCE6E2CEC66EC00ECD4FE /* OExploreSkinInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OExploreSkinInsightsView.swift; sourceTree = "<group>"; };
@@ -634,6 +644,35 @@
 			children = (
 				DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */,
 				DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */,
+			);
+			path = Disclaimer;
+			sourceTree = "<group>";
+		};
+		DE49F7B12D4298720007B601 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DE7BCE252CEC66EC00ECD4FE /* Views */,
+				DE7BCE272CEC66EC00ECD4FE /* MenuViewController.swift */,
+				DE7BCE282CEC66EC00ECD4FE /* MenuViewModel.swift */,
+				DE7BCE262CEC66EC00ECD4FE /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		DE49F7B22D42987A0007B601 /* References */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F7B32D4298870007B601 /* ReferencesViewController.swift */,
+				DE49F7B52D42988B0007B601 /* ReferencesView.swift */,
+			);
+			path = References;
+			sourceTree = "<group>";
+		};
+		DE49F7B72D42A0E80007B601 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F7B82D42A0FF0007B601 /* DisclaimerViewController.swift */,
+				DE49F7BA2D42A1040007B601 /* DisclaimerView.swift */,
 			);
 			path = Disclaimer;
 			sourceTree = "<group>";
@@ -936,6 +975,7 @@
 				DE7BCDB12CEC66EC00ECD4FE /* AnalyseScanResultImageCell.swift */,
 				DE7BCDB22CEC66EC00ECD4FE /* AnalyseScanResultNameCell.swift */,
 				DE7BCDB32CEC66EC00ECD4FE /* AnalyseScanResultRecommendationsCell.swift */,
+				DE49F7AF2D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1328,10 +1368,9 @@
 		DE7BCE292CEC66EC00ECD4FE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE252CEC66EC00ECD4FE /* Views */,
-				DE7BCE272CEC66EC00ECD4FE /* MenuViewController.swift */,
-				DE7BCE282CEC66EC00ECD4FE /* MenuViewModel.swift */,
-				DE7BCE262CEC66EC00ECD4FE /* MenuView.swift */,
+				DE49F7B72D42A0E80007B601 /* Disclaimer */,
+				DE49F7B22D42987A0007B601 /* References */,
+				DE49F7B12D4298720007B601 /* Menu */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1571,8 +1610,8 @@
 		DE7BCE6B2CEC66EC00ECD4FE /* Disclaimer */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCE6A2CEC66EC00ECD4FE /* DisclaimerViewController.swift */,
-				DE7BCE692CEC66EC00ECD4FE /* DisclaimerView.swift */,
+				DE7BCE6A2CEC66EC00ECD4FE /* OnbDisclaimerViewController.swift */,
+				DE7BCE692CEC66EC00ECD4FE /* OnbDisclaimerView.swift */,
 			);
 			path = Disclaimer;
 			sourceTree = "<group>";
@@ -2108,12 +2147,15 @@
 				DE7BCF082CEC66EC00ECD4FE /* CDTableTitleCell.swift in Sources */,
 				DE7BCF092CEC66EC00ECD4FE /* CatalogDetailsView.swift in Sources */,
 				DE7BCF0A2CEC66EC00ECD4FE /* OnboardingView.swift in Sources */,
+				DE49F7B62D42988B0007B601 /* ReferencesView.swift in Sources */,
 				DE7BCF0B2CEC66EC00ECD4FE /* CMRReminderView.swift in Sources */,
 				DE7BCF0C2CEC66EC00ECD4FE /* ChatsTableSection.swift in Sources */,
+				DE49F7B92D42A0FF0007B601 /* DisclaimerViewController.swift in Sources */,
 				DE7BCF0D2CEC66EC00ECD4FE /* CDCView.swift in Sources */,
 				DE7BD00E2CEC9A5400ECD4FE /* GetRecipeDetailsRequest.swift in Sources */,
 				DE7BCF0E2CEC66EC00ECD4FE /* RepetitionsViewController.swift in Sources */,
 				DE7BCF0F2CEC66EC00ECD4FE /* CRHeaderView.swift in Sources */,
+				DE49F7B02D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift in Sources */,
 				DE7BCF102CEC66EC00ECD4FE /* RepetitionEveryDayViewController.swift in Sources */,
 				DE7BCF112CEC66EC00ECD4FE /* AnalyseScanResultDescriptionCell.swift in Sources */,
 				DE7BD0122CEC9AC100ECD4FE /* GetRecipesRequest.swift in Sources */,
@@ -2121,7 +2163,7 @@
 				DE7BCF132CEC66EC00ECD4FE /* ChatManager.swift in Sources */,
 				DE7BCF152CEC66EC00ECD4FE /* ScanHistoryViewModel.swift in Sources */,
 				DE7BCF162CEC66EC00ECD4FE /* CameraService.swift in Sources */,
-				DE7BCF172CEC66EC00ECD4FE /* DisclaimerViewController.swift in Sources */,
+				DE7BCF172CEC66EC00ECD4FE /* OnbDisclaimerViewController.swift in Sources */,
 				DE7BCF182CEC66EC00ECD4FE /* PaygateInfoCell.swift in Sources */,
 				DE7BCF192CEC66EC00ECD4FE /* GetBookmarksGlossariesRequest.swift in Sources */,
 				DE7BCF1A2CEC66EC00ECD4FE /* FirebaseManager.swift in Sources */,
@@ -2170,6 +2212,7 @@
 				DE7BCF442CEC66EC00ECD4FE /* UnsaveDiseaseRequest.swift in Sources */,
 				DE7BCF452CEC66EC00ECD4FE /* MenuViewController.swift in Sources */,
 				DE7BCF462CEC66EC00ECD4FE /* AnalyseImageResizeViewController.swift in Sources */,
+				DE49F7B42D4298870007B601 /* ReferencesViewController.swift in Sources */,
 				DE7BCF472CEC66EC00ECD4FE /* CDTableSeparatorCell.swift in Sources */,
 				DE7BCF482CEC66EC00ECD4FE /* ScanHistoryView.swift in Sources */,
 				DE7BCF492CEC66EC00ECD4FE /* HomeView.swift in Sources */,
@@ -2243,6 +2286,7 @@
 				DE7BCF8B2CEC66EC00ECD4FE /* PaygateActionsView.swift in Sources */,
 				DE7BCF8C2CEC66EC00ECD4FE /* AnalyseScanResultViewController.swift in Sources */,
 				DE7BCF8D2CEC66EC00ECD4FE /* CatalogSection.swift in Sources */,
+				DE49F7BB2D42A1040007B601 /* DisclaimerView.swift in Sources */,
 				DE7BCF8E2CEC66EC00ECD4FE /* SASTInputField.swift in Sources */,
 				DE7BCF8F2CEC66EC00ECD4FE /* ProfileCreateRequest.swift in Sources */,
 				DE7BCF902CEC66EC00ECD4FE /* ReminderCalendarDayCell.swift in Sources */,
@@ -2341,7 +2385,7 @@
 				DE7BCFF02CEC66EC00ECD4FE /* SignError.swift in Sources */,
 				DE7BCFF12CEC66EC00ECD4FE /* TabItemButton.swift in Sources */,
 				DE7BCFF22CEC66EC00ECD4FE /* ScanHistoryTableView.swift in Sources */,
-				DE7BCFF32CEC66EC00ECD4FE /* DisclaimerView.swift in Sources */,
+				DE7BCFF32CEC66EC00ECD4FE /* OnbDisclaimerView.swift in Sources */,
 				DE7BCFF42CEC66EC00ECD4FE /* CreateChatResponse.swift in Sources */,
 				DE7BCFF52CEC66EC00ECD4FE /* SplashView.swift in Sources */,
 				DE7BCFF62CEC66EC00ECD4FE /* ChatMessagesPage.swift in Sources */,
@@ -2381,11 +2425,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2402,10 +2444,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair.dev;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Hair Care AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2423,11 +2464,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
@@ -2444,10 +2483,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair.dev;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Hair Care AppStore";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

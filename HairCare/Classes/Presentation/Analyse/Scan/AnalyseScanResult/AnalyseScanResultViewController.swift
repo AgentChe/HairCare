@@ -61,15 +61,10 @@ final class AnalyseScanResultViewController: UIViewController {
             return self.open(error: error)
         }
         
-        let disclaimerTapGesture = UITapGestureRecognizer()
-        mainView.disclaimerLabel.isUserInteractionEnabled = true
-        mainView.disclaimerLabel.addGestureRecognizer(disclaimerTapGesture)
-        
         let output = viewModel.configure(input: AnalyseScanResultViewModel.Input(
             didTapClose: mainView.closeButton.rx.tap.asSignal(),
-            didTapDisclaimer: disclaimerTapGesture.rx.event
-                .mapToVoid()
-                .asSignal(onErrorSignalWith: .never()),
+            didTapDisclaimer: mainView.tableView.didTapDisclaimer,
+            didTapReferences: mainView.tableView.didTapReferences,
             didTapAction: mainView.actionButton.rx.tap.asSignal()
         ))
         
@@ -140,7 +135,10 @@ private extension AnalyseScanResultViewController {
             complete(.close)
         case .disclaimer:
             let vc = DisclaimerViewController.make()
-            present(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
+        case .references:
+            let vc = ReferencesViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .save(let saveData):
             complete(.save(saveData))
         case .setNotification(let analyseId):

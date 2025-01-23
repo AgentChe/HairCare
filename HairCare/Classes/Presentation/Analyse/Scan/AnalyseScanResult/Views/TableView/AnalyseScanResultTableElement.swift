@@ -14,4 +14,5 @@ enum AnalyseScanResultTableElement {
     case conclusion(AnalyseScanConclusion)
     case recommendations([AnalyseScanRecommendation])
     case description(String)
+    case disclaimer
 }

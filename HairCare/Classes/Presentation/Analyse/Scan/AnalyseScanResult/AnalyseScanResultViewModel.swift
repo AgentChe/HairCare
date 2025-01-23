@@ -12,6 +12,7 @@ final class AnalyseScanResultViewModel {
     enum Route {
         case close
         case disclaimer
+        case references
         case save(AnalyseScanResultViewController.SaveData)
         case setNotification(String)
     }
@@ -40,6 +41,7 @@ extension AnalyseScanResultViewModel {
     struct Input {
         let didTapClose: Signal<Void>
         let didTapDisclaimer: Signal<Void>
+        let didTapReferences: Signal<Void>
         let didTapAction: Signal<Void>
     }
     
@@ -61,6 +63,7 @@ extension AnalyseScanResultViewModel {
             route: makeRoute(
                 didTapClose: input.didTapClose,
                 didTapDisclaimer: input.didTapDisclaimer,
+                didTapReferences: input.didTapReferences,
                 didTapAction: input.didTapAction,
                 scanResult: scanResult,
                 actionButtonState: actionButtonState
@@ -96,6 +99,8 @@ private extension AnalyseScanResultViewModel {
                 if let description = scanResult.description {
                     result.append(.description(description))
                 }
+                
+                result.append(.disclaimer)
                 
                 return result
             }
@@ -153,6 +158,7 @@ private extension AnalyseScanResultViewModel {
     func makeRoute(
         didTapClose: Signal<Void>,
         didTapDisclaimer: Signal<Void>,
+        didTapReferences: Signal<Void>,
         didTapAction: Signal<Void>,
         scanResult: Driver<AnalyseScanResult>,
         actionButtonState: Driver<AnalyseScanResultView.ActionButton>
@@ -163,6 +169,10 @@ private extension AnalyseScanResultViewModel {
         
         let disclaimer = didTapDisclaimer
             .map { Route.disclaimer }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let references = didTapReferences
+            .map { Route.references }
             .asDriver(onErrorDriveWith: .never())
         
         let action = didTapAction
@@ -186,6 +196,6 @@ private extension AnalyseScanResultViewModel {
             }
         
         return Driver
-            .merge(close, disclaimer, action)
+            .merge(close, disclaimer, references, action)
     }
 }

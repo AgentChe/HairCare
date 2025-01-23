@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class AnalyseScanResultTableView: UITableView {
     private lazy var elements = [AnalyseScanResultTableElement]()
+    
+    private lazy var didTapDisclaimerTrigger = PublishRelay<Void>()
+    private lazy var didTapReferencesTrigger = PublishRelay<Void>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -27,6 +32,14 @@ extension AnalyseScanResultTableView {
         self.elements = elements
         
         reloadData()
+    }
+    
+    var didTapDisclaimer: Signal<Void> {
+        didTapDisclaimerTrigger.asSignal()
+    }
+    
+    var didTapReferences: Signal<Void> {
+        didTapReferencesTrigger.asSignal()
     }
 }
 
@@ -62,6 +75,15 @@ extension AnalyseScanResultTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: AnalyseScanResultDescriptionCell.self)) as! AnalyseScanResultDescriptionCell
             cell.setup(element: element)
             return cell
+        case .disclaimer:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: AnalyseScanResultDisclaimerCell.self)) as! AnalyseScanResultDisclaimerCell
+            cell.didTapDisclaimer = { [weak self] in
+                self?.didTapDisclaimerTrigger.accept(Void())
+            }
+            cell.didTapReferences = { [weak self] in
+                self?.didTapReferencesTrigger.accept(Void())
+            }
+            return cell
         }
     }
 }
@@ -82,6 +104,7 @@ private extension AnalyseScanResultTableView {
         register(AnalyseScanResultConclusionCell.self, forCellReuseIdentifier: String(describing: AnalyseScanResultConclusionCell.self))
         register(AnalyseScanResultRecommendationsCell.self, forCellReuseIdentifier: String(describing: AnalyseScanResultRecommendationsCell.self))
         register(AnalyseScanResultDescriptionCell.self, forCellReuseIdentifier: String(describing: AnalyseScanResultDescriptionCell.self))
+        register(AnalyseScanResultDisclaimerCell.self, forCellReuseIdentifier: String(describing: AnalyseScanResultDisclaimerCell.self))
         
         dataSource = self
         delegate = self 

@@ -60,7 +60,7 @@ private extension MenuViewController {
         case .back:
             navigationController?.popViewController(animated: true)
         case .disclaimer:
-            let vc = DisclaimerViewController.make()
+            let vc = OnbDisclaimerViewController.make()
             present(vc, animated: true)
         case .open(let url):
             UIApplication.shared.open(url)

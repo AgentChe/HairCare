@@ -18,7 +18,7 @@ final class OnboardingViewController: UIViewController {
         markAsViewed()
         goNext()
     }, didTapReadMore: { [weak self] in
-        let vc = DisclaimerViewController.make()
+        let vc = OnbDisclaimerViewController.make()
         self?.present(vc, animated: true)
     })
     
