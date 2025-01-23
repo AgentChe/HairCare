@@ -12,6 +12,7 @@ final class MenuViewModel {
     enum Route {
         case back
         case disclaimer
+        case references
         case open(URL)
     }
 }
@@ -50,6 +51,8 @@ private extension MenuViewModel {
         let menuRoute = didTapMenuRoute
             .map { menuRoute -> Route in
                 switch menuRoute {
+                case .references:
+                    return .references
                 case .disclaimer:
                     return .disclaimer
                 case .termsOfUse:

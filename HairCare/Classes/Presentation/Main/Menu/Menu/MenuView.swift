@@ -10,6 +10,7 @@ import UIKit
 final class MenuView: UIView {
     lazy var backButton = makeBackButton()
     lazy var titleLabel = makeTitleLabel()
+    lazy var referencesButton = makeRouteButton(route: .references)
     lazy var disclaimerButton = makeRouteButton(route: .disclaimer)
     lazy var termsOfUseButton = makeRouteButton(route: .termsOfUse)
     lazy var privacyPolicyButton = makeRouteButton(route: .privacyPolicy)
@@ -50,9 +51,16 @@ private extension MenuView {
         ])
         
         NSLayoutConstraint.activate([
+            referencesButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            referencesButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            referencesButton.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 49.scale),
+            referencesButton.heightAnchor.constraint(equalToConstant: 44.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             disclaimerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             disclaimerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            disclaimerButton.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 49.scale),
+            disclaimerButton.topAnchor.constraint(equalTo: referencesButton.bottomAnchor, constant: 24.scale),
             disclaimerButton.heightAnchor.constraint(equalToConstant: 44.scale)
         ])
         

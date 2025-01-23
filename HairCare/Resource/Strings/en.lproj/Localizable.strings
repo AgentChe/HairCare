@@ -113,6 +113,7 @@
 
 // MARK: Menu
 "Menu.Title" = "Menu";
+"Menu.References" = "References";
 "Menu.Disclaimer" = "Disclaimer";
 "Menu.TermsOfUse" = "Terms of Use";
 "Menu.PrivacyPolicy" = "Privacy Policy";

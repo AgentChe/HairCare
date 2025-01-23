@@ -25,6 +25,7 @@ final class MenuViewController: UIViewController {
         
         let menuRoute = Signal<MenuRouteButton.Route>
             .merge(
+                mainView.referencesButton.rx.tap.asSignal().map { .references },
                 mainView.disclaimerButton.rx.tap.asSignal().map { .disclaimer },
                 mainView.termsOfUseButton.rx.tap.asSignal().map { .termsOfUse },
                 mainView.privacyPolicyButton.rx.tap.asSignal().map { .privacyPolicy },
@@ -59,9 +60,12 @@ private extension MenuViewController {
         switch route {
         case .back:
             navigationController?.popViewController(animated: true)
+        case .references:
+            let vc = ReferencesViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .disclaimer:
-            let vc = OnbDisclaimerViewController.make()
-            present(vc, animated: true)
+            let vc = DisclaimerViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .open(let url):
             UIApplication.shared.open(url)
         }

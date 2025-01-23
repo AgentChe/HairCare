@@ -9,7 +9,7 @@ import UIKit
 
 final class MenuRouteButton: UIButton {
     enum Route {
-        case disclaimer, termsOfUse, privacyPolicy, support
+        case references, disclaimer, termsOfUse, privacyPolicy, support
     }
     
     lazy var label = makeLabel()
@@ -86,6 +86,8 @@ private extension MenuRouteButton {
 private extension MenuRouteButton.Route {
     var title: String {
         switch self {
+        case .references:
+            return "Menu.References".localized
         case .disclaimer:
             return "Menu.Disclaimer".localized
         case .termsOfUse:
@@ -101,7 +103,7 @@ private extension MenuRouteButton.Route {
         switch self {
         case .support:
             return true
-        case .disclaimer, .termsOfUse, .privacyPolicy:
+        case .references, .disclaimer, .termsOfUse, .privacyPolicy:
             return false
         }
     }
