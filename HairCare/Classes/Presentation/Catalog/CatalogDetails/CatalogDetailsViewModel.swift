@@ -10,7 +10,7 @@ import RxCocoa
 
 final class CatalogDetailsViewModel {
     enum Route {
-        case back, paygate
+        case back, paygate, disclaimer, references
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
@@ -37,6 +37,8 @@ extension CatalogDetailsViewModel {
     struct Input {
         let didTapBack: Signal<Void>
         let didTapMark: Signal<Bool>
+        let didTapDisclaimer: Signal<Void>
+        let didTapReferences: Signal<Void>
     }
     
     struct Output {
@@ -66,7 +68,11 @@ extension CatalogDetailsViewModel {
             ),
             sections: makeSections(catalogDetails: catalogDetails),
             activity: activity.asDriver(),
-            route: makeRoute(didTapBack: input.didTapBack),
+            route: makeRoute(
+                didTapBack: input.didTapBack,
+                didTapDisclaimer: input.didTapDisclaimer,
+                didTapReferences: input.didTapReferences
+            ),
             disposable: canSave.drive()
         )
     }
@@ -236,7 +242,11 @@ private extension CatalogDetailsViewModel {
             }
     }
     
-    func makeRoute(didTapBack: Signal<Void>) -> Driver<Route> {
+    func makeRoute(
+        didTapBack: Signal<Void>,
+        didTapDisclaimer: Signal<Void>,
+        didTapReferences: Signal<Void>
+    ) -> Driver<Route> {
         let back = didTapBack
             .map { Route.back }
             .asDriver(onErrorDriveWith: .never())
@@ -245,8 +255,16 @@ private extension CatalogDetailsViewModel {
             .map { Route.paygate }
             .asDriver(onErrorDriveWith: .never())
         
+        let disclaimer = didTapDisclaimer
+            .map { Route.disclaimer }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let references = didTapReferences
+            .map { Route.references }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(back, paygate)
+            .merge(back, paygate, disclaimer, references)
     }
     
     func makeCanSave(

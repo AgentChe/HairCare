@@ -15,6 +15,7 @@
 		DE49F7B62D42988B0007B601 /* ReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7B52D42988B0007B601 /* ReferencesView.swift */; };
 		DE49F7B92D42A0FF0007B601 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7B82D42A0FF0007B601 /* DisclaimerViewController.swift */; };
 		DE49F7BB2D42A1040007B601 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7BA2D42A1040007B601 /* DisclaimerView.swift */; };
+		DE49F7BD2D42ACF30007B601 /* CatalogDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7BC2D42ACF30007B601 /* CatalogDisclaimerView.swift */; };
 		DE7BCD492CEC64E700ECD4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */; };
 		DE7BCD4B2CEC64E700ECD4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD402CEC64E700ECD4FE /* LaunchScreen.storyboard */; };
 		DE7BCEE22CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEA42CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift */; };
@@ -316,6 +317,7 @@
 		DE49F7B52D42988B0007B601 /* ReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesView.swift; sourceTree = "<group>"; };
 		DE49F7B82D42A0FF0007B601 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		DE49F7BA2D42A1040007B601 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		DE49F7BC2D42ACF30007B601 /* CatalogDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDisclaimerView.swift; sourceTree = "<group>"; };
 		DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile HairCare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7BCD3E2CEC64E700ECD4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1146,6 +1148,7 @@
 			children = (
 				DE7BCDE42CEC66EC00ECD4FE /* TableView */,
 				DE7BCDE52CEC66EC00ECD4FE /* CatalogsSearchField.swift */,
+				DE49F7BC2D42ACF30007B601 /* CatalogDisclaimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2313,6 +2316,7 @@
 				DE7BCFA62CEC66EC00ECD4FE /* RemindersViewModel.swift in Sources */,
 				DE7BCFA72CEC66EC00ECD4FE /* DermatologySyncTokensRequest.swift in Sources */,
 				DE7BD00A2CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift in Sources */,
+				DE49F7BD2D42ACF30007B601 /* CatalogDisclaimerView.swift in Sources */,
 				DE7BCFA82CEC66EC00ECD4FE /* SceneDelegate.swift in Sources */,
 				DE7BCFA92CEC66EC00ECD4FE /* Collection+Extension.swift in Sources */,
 				DE7BCFAA2CEC66EC00ECD4FE /* CMRView.swift in Sources */,

@@ -41,7 +41,9 @@ final class CatalogsViewController: UIViewController {
         let output = viewModel.configure(input: CatalogsViewModel.Input(
             didTapBack: mainView.backButton.rx.tap.asSignal(),
             didSearch: mainView.searchField.changedText,
-            didSelect: mainView.tableView.didSelect
+            didSelect: mainView.tableView.didSelect,
+            didTapDisclaimer: mainView.disclaimerView.didTapDisclaimer,
+            didTapReferences: mainView.disclaimerView.didTapReferences
         ))
         
         output.elements
@@ -95,6 +97,12 @@ private extension CatalogsViewController {
                 let vc = CatalogDetailsViewController.make(item: detailsItem, catalog: element.catalog)
                 navigationController?.pushViewController(vc, animated: true)
             }
+        case .disclaimer:
+            let vc = DisclaimerViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .references:
+            let vc = ReferencesViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

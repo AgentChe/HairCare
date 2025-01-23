@@ -53,7 +53,9 @@ final class CatalogDetailsViewController: UIViewController {
         
         let output = viewModel.configure(input: CatalogDetailsViewModel.Input(
             didTapBack: mainView.backButton.rx.tap.asSignal(),
-            didTapMark: didTapMarkedTrigger.asSignal()
+            didTapMark: didTapMarkedTrigger.asSignal(),
+            didTapDisclaimer: mainView.disclaimerView.didTapDisclaimer,
+            didTapReferences: mainView.disclaimerView.didTapReferences
         ))
         
         let marked = output.marked
@@ -126,6 +128,12 @@ private extension CatalogDetailsViewController {
         case .paygate:
             let vc = PaygateViewController.make()
             present(vc, animated: true)
+        case .disclaimer:
+            let vc = DisclaimerViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .references:
+            let vc = ReferencesViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

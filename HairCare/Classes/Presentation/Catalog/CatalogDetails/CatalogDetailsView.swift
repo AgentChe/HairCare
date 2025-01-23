@@ -13,6 +13,7 @@ final class CatalogDetailsView: UIView {
     lazy var bookmarkButton = makeBookmarkButton()
     lazy var tableView = makeTableView()
     lazy var preloader = makePreloader()
+    lazy var disclaimerView = makeDisclaimerView()
     
     private let title: String
     
@@ -71,12 +72,18 @@ private extension CatalogDetailsView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 2.scale),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: disclaimerView.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
             preloader.centerXAnchor.constraint(equalTo: centerXAnchor),
             preloader.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            disclaimerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            disclaimerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            disclaimerView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
@@ -129,6 +136,13 @@ private extension CatalogDetailsView {
         let view = UIActivityIndicatorView()
         view.color = Appearance.mono200
         view.style = .large
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeDisclaimerView() -> CatalogDisclaimerView {
+        let view = CatalogDisclaimerView()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

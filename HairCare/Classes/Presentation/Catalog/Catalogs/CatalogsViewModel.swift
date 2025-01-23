@@ -12,6 +12,8 @@ final class CatalogsViewModel {
     enum Route {
         case back
         case details(CatalogsTableElement)
+        case disclaimer
+        case references
     }
     
     private let item: Driver<CatalogsViewController.Item>
@@ -29,6 +31,8 @@ extension CatalogsViewModel {
         let didTapBack: Signal<Void>
         let didSearch: Signal<String>
         let didSelect: Signal<CatalogsTableElement>
+        let didTapDisclaimer: Signal<Void>
+        let didTapReferences: Signal<Void>
     }
     
     struct Output {
@@ -45,7 +49,9 @@ extension CatalogsViewModel {
             ),
             route: makeRoute(
                 didTapBack: input.didTapBack,
-                didSelect: input.didSelect
+                didSelect: input.didSelect,
+                didTapDisclaimer: input.didTapDisclaimer,
+                didTapReferences: input.didTapReferences
             )
         )
     }
@@ -114,7 +120,9 @@ private extension CatalogsViewModel {
     
     func makeRoute(
         didTapBack: Signal<Void>,
-        didSelect: Signal<CatalogsTableElement>
+        didSelect: Signal<CatalogsTableElement>,
+        didTapDisclaimer: Signal<Void>,
+        didTapReferences: Signal<Void>
     ) -> Driver<Route> {
         let back = didTapBack
             .map { Route.back }
@@ -124,8 +132,16 @@ private extension CatalogsViewModel {
             .map { Route.details($0) }
             .asDriver(onErrorDriveWith: .never())
         
+        let disclaimer = didTapDisclaimer
+            .map { Route.disclaimer }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let references = didTapReferences
+            .map { Route.references }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(back, details)
+            .merge(back, details, disclaimer, references)
     }
     
     func makeActiveSubscription() -> Driver<Bool> {

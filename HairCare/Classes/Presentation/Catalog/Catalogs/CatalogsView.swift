@@ -12,6 +12,7 @@ final class CatalogsView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var searchField = makeSearchField()
     lazy var tableView = makeTableView()
+    lazy var disclaimerView = makeDisclaimerView()
     
     private let title: String
     
@@ -61,7 +62,13 @@ private extension CatalogsView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 2.scale),
-            tableView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor)
+            tableView.bottomAnchor.constraint(equalTo: disclaimerView.topAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            disclaimerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            disclaimerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            disclaimerView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
@@ -107,6 +114,13 @@ private extension CatalogsView {
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
         view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeDisclaimerView() -> CatalogDisclaimerView {
+        let view = CatalogDisclaimerView()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
