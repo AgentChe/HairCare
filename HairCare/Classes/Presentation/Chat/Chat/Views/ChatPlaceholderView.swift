@@ -11,6 +11,8 @@ final class ChatPlaceholderView: UIView {
     lazy var imageView = makeImageView()
     lazy var titleLabel = makeTitleLabel()
     lazy var subTitleLabel = makeSubTitleLabel()
+    lazy var separator = makeSeparator()
+    lazy var disclaimerView = makeDisclaimerView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,8 +52,21 @@ private extension ChatPlaceholderView {
         NSLayoutConstraint.activate([
             subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4.scale),
-            subTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            separator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            separator.heightAnchor.constraint(equalToConstant: 1.scale),
+            separator.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 24.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            disclaimerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            disclaimerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            disclaimerView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 24.scale),
+            disclaimerView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
@@ -91,6 +106,21 @@ private extension ChatPlaceholderView {
         let view = UILabel()
         view.numberOfLines = 0
         view.attributedText = "Chat.Placeholder.SubTitle".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSeparator() -> UIView {
+        let view = UIView()
+        view.backgroundColor = Appearance.mono200.withAlphaComponent(0.1)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeDisclaimerView() -> CatalogDisclaimerView {
+        let view = CatalogDisclaimerView(withSeparator: false)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

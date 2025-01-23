@@ -13,6 +13,8 @@ final class ChatViewModel {
     
     enum Route {
         case history
+        case disclaimer
+        case references
     }
     
     enum DisplayInput {
@@ -51,11 +53,15 @@ extension ChatViewModel {
         let didTapRegenerate: Signal<DataForSendMessage>
         let didTapCopy: Signal<String>
         let didTapRefresh: Signal<ChatTableAnswerElement>
+        let didTapDisclaimer: Signal<Void>
+        let didTapReferences: Signal<Void>
+        let inputFocusChanged: Signal<Bool>
     }
     
     struct Output {
         let route: Driver<Route>
         let action: Driver<Action>
+        let disclaimerHidden: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
@@ -68,7 +74,11 @@ extension ChatViewModel {
         let chatId = makeChatId(mode: mode)
         
         return Output(
-            route: makeRoute(didTapHistory: input.didTapHistory),
+            route: makeRoute(
+                didTapHistory: input.didTapHistory,
+                didTapDisclaimer: input.didTapDisclaimer,
+                didTapReferences: input.didTapReferences
+            ),
             action: makeAction(
                 mode: mode,
                 chatId: chatId,
@@ -77,7 +87,10 @@ extension ChatViewModel {
                 didTapCopy: input.didTapCopy,
                 didTapRefresh: input.didTapRefresh,
                 didScrollToTop: input.didScrollToTop
-            )
+            ),
+            disclaimerHidden: input.inputFocusChanged
+                .map { $0 }
+                .asDriver(onErrorDriveWith: .never())
         )
     }
 }
@@ -88,10 +101,25 @@ private extension ChatViewModel {
         case newChat, history(Chat)
     }
     
-    func makeRoute(didTapHistory: Signal<Void>) -> Driver<Route> {
-        didTapHistory
+    func makeRoute(
+        didTapHistory: Signal<Void>,
+        didTapDisclaimer: Signal<Void>,
+        didTapReferences: Signal<Void>
+    ) -> Driver<Route> {
+        let history = didTapHistory
             .map { Route.history }
             .asDriver(onErrorDriveWith: .never())
+        
+        let disclaimer = didTapDisclaimer
+            .map { Route.disclaimer }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let references = didTapReferences
+            .map { Route.references }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(history, disclaimer, references)
     }
     
     func makeMode(

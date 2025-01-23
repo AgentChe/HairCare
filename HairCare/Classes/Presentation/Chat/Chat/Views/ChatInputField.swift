@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ChatInputField: UIView {
     lazy var textField = makeTextField()
     lazy var sendButton = makeSendButton()
+    
+    private lazy var focusChangedTrigger = PublishRelay<Bool>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +27,23 @@ final class ChatInputField: UIView {
     }
 }
 
+// MARK: Public
+extension ChatInputField {
+    var focusChanged: Signal<Bool> {
+        focusChangedTrigger.asSignal()
+    }
+}
+
 // MARK: UITextFieldDelegate
 extension ChatInputField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        focusChangedTrigger.accept(true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        focusChangedTrigger.accept(false)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

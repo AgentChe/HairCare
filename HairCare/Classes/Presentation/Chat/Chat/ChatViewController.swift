@@ -37,6 +37,7 @@ final class ChatViewController: UIViewController {
         mainView.tableView
             .didChangeElementsCount
             .emit(to: Binder(mainView) { base, count in
+                base.startNewChatButton.isHidden = (count == 0)
                 base.placeholderView.isHidden = (count > 0)
                 base.tableView.isHidden = (count == 0)
             })
@@ -62,7 +63,10 @@ final class ChatViewController: UIViewController {
             didSendMessage: didSendMessage,
             didTapRegenerate: didTapRegenerate,
             didTapCopy: mainView.tableView.didCopy,
-            didTapRefresh: mainView.tableView.didRefresh
+            didTapRefresh: mainView.tableView.didRefresh,
+            didTapDisclaimer: mainView.placeholderView.disclaimerView.didTapDisclaimer,
+            didTapReferences: mainView.placeholderView.disclaimerView.didTapReferences,
+            inputFocusChanged: mainView.inputField.focusChanged
         ))
         
         output.route
@@ -74,6 +78,13 @@ final class ChatViewController: UIViewController {
         output.action
             .drive(Binder(self) { base, action in
                 base.action(action)
+            })
+            .disposed(by: disposeBag)
+        
+        output.disclaimerHidden
+            .drive(Binder(mainView.placeholderView) { base, hidden in
+                base.separator.isHidden = hidden
+                base.disclaimerView.isHidden = hidden
             })
             .disposed(by: disposeBag)
     }
@@ -112,6 +123,12 @@ private extension ChatViewController {
             let vc = ChatsViewController.make { [weak self] chat in
                 self?.didSelectChatFromHistoryTrigger.accept(chat)
             }
+            navigationController?.pushViewController(vc, animated: true)
+        case .disclaimer:
+            let vc = DisclaimerViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
+        case .references:
+            let vc = ReferencesViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         }
     }

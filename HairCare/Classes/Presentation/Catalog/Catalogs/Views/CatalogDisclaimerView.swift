@@ -19,7 +19,11 @@ final class CatalogDisclaimerView: UIView {
     private let disclaimer: NSAttributedString
     private let references: NSAttributedString
     
-    override init(frame: CGRect) {
+    private let withSeparator: Bool
+    
+    init(withSeparator: Bool = true) {
+        self.withSeparator = withSeparator
+        
         let attrs = TextAttributes()
             .textColor(Appearance.mono200.withAlphaComponent(0.5))
             .font(Fonts.Roboto.regular(size: 14.scale))
@@ -54,7 +58,7 @@ final class CatalogDisclaimerView: UIView {
             return result
         }()
         
-        super.init(frame: frame)
+        super.init(frame: .zero)
         
         makeConstraints()
         initialize()
@@ -113,7 +117,7 @@ private extension CatalogDisclaimerView {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: withSeparator ? 5.scale : 0),
             label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -123,6 +127,7 @@ private extension CatalogDisclaimerView {
 private extension CatalogDisclaimerView {
     func makeSeparator() -> UIView {
         let view = UIView()
+        view.isHidden = !withSeparator
         view.backgroundColor = Appearance.main700
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
