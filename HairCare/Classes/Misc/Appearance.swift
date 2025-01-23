@@ -22,4 +22,5 @@ struct Appearance {
         Appearance.main700.withAlphaComponent(0).cgColor,
         Appearance.main700.withAlphaComponent(0.66).cgColor
     ]
+    static let custom_171C10 = UIColor(integralRed: 23, green: 28, blue: 16)
 }

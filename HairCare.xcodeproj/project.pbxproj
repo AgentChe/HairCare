@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B79668BA3EE68BCF8C4D31C /* Pods_HairCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */; };
+		DE49F7AC2D425BE70007B601 /* HomeDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */; };
+		DE49F7AE2D425BEC0007B601 /* HomeDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */; };
 		DE7BCD492CEC64E700ECD4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */; };
 		DE7BCD4B2CEC64E700ECD4FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7BCD402CEC64E700ECD4FE /* LaunchScreen.storyboard */; };
 		DE7BCEE22CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEA42CEC66EC00ECD4FE /* GetBookmarksProceduresRequest.swift */; };
@@ -302,6 +304,8 @@
 /* Begin PBXFileReference section */
 		023F3B98CF483585080964AA /* Pods-HairCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HairCare.release.xcconfig"; path = "Target Support Files/Pods-HairCare/Pods-HairCare.release.xcconfig"; sourceTree = "<group>"; };
 		23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HairCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerViewController.swift; sourceTree = "<group>"; };
+		DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerView.swift; sourceTree = "<group>"; };
 		DE7BCD242CEC64DF00ECD4FE /* Mobile HairCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile HairCare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7BCD3E2CEC64E700ECD4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -623,6 +627,15 @@
 				23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE49F7AA2D425BDA0007B601 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */,
+				DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */,
+			);
+			path = Disclaimer;
 			sourceTree = "<group>";
 		};
 		DE7BCD1B2CEC64DF00ECD4FE = {
@@ -1259,6 +1272,7 @@
 		DE7BCE172CEC66EC00ECD4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE49F7AA2D425BDA0007B601 /* Disclaimer */,
 				DE7BCE162CEC66EC00ECD4FE /* CollectionView */,
 			);
 			path = Views;
@@ -2084,6 +2098,7 @@
 				DE7BCEFF2CEC66EC00ECD4FE /* UIColor+Extension.swift in Sources */,
 				DE7BCF002CEC66EC00ECD4FE /* CDTableView.swift in Sources */,
 				DE7BCF012CEC66EC00ECD4FE /* BookmarksEmptyView.swift in Sources */,
+				DE49F7AC2D425BE70007B601 /* HomeDisclaimerViewController.swift in Sources */,
 				DE7BCF022CEC66EC00ECD4FE /* AnalyseScanResultAssessmentCell.swift in Sources */,
 				DE7BCF032CEC66EC00ECD4FE /* ChatsTableView.swift in Sources */,
 				DE7BCF042CEC66EC00ECD4FE /* RemindersViewController.swift in Sources */,
@@ -2138,6 +2153,7 @@
 				DE7BCF332CEC66EC00ECD4FE /* GetChatsRequest.swift in Sources */,
 				DE7BCF342CEC66EC00ECD4FE /* ChatMessage.swift in Sources */,
 				DE7BCF352CEC66EC00ECD4FE /* CRNameField.swift in Sources */,
+				DE49F7AE2D425BEC0007B601 /* HomeDisclaimerView.swift in Sources */,
 				DE7BCF362CEC66EC00ECD4FE /* CDRView.swift in Sources */,
 				DE7BCF372CEC66EC00ECD4FE /* Chat.swift in Sources */,
 				DE7BCF382CEC66EC00ECD4FE /* GetGlossariesRequest.swift in Sources */,

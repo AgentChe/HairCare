@@ -14,6 +14,7 @@ final class HomeExploreItemButton: UIButton {
         case procedures
         case disease
         case glossary
+        case disclaimer
     }
     
     lazy var iconView = makeIconView()
@@ -45,7 +46,7 @@ private extension HomeExploreItemButton {
                 return UIColor(integralRed: 240, green: 219, blue: 255)
             case .insights:
                 return UIColor(integralRed: 201, green: 241, blue: 255)
-            case .procedures, .disease, .glossary:
+            case .procedures, .disease, .glossary, .disclaimer:
                 return Appearance.main700
             }
         }()
@@ -103,15 +104,9 @@ private extension HomeExploreItemButton {
     }
     
     func makeTextLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200.withAlphaComponent(0.5))
-            .font(Fonts.Roboto.regular(size: 14.scale))
-            .lineHeight(20.scale)
-            .textAlignment(.left)
-        
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = item.text.attributed(with: attrs)
+        view.attributedText = item.text
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -132,6 +127,8 @@ private extension HomeExploreItemButton.Item {
             return "Home.Explore.Disease"
         case .glossary:
             return "Home.Explore.Glossary"
+        case .disclaimer:
+            return "Home.Explore.Disclaimer"
         }
     }
     
@@ -147,21 +144,41 @@ private extension HomeExploreItemButton.Item {
             return "Home.Explore.Disease.Title".localized
         case .glossary:
             return "Home.Explore.Glossary.Title".localized
+        case .disclaimer:
+            return "Home.Explore.Disclaimer.Title".localized
         }
     }
     
-    var text: String {
+    var text: NSAttributedString {
+        let attrs = TextAttributes()
+            .textColor(Appearance.mono200.withAlphaComponent(0.5))
+            .font(Fonts.Roboto.regular(size: 14.scale))
+            .lineHeight(20.scale)
+            .textAlignment(.left)
+        
         switch self {
         case .recipes:
-            return "Home.Explore.Recipes.Text".localized
+            return "Home.Explore.Recipes.Text".localized.attributed(with: attrs)
         case .insights:
-            return "Home.Explore.Insights.Text".localized
+            return "Home.Explore.Insights.Text".localized.attributed(with: attrs)
         case .procedures:
-            return "Home.Explore.Procedures.Text".localized
+            return "Home.Explore.Procedures.Text".localized.attributed(with: attrs)
         case .disease:
-            return "Home.Explore.Disease.Text".localized
+            return "Home.Explore.Disease.Text".localized.attributed(with: attrs)
         case .glossary:
-            return "Home.Explore.Glossary.Text".localized
+            return "Home.Explore.Glossary.Text".localized.attributed(with: attrs)
+        case .disclaimer:
+            let boldAttrs = TextAttributes()
+                .textColor(Appearance.mono200.withAlphaComponent(0.5))
+                .font(Fonts.Roboto.bold(size: 14.scale))
+                .lineHeight(20.scale)
+                .textAlignment(.left)
+            
+            let result = NSMutableAttributedString()
+            result.append("Home.Explore.Disclaimer.Text.1".localized.attributed(with: attrs))
+            result.append("Home.Explore.Disclaimer.Text.2".localized.attributed(with: boldAttrs))
+            result.append("Home.Explore.Disclaimer.Text.3".localized.attributed(with: attrs))
+            return result
         }
     }
 }

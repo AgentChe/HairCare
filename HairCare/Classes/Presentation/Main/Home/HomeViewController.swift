@@ -72,6 +72,9 @@ private extension HomeViewController {
             navigationController?.pushViewController(vc, animated: true)
         case .addReminder:
             CreateReminderAssembly().create(from: self)
+        case .openDisclaimer:
+            let vc = HomeDisclaimerViewController.make()
+            present(vc, animated: false)
         }
     }
 }

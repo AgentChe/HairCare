@@ -16,6 +16,7 @@ final class HomeExploreCell: UICollectionViewCell {
     lazy var proceduresButton = makeItemButton(item: .procedures)
     lazy var diseaseButton = makeItemButton(item: .disease)
     lazy var glossaryButton = makeItemButton(item: .glossary)
+    lazy var disclaimerButton = makeItemButton(item: .disclaimer)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -89,6 +90,13 @@ private extension HomeExploreCell {
             glossaryButton.heightAnchor.constraint(equalToConstant: 175.scale),
             glossaryButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
             glossaryButton.topAnchor.constraint(equalTo: proceduresButton.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            disclaimerButton.widthAnchor.constraint(equalToConstant: 164.scale),
+            disclaimerButton.heightAnchor.constraint(equalToConstant: 175.scale),
+            disclaimerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
+            disclaimerButton.topAnchor.constraint(equalTo: proceduresButton.bottomAnchor, constant: 16.scale)
         ])
     }
 }

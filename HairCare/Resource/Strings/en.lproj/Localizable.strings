@@ -91,6 +91,10 @@
 "Home.Explore.Disease.Text" = "Discover an extensive guide";
 "Home.Explore.Glossary.Title" = "Glossary";
 "Home.Explore.Glossary.Text" = "A compilation of key terms";
+"Home.Explore.Disclaimer.Title" = "Disclaimer";
+"Home.Explore.Disclaimer.Text.1" = "The information provided in the app";
+"Home.Explore.Disclaimer.Text.2" = " MUST NOT ";
+"Home.Explore.Disclaimer.Text.3" = "be...";
 "Home.OpenScanner.Title" = "Start hair diagnostics";
 "Home.OpenScanner.SubTitle" = "Diagnose your hair type";
 "Home.OpenScanner.Button" = "Open scanner";
@@ -100,6 +104,12 @@
 "Home.AddReminder.Title" = "Set a notification";
 "Home.AddReminder.SubTitle" = "Schedule a treatment\nreminder";
 "Home.AddReminder.Button" = "Add event";
+"Home.Disclaimer.Title" = "Disclaimer";
+"Home.Disclaimer.Text.1" = "The information provided in this application";
+"Home.Disclaimer.Text.2" = " MUST NOT ";
+"Home.Disclaimer.Text.3" = "be regarded as a replacement for a professional medical advice. All of the medical decisions you make";
+"Home.Disclaimer.Text.4" = " SHOULD BE ADVISED BY A QUALIFIED DOCTOR ";
+"Home.Disclaimer.Text.5" = "who is able to take all of your conditions into account.";
 
 // MARK: Menu
 "Menu.Title" = "Menu";
