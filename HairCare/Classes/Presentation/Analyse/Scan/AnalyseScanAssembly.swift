@@ -38,28 +38,34 @@ private extension AnalyseScanAssembly {
         let nc = NavigationController()
         nc.modalPresentationStyle = .fullScreen
         
-        let cameraVC = AnalyseCameraViewController.make { [weak nc] result in
-            switch result {
-            case .close:
-                nc?.dismiss(animated: true)
-            case .image(let image):
-                let resizeVC = AnalyseImageResizeViewController.make(image: image) { [weak self, weak nc] result in
-                    guard let self else { return }
-                    
-                    switch result {
-                    case .scanResult(let scanResult):
-                        let resultNC = self.startResultFlow(resultFromScan: scanResult) { [weak from] in
-                            from?.dismiss(animated: true)
+        let preScanOnbVC = PreScanOnbViewController.make { [weak nc] in
+            nc?.dismiss(animated: true)
+        } complete: {
+            let cameraVC = AnalyseCameraViewController.make { [weak nc] result in
+                switch result {
+                case .close:
+                    nc?.dismiss(animated: true)
+                case .image(let image):
+                    let resizeVC = AnalyseImageResizeViewController.make(image: image) { [weak self, weak nc] result in
+                        guard let self else { return }
+                        
+                        switch result {
+                        case .scanResult(let scanResult):
+                            let resultNC = self.startResultFlow(resultFromScan: scanResult) { [weak from] in
+                                from?.dismiss(animated: true)
+                            }
+                            nc?.present(resultNC, animated: true)
+                        case .retake, .back:
+                            nc?.popViewController(animated: true)
                         }
-                        nc?.present(resultNC, animated: true)
-                    case .retake, .back:
-                        nc?.popViewController(animated: true)
                     }
+                    nc?.pushViewController(resizeVC, animated: true)
                 }
-                nc?.pushViewController(resizeVC, animated: true)
             }
+            nc.setViewControllers([cameraVC], animated: false)
         }
-        nc.setViewControllers([cameraVC], animated: false)
+        
+        nc.setViewControllers([preScanOnbVC], animated: false)
         
         from.present(nc, animated: true)
     }

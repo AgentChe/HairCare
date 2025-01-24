@@ -289,3 +289,29 @@
 "Disclaimer.Text3" = " be regarded as a replacement for a professional medical advice. All of the medical decisions you make ";
 "Disclaimer.Text4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
 "Disclaimer.Text5" = " who is able to take all of your conditions into account.";
+
+// MARK: PreScanOnb
+"PreScanOnb.Title" = "Take a quiz";
+"PreScanOnb.Start.Title" = "Please take a short quiz before hair scanning!";
+"PreScanOnb.Start.SubTitle" = "It will help us to give you better recommendations.";
+"PreScanOnb.Start.Button" = "Start the quiz";
+"PreScanOnb.List.Title.Touch" = "How does your hair feel to the touch?";
+"PreScanOnb.List.Touch.Cell1" = "Soft and smooth";
+"PreScanOnb.List.Touch.Cell2" = "Slightly rough but manageable";
+"PreScanOnb.List.Touch.Cell3" = "Coarse and brittle";
+"PreScanOnb.List.Touch.Cell4" = "Sticky or greasy";
+"PreScanOnb.List.Title.SplitEnds" = "How often do you notice split ends?";
+"PreScanOnb.List.SplitEnds.Cell1" = "Rarely or never";
+"PreScanOnb.List.SplitEnds.Cell2" = "Occasionally, but not too often";
+"PreScanOnb.List.SplitEnds.Cell3" = "Frequently, especially after styling";
+"PreScanOnb.List.SplitEnds.Cell4" = "Almost all the time";
+"PreScanOnb.List.Title.AfterWashing" = "How does your hair behave after washing?";
+"PreScanOnb.List.AfterWashing.Cell1" = "It feels hydrated and looks shiny";
+"PreScanOnb.List.AfterWashing.Cell2" = "It feels dry and slightly tangled";
+"PreScanOnb.List.AfterWashing.Cell3" = "It feels extremely tangled and dull";
+"PreScanOnb.List.AfterWashing.Cell4" = "It becomes oily within hours";
+"PreScanOnb.List.Title.LooseDaily" = "How much hair do you typically lose daily?";
+"PreScanOnb.List.LooseDaily.Cell1" = "Less than 50 strands";
+"PreScanOnb.List.LooseDaily.Cell2" = "50–100 strands (normal range)";
+"PreScanOnb.List.LooseDaily.Cell3" = "More than 100 strands regularly";
+"PreScanOnb.List.LooseDaily.Cell4" = "Clumps of hair during brushing or washing";
