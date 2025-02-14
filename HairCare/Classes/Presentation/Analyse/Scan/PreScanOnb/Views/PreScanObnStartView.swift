@@ -60,8 +60,8 @@ private extension PreScanObnStartView {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 37.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -37.scale),
+            titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 24.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -24.scale),
             titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 164.scale)
         ])
         

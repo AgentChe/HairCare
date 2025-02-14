@@ -16,6 +16,7 @@ final class HomeViewModel {
         case openHistory
         case addReminder
         case openDisclaimer
+        case openReferences
     }
     
     private lazy var analyseManager = AnalyseManager()
@@ -99,6 +100,8 @@ private extension HomeViewModel {
                     return .catalogs(.disease)
                 case .disclaimer:
                     return .openDisclaimer
+                case .references:
+                    return .openReferences
                 }
             }
             .asDriver(onErrorDriveWith: .never())

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B79668BA3EE68BCF8C4D31C /* Pods_HairCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */; };
+		DE1609602D5F26DF00B53F5A /* OReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE16095F2D5F26DF00B53F5A /* OReferencesView.swift */; };
+		DE1609632D5F550600B53F5A /* HomeReferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1609622D5F550600B53F5A /* HomeReferencesViewController.swift */; };
+		DE1609652D5F550A00B53F5A /* HomeReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1609642D5F550A00B53F5A /* HomeReferencesView.swift */; };
 		DE49F7AC2D425BE70007B601 /* HomeDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */; };
 		DE49F7AE2D425BEC0007B601 /* HomeDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */; };
 		DE49F7B02D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7AF2D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift */; };
@@ -316,6 +319,9 @@
 /* Begin PBXFileReference section */
 		023F3B98CF483585080964AA /* Pods-HairCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HairCare.release.xcconfig"; path = "Target Support Files/Pods-HairCare/Pods-HairCare.release.xcconfig"; sourceTree = "<group>"; };
 		23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HairCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE16095F2D5F26DF00B53F5A /* OReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OReferencesView.swift; sourceTree = "<group>"; };
+		DE1609622D5F550600B53F5A /* HomeReferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReferencesViewController.swift; sourceTree = "<group>"; };
+		DE1609642D5F550A00B53F5A /* HomeReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReferencesView.swift; sourceTree = "<group>"; };
 		DE49F7AB2D425BE70007B601 /* HomeDisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerViewController.swift; sourceTree = "<group>"; };
 		DE49F7AD2D425BEC0007B601 /* HomeDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisclaimerView.swift; sourceTree = "<group>"; };
 		DE49F7AF2D42675A0007B601 /* AnalyseScanResultDisclaimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseScanResultDisclaimerCell.swift; sourceTree = "<group>"; };
@@ -651,6 +657,15 @@
 				23803F4E5DBFDE51F3ECFF87 /* Pods_HairCare.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE1609612D5F54B300B53F5A /* References */ = {
+			isa = PBXGroup;
+			children = (
+				DE1609622D5F550600B53F5A /* HomeReferencesViewController.swift */,
+				DE1609642D5F550A00B53F5A /* HomeReferencesView.swift */,
+			);
+			path = References;
 			sourceTree = "<group>";
 		};
 		DE49F7AA2D425BDA0007B601 /* Disclaimer */ = {
@@ -1357,6 +1372,7 @@
 		DE7BCE172CEC66EC00ECD4FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE1609612D5F54B300B53F5A /* References */,
 				DE49F7AA2D425BDA0007B601 /* Disclaimer */,
 				DE7BCE162CEC66EC00ECD4FE /* CollectionView */,
 			);
@@ -1667,6 +1683,7 @@
 				DE7BCE722CEC66EC00ECD4FE /* OStepsView.swift */,
 				DE7BCE6F2CEC66EC00ECD4FE /* OnboardingSlideView.swift */,
 				DE7BCE6D2CEC66EC00ECD4FE /* ODisclaimerView.swift */,
+				DE16095F2D5F26DF00B53F5A /* OReferencesView.swift */,
 				DE7BCE702CEC66EC00ECD4FE /* OScanScinView.swift */,
 				DE7BCE6E2CEC66EC00ECD4FE /* OExploreSkinInsightsView.swift */,
 				DE7BCE712CEC66EC00ECD4FE /* OStayOnTrackView.swift */,
@@ -2360,6 +2377,7 @@
 				DE7BCFA62CEC66EC00ECD4FE /* RemindersViewModel.swift in Sources */,
 				DE7BCFA72CEC66EC00ECD4FE /* DermatologySyncTokensRequest.swift in Sources */,
 				DE7BD00A2CEC99FE00ECD4FE /* GetBookmarksRecipesRequest.swift in Sources */,
+				DE1609652D5F550A00B53F5A /* HomeReferencesView.swift in Sources */,
 				DE49F7BD2D42ACF30007B601 /* CatalogDisclaimerView.swift in Sources */,
 				DE7BCFA82CEC66EC00ECD4FE /* SceneDelegate.swift in Sources */,
 				DE49F7C72D43BC330007B601 /* PreScanOnbListView.swift in Sources */,
@@ -2431,6 +2449,7 @@
 				DE7BCFEA2CEC66EC00ECD4FE /* CREButton.swift in Sources */,
 				DE7BCFEB2CEC66EC00ECD4FE /* RepetitionsTableCell.swift in Sources */,
 				DE7BCFEC2CEC66EC00ECD4FE /* IAPActionResult.swift in Sources */,
+				DE1609632D5F550600B53F5A /* HomeReferencesViewController.swift in Sources */,
 				DE7BCFED2CEC66EC00ECD4FE /* SASTScannedAreaView.swift in Sources */,
 				DE7BCFEE2CEC66EC00ECD4FE /* PaygateProductButton.swift in Sources */,
 				DE7BCFEF2CEC66EC00ECD4FE /* ChatsTableFooterView.swift in Sources */,
@@ -2440,6 +2459,7 @@
 				DE7BCFF32CEC66EC00ECD4FE /* OnbDisclaimerView.swift in Sources */,
 				DE7BCFF42CEC66EC00ECD4FE /* CreateChatResponse.swift in Sources */,
 				DE7BCFF52CEC66EC00ECD4FE /* SplashView.swift in Sources */,
+				DE1609602D5F26DF00B53F5A /* OReferencesView.swift in Sources */,
 				DE7BCFF62CEC66EC00ECD4FE /* ChatMessagesPage.swift in Sources */,
 				DE7BCFF72CEC66EC00ECD4FE /* BranchManager.swift in Sources */,
 				DE7BCFF82CEC66EC00ECD4FE /* PaygateInteractor.swift in Sources */,
@@ -2478,7 +2498,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2495,7 +2515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2517,7 +2537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2534,7 +2554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";

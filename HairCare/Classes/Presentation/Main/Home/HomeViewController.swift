@@ -75,6 +75,9 @@ private extension HomeViewController {
         case .openDisclaimer:
             let vc = HomeDisclaimerViewController.make()
             present(vc, animated: false)
+        case .openReferences:
+            let vc = HomeReferencesViewController.make()
+            present(vc, animated: false)
         }
     }
 }

@@ -38,7 +38,7 @@ extension OStepsView {
         
         isHidden = {
             switch slide {
-            case .disclaimer:
+            case .disclaimer, .references:
                 return true
             case .scanScin, .exploreSkinInsights, .stayOnTrack, .chat:
                 return false

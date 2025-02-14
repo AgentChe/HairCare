@@ -59,16 +59,19 @@
 "Onboarding.Disclaimer.Text3" = " be regarded as a replacement for a professional medical advice. All of the medical decisions you make ";
 "Onboarding.Disclaimer.Text4" = "SHOULD BE ADVISED BY A QUALIFIED DOCTOR";
 "Onboarding.Disclaimer.Text5" = " who is able to take all of your conditions into account.";
+"Onboarding.References.Title" = "References";
+"Onboarding.References.Text1" = "This product uses publicly available data from the U.S. National Library of Medicine (NLM) and the Centers for Disease Control and Prevention (CDC). ";
+"Onboarding.References.Text2" = "Both CDC and NLM provide direct access to essential health and safety topics, scientific articles, data, and statistics, along with tools and resources. NLM and CDC are not responsible for the product and do not endorse or recommend this or any other product.\n\n";
 "Onboarding.BottomInfo1" = "The information provided in the app ";
 "Onboarding.BottomInfo2" = "MUST NOT";
 "Onboarding.BottomInfo3" = " be regarded as a replacement for a professional medical advice. Read more. ";
 "Onboarding.BottomInfo4" = "Read more";
-"Onboarding.ScanScin.Title" = "Scan Your Hair";
+"Onboarding.ScanScin.Title" = "Analyze Your Hair";
 "Onboarding.ScanScin.Text" = "Analyze your hair’s condition with our AI scanner. Get personalized insights and recommendations.";
 "Onboarding.ExploreSkinInsights.Title" = "Hair Care Insights";
-"Onboarding.ExploreSkinInsights.Text" = "Browse curated articles on hair care, treatments, and trends from experts.";
-"Onboarding.StayOnTrack.Title" = "Treatment Calendar";
-"Onboarding.StayOnTrack.Text" = "Set reminders for treatments and rescans. Track your progress effortlessly.";
+"Onboarding.ExploreSkinInsights.Text" = "Browse curated articles on hair care, and trends from experts.";
+"Onboarding.StayOnTrack.Title" = "Hair Care Calendar";
+"Onboarding.StayOnTrack.Text" = "Set reminders for hair care and rescans. Track your progress effortlessly.";
 "Onboarding.Chat.Title" = "Chat with HairBot";
 "Onboarding.Chat.Text" = "Chat with our AI assistant for instant support and personalized hair care tips.";
 
@@ -85,8 +88,8 @@
 "Home.Explore.Recipes.Text" = "Nourishing hair recipes, masks and treatments";
 "Home.Explore.Insights.Title" = "Insights";
 "Home.Explore.Insights.Text" = "Hair care insights and tips";
-"Home.Explore.Procedures.Title" = "Procedures";
-"Home.Explore.Procedures.Text" = "A concise glossary of essential procedures";
+"Home.Explore.Procedures.Title" = "Hair care";
+"Home.Explore.Procedures.Text" = "A concise glossary of essential hair care routines";
 "Home.Explore.Disease.Title" = "Disease";
 "Home.Explore.Disease.Text" = "Discover an extensive guide";
 "Home.Explore.Glossary.Title" = "Glossary";
@@ -95,6 +98,8 @@
 "Home.Explore.Disclaimer.Text.1" = "The information provided in the app";
 "Home.Explore.Disclaimer.Text.2" = " MUST NOT ";
 "Home.Explore.Disclaimer.Text.3" = "be...";
+"Home.Explore.References.Title" = "References";
+"Home.Explore.References.Text" = "This product uses publicly available data from the U.S. ...";
 "Home.OpenScanner.Title" = "Start hair diagnostics";
 "Home.OpenScanner.SubTitle" = "Diagnose your hair type";
 "Home.OpenScanner.Button" = "Open scanner";
@@ -110,6 +115,9 @@
 "Home.Disclaimer.Text.3" = "be regarded as a replacement for a professional medical advice. All of the medical decisions you make";
 "Home.Disclaimer.Text.4" = " SHOULD BE ADVISED BY A QUALIFIED DOCTOR ";
 "Home.Disclaimer.Text.5" = "who is able to take all of your conditions into account.";
+"Home.References.Title" = "References";
+"Home.References.Text1" = "This product uses publicly available data from the U.S. National Library of Medicine (NLM) and the Centers for Disease Control and Prevention (CDC).\n\n";
+"Home.References.Text2" = "Both CDC and NLM provide direct access to essential health and safety topics, scientific articles, data, and statistics, along with tools and resources. NLM and CDC are not responsible for the product and do not endorse or recommend this or any other product.\n\n";
 
 // MARK: Menu
 "Menu.Title" = "Menu";
@@ -177,7 +185,7 @@
 "AnalyseImageResize.Incorrect" = "Cannot scan the photo";
 
 // MARK: AnalyseScanResult
-"AnalyseScanResult.Title" = "Scan result";
+"AnalyseScanResult.Title" = "Result";
 "AnalyseScanResult.Name" = "Name: ";
 "AnalyseScanResult.Assessment" = "Assessment: ";
 "AnalyseScanResult.Conclusion" = "Conclusion: ";
@@ -291,10 +299,10 @@
 "Disclaimer.Text5" = " who is able to take all of your conditions into account.";
 
 // MARK: PreScanOnb
-"PreScanOnb.Title" = "Take a quiz";
-"PreScanOnb.Start.Title" = "Please take a short quiz before hair scanning!";
+"PreScanOnb.Title" = "Answer the questions";
+"PreScanOnb.Start.Title" = "Please answer a few questions for hair analyzing!";
 "PreScanOnb.Start.SubTitle" = "It will help us to give you better recommendations.";
-"PreScanOnb.Start.Button" = "Start the quiz";
+"PreScanOnb.Start.Button" = "Start";
 "PreScanOnb.List.Title.Touch" = "How does your hair feel to the touch?";
 "PreScanOnb.List.Touch.Cell1" = "Soft and smooth";
 "PreScanOnb.List.Touch.Cell2" = "Slightly rough but manageable";

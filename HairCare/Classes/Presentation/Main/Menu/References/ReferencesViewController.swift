@@ -29,9 +29,9 @@ final class ReferencesViewController: UIViewController {
         Observable
             .merge(
                 mainView.link1Button.rx.tap
-                    .compactMap { URL(string: "https://www.nlm.nih.gov") },
+                    .compactMap { URL(string: GlobalDefinitions.References.nlm.absoluteString) },
                 mainView.link2Button.rx.tap
-                    .compactMap { URL(string: "https://www.cdc.gov/health-topics.html") }
+                    .compactMap { URL(string: GlobalDefinitions.References.cdc.absoluteString) }
             )
             .bind(to: Binder(self) { base, url in
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

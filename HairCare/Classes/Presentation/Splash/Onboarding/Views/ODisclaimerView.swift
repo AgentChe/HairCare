@@ -83,13 +83,13 @@ private extension ODisclaimerView {
     func makeTextLabel() -> UILabel {
         let bAttrs = TextAttributes()
             .textColor(Appearance.mono200)
-            .font(Fonts.Roboto.bold(size: 18.scale))
-            .lineHeight(21.scale)
+            .font(Fonts.Roboto.bold(size: 16.scale))
+            .lineHeight(19.scale)
             .textAlignment(.left)
         let rAttrs = TextAttributes()
             .textColor(Appearance.mono200)
-            .font(Fonts.Roboto.regular(size: 18.scale))
-            .lineHeight(21.scale)
+            .font(Fonts.Roboto.regular(size: 16.scale))
+            .lineHeight(19.scale)
             .textAlignment(.left)
         
         let result = NSMutableAttributedString()

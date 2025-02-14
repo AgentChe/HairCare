@@ -14,8 +14,8 @@ final class ReferencesView: UIView {
     lazy var block1Label = makeBlock1Label()
     lazy var block2Label = makeBlock2Label()
     lazy var block3Label = makeBlock3Label()
-    lazy var link1Button = makeLinkButton(link: "https://www.nlm.nih.gov")
-    lazy var link2Button = makeLinkButton(link: "https://www.cdc.gov/health-topics.html")
+    lazy var link1Button = makeLinkButton(link: GlobalDefinitions.References.nlm.absoluteString)
+    lazy var link2Button = makeLinkButton(link: GlobalDefinitions.References.cdc.absoluteString)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

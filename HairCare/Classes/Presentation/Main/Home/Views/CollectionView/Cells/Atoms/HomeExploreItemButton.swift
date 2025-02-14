@@ -15,6 +15,7 @@ final class HomeExploreItemButton: UIButton {
         case disease
         case glossary
         case disclaimer
+        case references
     }
     
     lazy var iconView = makeIconView()
@@ -46,7 +47,7 @@ private extension HomeExploreItemButton {
                 return UIColor(integralRed: 240, green: 219, blue: 255)
             case .insights:
                 return UIColor(integralRed: 201, green: 241, blue: 255)
-            case .procedures, .disease, .glossary, .disclaimer:
+            case .procedures, .disease, .glossary, .disclaimer, .references:
                 return Appearance.main700
             }
         }()
@@ -129,6 +130,8 @@ private extension HomeExploreItemButton.Item {
             return "Home.Explore.Glossary"
         case .disclaimer:
             return "Home.Explore.Disclaimer"
+        case .references:
+            return "Home.Explore.References"
         }
     }
     
@@ -146,6 +149,8 @@ private extension HomeExploreItemButton.Item {
             return "Home.Explore.Glossary.Title".localized
         case .disclaimer:
             return "Home.Explore.Disclaimer.Title".localized
+        case .references:
+            return "Home.Explore.References.Title".localized
         }
     }
     
@@ -179,6 +184,8 @@ private extension HomeExploreItemButton.Item {
             result.append("Home.Explore.Disclaimer.Text.2".localized.attributed(with: boldAttrs))
             result.append("Home.Explore.Disclaimer.Text.3".localized.attributed(with: attrs))
             return result
+        case .references:
+            return "Home.Explore.References.Text".localized.attributed(with: attrs)
         }
     }
 }

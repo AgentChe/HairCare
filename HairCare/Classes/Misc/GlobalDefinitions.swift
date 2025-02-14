@@ -28,4 +28,9 @@ final class GlobalDefinitions {
         static let yearly = "mobile.hair.yearly"
         static let weekly = "mobile.hair.weekly"
     }
+    
+    enum References {
+        static let nlm = URL(string: "https://www.nlm.nih.gov")!
+        static let cdc = URL(string: "https://www.cdc.gov/health-topics.html")!
+    }
 }

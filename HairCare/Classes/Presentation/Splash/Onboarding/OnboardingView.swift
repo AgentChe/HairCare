@@ -9,13 +9,14 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Slide: Int {
-        case disclaimer, scanScin, exploreSkinInsights, stayOnTrack, chat
+        case disclaimer, references, scanScin, exploreSkinInsights, stayOnTrack, chat
     }
     
     lazy var container = makeContainer()
     lazy var stepsView = makeStepsView()
     lazy var slidesViews: [OnboardingSlideView] = [
         ODisclaimerView(),
+        OReferencesView(),
         OScanScinView(),
         OExploreSkinInsightsView(),
         OStayOnTrackView(),

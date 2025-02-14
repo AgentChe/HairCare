@@ -11,12 +11,13 @@ final class HomeExploreCell: UICollectionViewCell {
     var didTap: ((HomeExploreItemButton.Item) -> Void)?
     
     lazy var titleLabel = makeTitleLabel()
+    lazy var disclaimerButton = makeItemButton(item: .disclaimer)
+    lazy var referencesButton = makeItemButton(item: .references)
     lazy var recipesButton = makeItemButton(item: .recipes)
     lazy var insightsButton = makeItemButton(item: .insights)
     lazy var proceduresButton = makeItemButton(item: .procedures)
     lazy var diseaseButton = makeItemButton(item: .disease)
     lazy var glossaryButton = makeItemButton(item: .glossary)
-    lazy var disclaimerButton = makeItemButton(item: .disclaimer)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,17 +59,31 @@ private extension HomeExploreCell {
         ])
         
         NSLayoutConstraint.activate([
+            disclaimerButton.widthAnchor.constraint(equalToConstant: 164.scale),
+            disclaimerButton.heightAnchor.constraint(equalToConstant: 175.scale),
+            disclaimerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            disclaimerButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            referencesButton.widthAnchor.constraint(equalToConstant: 164.scale),
+            referencesButton.heightAnchor.constraint(equalToConstant: 175.scale),
+            referencesButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
+            referencesButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             recipesButton.widthAnchor.constraint(equalToConstant: 164.scale),
             recipesButton.heightAnchor.constraint(equalToConstant: 175.scale),
             recipesButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
-            recipesButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+            recipesButton.topAnchor.constraint(equalTo: disclaimerButton.bottomAnchor, constant: 16.scale)
         ])
         
         NSLayoutConstraint.activate([
             insightsButton.widthAnchor.constraint(equalToConstant: 164.scale),
             insightsButton.heightAnchor.constraint(equalToConstant: 175.scale),
             insightsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
-            insightsButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
+            insightsButton.topAnchor.constraint(equalTo: referencesButton.bottomAnchor, constant: 16.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -90,13 +105,6 @@ private extension HomeExploreCell {
             glossaryButton.heightAnchor.constraint(equalToConstant: 175.scale),
             glossaryButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
             glossaryButton.topAnchor.constraint(equalTo: proceduresButton.bottomAnchor, constant: 16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            disclaimerButton.widthAnchor.constraint(equalToConstant: 164.scale),
-            disclaimerButton.heightAnchor.constraint(equalToConstant: 175.scale),
-            disclaimerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 195.scale),
-            disclaimerButton.topAnchor.constraint(equalTo: proceduresButton.bottomAnchor, constant: 16.scale)
         ])
     }
 }
