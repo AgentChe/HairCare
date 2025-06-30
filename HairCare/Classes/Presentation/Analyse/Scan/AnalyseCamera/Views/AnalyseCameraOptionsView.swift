@@ -8,7 +8,7 @@
 import UIKit
 
 final class AnalyseCameraOptionsView: UIView {
-    lazy var refreshButton = makeButton(iconName: "AnalyseCamera.Refresh")
+    lazy var rotateCameraButton = makeButton(iconName: "AnalyseCamera.Refresh")
     lazy var minusButton = makeButton(iconName: "AnalyseCamera.Minus")
     lazy var sliderView = makeSliderView()
     lazy var plusButton = makeButton(iconName: "AnalyseCamera.Plus")
@@ -42,10 +42,10 @@ private extension AnalyseCameraOptionsView {
 private extension AnalyseCameraOptionsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            refreshButton.widthAnchor.constraint(equalToConstant: 46.scale),
-            refreshButton.heightAnchor.constraint(equalToConstant: 46.scale),
-            refreshButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 13.5.scale),
-            refreshButton.centerYAnchor.constraint(equalTo: centerYAnchor)
+            rotateCameraButton.widthAnchor.constraint(equalToConstant: 46.scale),
+            rotateCameraButton.heightAnchor.constraint(equalToConstant: 46.scale),
+            rotateCameraButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 13.5.scale),
+            rotateCameraButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([

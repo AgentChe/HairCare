@@ -74,8 +74,7 @@ final class AnalyseCameraViewController: UIViewController {
         Observable
             .merge(
                 mainView.optionsView.minusButton.rx.tap.map { -1 },
-                mainView.optionsView.plusButton.rx.tap.map { 1 },
-                mainView.optionsView.refreshButton.rx.tap.map { -20 } // Вернет зум на 1
+                mainView.optionsView.plusButton.rx.tap.map { 1 }
             )
             .scan(1) { value, incr -> Int in
                 let result = value + incr
@@ -89,6 +88,12 @@ final class AnalyseCameraViewController: UIViewController {
             .bind(to: Binder(self) { base, zoom in
                 base.cameraService.setZoom(scale: CGFloat(zoom))
                 base.mainView.optionsView.sliderView.value = Float(zoom)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.optionsView.rotateCameraButton.rx.tap
+            .bind(to: Binder(cameraService) { base, void in
+                base.switchCameraInput()
             })
             .disposed(by: disposeBag)
     }
