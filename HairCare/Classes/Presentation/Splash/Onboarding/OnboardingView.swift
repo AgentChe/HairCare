@@ -155,7 +155,7 @@ private extension OnboardingView {
             stepsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12.scale),
             stepsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12.scale),
             stepsView.heightAnchor.constraint(equalToConstant: 6.scale),
-            stepsView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44.scale)
+            stepsView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ScreenSize.isIphoneXFamily ? 44.scale : 16.scale)
         ])
     }
 }
