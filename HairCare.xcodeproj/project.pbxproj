@@ -2503,13 +2503,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Mobile HairCare";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hair Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is needed to analyze your hair and provide personalized insights";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to select photo for scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2521,7 +2521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2545,13 +2545,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HairCare/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Mobile HairCare";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hair Care";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is needed to analyze your hair and provide personalized insights";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to select photo for scan";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2563,7 +2563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
