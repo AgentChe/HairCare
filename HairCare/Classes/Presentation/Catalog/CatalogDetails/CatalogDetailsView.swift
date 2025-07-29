@@ -57,7 +57,8 @@ private extension CatalogDetailsView {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 8.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: bookmarkButton.leadingAnchor, constant: -8.scale),
             titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor)
         ])
         
@@ -104,6 +105,7 @@ private extension CatalogDetailsView {
             .font(Fonts.Roboto.regular(size: 16.scale))
             .lineHeight(30.scale)
             .textAlignment(.center)
+            .lineBreakMode(.byTruncatingTail)
         
         let view = UILabel()
         view.attributedText = title.attributed(with: attrs)
