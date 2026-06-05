@@ -34,7 +34,6 @@
 		DE7BCEE62CEC66EC00ECD4FE /* ChatsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDFC2CEC66EC00ECD4FE /* ChatsTableCell.swift */; };
 		DE7BCEE72CEC66EC00ECD4FE /* ODisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE6D2CEC66EC00ECD4FE /* ODisclaimerView.swift */; };
 		DE7BCEE82CEC66EC00ECD4FE /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE812CEC66EC00ECD4FE /* PaygateView.swift */; };
-		DE7BCEE92CEC66EC00ECD4FE /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD4E2CEC66EC00ECD4FE /* AmplitudeManager.swift */; };
 		DE7BCEEA2CEC66EC00ECD4FE /* RepetitionSpecificDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE3D2CEC66EC00ECD4FE /* RepetitionSpecificDayViewController.swift */; };
 		DE7BCEEB2CEC66EC00ECD4FE /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE832CEC66EC00ECD4FE /* PaygateViewModel.swift */; };
 		DE7BCEEC2CEC66EC00ECD4FE /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE152CEC66EC00ECD4FE /* HomeCollectionView.swift */; };
@@ -296,7 +295,6 @@
 		DE7BCFF42CEC66EC00ECD4FE /* CreateChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEBE2CEC66EC00ECD4FE /* CreateChatResponse.swift */; };
 		DE7BCFF52CEC66EC00ECD4FE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE872CEC66EC00ECD4FE /* SplashView.swift */; };
 		DE7BCFF62CEC66EC00ECD4FE /* ChatMessagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCEB82CEC66EC00ECD4FE /* ChatMessagesPage.swift */; };
-		DE7BCFF72CEC66EC00ECD4FE /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD4F2CEC66EC00ECD4FE /* BranchManager.swift */; };
 		DE7BCFF82CEC66EC00ECD4FE /* PaygateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCE782CEC66EC00ECD4FE /* PaygateInteractor.swift */; };
 		DE7BCFF92CEC66EC00ECD4FE /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCD642CEC66EC00ECD4FE /* UIEdgeInsets+Extension.swift */; };
 		DE7BCFFA2CEC66EC00ECD4FE /* BookmarksFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BCDC22CEC66EC00ECD4FE /* BookmarksFilterView.swift */; };
@@ -340,8 +338,6 @@
 		DE7BCD3D2CEC64E700ECD4FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7BCD3E2CEC64E700ECD4FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7BCD3F2CEC64E700ECD4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE7BCD4E2CEC66EC00ECD4FE /* AmplitudeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
-		DE7BCD4F2CEC66EC00ECD4FE /* BranchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE7BCD502CEC66EC00ECD4FE /* FacebookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DE7BCD512CEC66EC00ECD4FE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE7BCD532CEC66EC00ECD4FE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -777,8 +773,6 @@
 		DE7BCD522CEC66EC00ECD4FE /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE7BCD4E2CEC66EC00ECD4FE /* AmplitudeManager.swift */,
-				DE7BCD4F2CEC66EC00ECD4FE /* BranchManager.swift */,
 				DE7BCD502CEC66EC00ECD4FE /* FacebookManager.swift */,
 				DE7BCD512CEC66EC00ECD4FE /* FirebaseManager.swift */,
 			);
@@ -2177,7 +2171,6 @@
 				DE7BCEE62CEC66EC00ECD4FE /* ChatsTableCell.swift in Sources */,
 				DE7BCEE72CEC66EC00ECD4FE /* ODisclaimerView.swift in Sources */,
 				DE7BCEE82CEC66EC00ECD4FE /* PaygateView.swift in Sources */,
-				DE7BCEE92CEC66EC00ECD4FE /* AmplitudeManager.swift in Sources */,
 				DE7BCEEA2CEC66EC00ECD4FE /* RepetitionSpecificDayViewController.swift in Sources */,
 				DE7BD00C2CEC9A2C00ECD4FE /* GetBookmarksInsightsRequest.swift in Sources */,
 				DE7BCEEB2CEC66EC00ECD4FE /* PaygateViewModel.swift in Sources */,
@@ -2465,7 +2458,6 @@
 				DE7BCFF52CEC66EC00ECD4FE /* SplashView.swift in Sources */,
 				DE1609602D5F26DF00B53F5A /* OReferencesView.swift in Sources */,
 				DE7BCFF62CEC66EC00ECD4FE /* ChatMessagesPage.swift in Sources */,
-				DE7BCFF72CEC66EC00ECD4FE /* BranchManager.swift in Sources */,
 				DE7BCFF82CEC66EC00ECD4FE /* PaygateInteractor.swift in Sources */,
 				DE7BCFF92CEC66EC00ECD4FE /* UIEdgeInsets+Extension.swift in Sources */,
 				DE7BCFFA2CEC66EC00ECD4FE /* BookmarksFilterView.swift in Sources */,
@@ -2503,7 +2495,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2521,7 +2513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.8;
+				MARKETING_VERSION = 1.1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2545,7 +2537,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2563,7 +2555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.8;
+				MARKETING_VERSION = 1.1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = mobile.hair;
 				PRODUCT_NAME = "Mobile HairCare";
 				PROVISIONING_PROFILE_SPECIFIER = "";
